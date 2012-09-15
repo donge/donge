@@ -1,0 +1,72 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Ticket - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Release/Ticket.res" /d "NDEBUG" /d "_AFXDLL" "E:\Project\Ticket\Ticket.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP1FC.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/Ticket.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\Project\Ticket\AirTicket.cpp"
+"E:\Project\Ticket\AirTicketTable.cpp"
+"E:\Project\Ticket\ChineseCodeLib.cpp"
+"E:\Project\Ticket\MainFrm.cpp"
+"E:\Project\Ticket\PropPageFirst.cpp"
+"E:\Project\Ticket\Ticket.cpp"
+"E:\Project\Ticket\TicketDoc.cpp"
+"E:\Project\Ticket\TicketListVew.cpp"
+"E:\Project\Ticket\TicketView.cpp"
+"E:\Project\Ticket\WebFetcher.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP1FC.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP1FD.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/Ticket.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\Project\Ticket\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP1FD.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP1FE.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/Ticket.pdb" /machine:I386 /out:"Release/Ticket.exe" 
+.\Release\AirTicket.obj
+.\Release\AirTicketTable.obj
+.\Release\ChineseCodeLib.obj
+.\Release\MainFrm.obj
+.\Release\PropPageFirst.obj
+.\Release\StdAfx.obj
+.\Release\Ticket.obj
+.\Release\TicketDoc.obj
+.\Release\TicketListVew.obj
+.\Release\TicketView.obj
+.\Release\WebFetcher.obj
+.\Release\Ticket.res
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP1FE.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+AirTicket.cpp
+AirTicketTable.cpp
+ChineseCodeLib.cpp
+MainFrm.cpp
+PropPageFirst.cpp
+Ticket.cpp
+TicketDoc.cpp
+TicketListVew.cpp
+TicketView.cpp
+WebFetcher.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Ticket.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
