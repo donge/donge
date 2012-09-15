@@ -1,0 +1,479 @@
+<html><head><meta http-equiv=Content-Type content=text/html; charset=gb2312 charset=gb2312><style>body{font-family:宋体;font-size:9pt}td{font-family:宋体;font-size:9pt;}.big{font-family:宋体;font-size:10.5pt}a:link{color:#000000;text-decoration:none}a:visited{color:#000000;text-decoration:none}a:active{color:#808080;text-decoration:none}a:hover{color:#808080;text-decoration:underline}</style><title>★☆ 永远的２３３７ ☆★</title><meta http-equiv="Content-Type" content="text/html; charset=gb2312"></head><body bgcolor=#666666 topmargin=0 leftmargin=0>
+<LAYER NAME="a2" LEFT=10 TOP=10 VISIBILITY=SHOW BGCOLOR="#ffa000" CLIP="0,0,1,1"></LAYER>
+<LAYER NAME="a3" LEFT=10 TOP=10 VISIBILITY=SHOW BGCOLOR="#ff00ff" CLIP="0,0,1,1"></LAYER>
+<LAYER NAME="a4" LEFT=10 TOP=10 VISIBILITY=SHOW BGCOLOR="#00ff00" CLIP="0,0,1,1"></LAYER>
+<LAYER NAME="a5" LEFT=10 TOP=10 VISIBILITY=SHOW BGCOLOR="#FF00FF" CLIP="0,0,1,1"></LAYER>
+<LAYER NAME="a6" LEFT=10 TOP=10 VISIBILITY=SHOW BGCOLOR="#FF0000" CLIP="0,0,1,1"></LAYER>
+<LAYER NAME="a9" LEFT=10 TOP=10 VISIBILITY=SHOW BGCOLOR="#ffa000" CLIP="0,0,2,2"></LAYER>
+<LAYER NAME="a10" LEFT=10 TOP=10 VISIBILITY=SHOW BGCOLOR="#ff00ff" CLIP="0,0,2,2"></LAYER>
+<LAYER NAME="a11" LEFT=10 TOP=10 VISIBILITY=SHOW BGCOLOR="#00ff00" CLIP="0,0,2,2"></LAYER>
+<LAYER NAME="a12" LEFT=10 TOP=10 VISIBILITY=SHOW BGCOLOR="#0000ff" CLIP="0,0,2,2"></LAYER>
+<LAYER NAME="a13" LEFT=10 TOP=10 VISIBILITY=SHOW BGCOLOR="#FF0000" CLIP="0,0,2,2"></LAYER>
+
+<script language="JavaScript">
+
+if (document.all){
+with (document){
+write('<div id="starsDiv" style="position:absolute;top:0px;left:0px">')
+write('<div style="position:relative;width:1px;height:1px;background:#ffa000;font-size:1px;visibility:visible"></div>')
+write('<div style="position:relative;width:1px;height:1px;background:#ff00ff;font-size:1px;visibility:visible"></div>')
+write('<div style="position:relative;width:1px;height:1px;background:#00ff00;font-size:1px;visibility:visible"></div>')
+write('<div style="position:relative;width:1px;height:1px;background:#0000ff;font-size:1px;visibility:visible"></div>')
+write('<div style="position:relative;width:1px;height:1px;background:#FF0000;font-size:1px;visibility:visible"></div>')
+write('<div style="position:relative;width:2px;height:2px;background:#ffa000;font-size:2px;visibility:visible"></div>')
+write('<div style="position:relative;width:2px;height:2px;background:#ff00ff;font-size:2px;visibility:visible"></div>')
+write('<div style="position:relative;width:2px;height:2px;background:#00ff00;font-size:2px;visibility:visible"></div>')
+write('<div style="position:relative;width:2px;height:2px;background:#0000ff;font-size:2px;visibility:visible"></div>')
+write('<div style="position:relative;width:3px;height:3px;background:#FF0000;font-size:3px;visibility:visible"></div>')
+write('</div>')
+}
+}
+
+if (document.layers)
+{window.captureEvents(Event.MOUSEMOVE);}
+var yBase = 200;
+var xBase = 200;
+var step = 1;
+var currStep = 0;
+var Xpos = 1;
+var Ypos = 1;
+
+if (document.all)
+{
+  function MoveHandler(){
+  Xpos = document.body.scrollLeft+event.x;
+  Ypos = document.body.scrollTop+event.y;
+  }
+  document.onmousemove = MoveHandler;
+}
+
+else if (document.layers)
+{
+  function xMoveHandler(evnt){
+  Xpos = evnt.pageX;
+  Ypos = evnt.pageY;
+  }
+  window.onMouseMove = xMoveHandler;
+}
+
+function animateLogo() {
+if (document.all)
+{
+ yBase = window.document.body.offsetHeight/6;
+ xBase = window.document.body.offsetWidth/6;
+}
+else if (document.layers)
+{
+ yBase = window.innerHeight/8;
+ xBase = window.innerWidth/8;
+}
+
+if (document.all)
+{
+ for ( i = 0 ; i < starsDiv.all.length ; i++ )
+ {
+  starsDiv.all[i].style.top = Ypos + yBase*Math.sin((currStep + i*4)/12)*Math.cos(400+currStep/200);
+ starsDiv.all[i].style.left = Xpos + xBase*Math.sin((currStep + i*3)/10)*Math.sin(currStep/200);
+ }
+}
+
+else if (document.layers)
+{
+ for ( j = 0 ; j < 10 ; j++ ) //number of NS layers!
+ {
+  var templayer="a"+j
+  document.layers[templayer].top = Ypos + yBase*Math.sin((currStep + j*4)/12)*Math.cos(400+currStep/200);
+  document.layers[templayer].left = Xpos + xBase*Math.sin((currStep + j*3)/10)*Math.sin(currStep/200);
+ }
+}
+currStep+= step;
+setTimeout("animateLogo()", 30);
+}
+animateLogo();
+</script>
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FFFFFF">
+  <tr> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td align="center"><font face="Verdana, Arial, Helvetica, sans-serif"><strong>2337.126.COM</strong></font></td>
+  </tr>
+  <tr> 
+    <td width="25%" bgcolor="#FF0080">&nbsp;</td>
+    <td width="25%" bgcolor="#0080FF">&nbsp;</td>
+    <td width="25%" bgcolor="#FF8000">&nbsp;</td>
+    <td width="25%" bgcolor="#8000FF">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="60" bgcolor="#FFBBDD"><font color="#0000A0"><strong>我的话</strong></font> 
+      - 终于可以在寝室更新了，方便多了。如果大家联系方式有变化，请和我联系，以便随时更新。 - 东冬 2002.11.13</td>
+    <td bgcolor="#BBDDFF"><div align="center">
+        <table border="0" align="center" cellpadding="1" cellspacing="0">
+          <tr> 
+            <td colspan="3"><div align="center">绝对实用的强力搜索</div></td>
+          </tr>
+          <tr> 
+            <td><select style="font-size:12px;border:1 solid #000000" name=select1>
+                <option value="http://www.google.com/search?q=" selected>Google</option>
+                <option value="http://www1.baidu.com/baidu?word=">百度</option>
+                <option value="http://cn.search.yahoo.com/search/cn?p=">雅虎</option>
+                <option value="http://search.sina.com.cn/cgi-bin/search/search.cgi?_searchkey=">新浪</option>
+                <option value="http://search.163.com/cgi-bin/search/engine/search.fcgi?key=">网易</option>
+                <option value="http://site.search.sohu.com/sitesearch.jsp?key_word=">搜狐</option>
+                <option value="http://www.goyoyo.com.cn/gyy/search%20GB?query=">悠游</option>
+                <option value="http://202.106.148.151/cns.dll?act=go&amp;lang=gb&amp;fw=1&amp;name=">3721</option>
+              </select></td>
+            <td><input style="font-size:12px;border:1 solid #000000" name=text1 size=10></td>
+            <td><input style="font-size:12px;border:1 solid #000000" name=button1 onClick=window.open(select1.value+text1.value) type=button value=搜索></td>
+          </tr>
+        </table>
+        
+      </div>
+      </td>
+    <td bgcolor="#FFDDBB"> <font color="#008040"><strong>２３３７通讯录</strong></font> 
+      - <font color="#FF0000"><strong>强力推荐</strong></font><br>
+      2002.11.13 程序正式版推出！最新数据库更新，数据下载后覆盖原文件即可。请大家注意及时更新。<br>
+      [<a href="donge.exe"><font color="#0000FF">完整-点此下载</font></a>][<a href="2337.dat"><font color="#0000FF">数据-点此下载</font></a>]</td>
+    <td bgcolor="#DDBBFF"><table border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td colspan="3"><div align="center"><font color="#800040" face="Verdana, Arial, Helvetica, sans-serif"><strong>Kiss</strong></font><font color="#0000A0"><strong><font face="Verdana, Arial, Helvetica, sans-serif">Radio</font></strong></font> 
+              网络电台</div></td>
+        </tr>
+        <tr> 
+          <td><embed src="http://210.242.69.206/ramgen/broadcast/kissradio/encoder/kissradio.rm" width=40 
+height=24 controls=PlayButton autostart=false console=sale align="absmiddle"> 
+            </embed></td>
+          <td><embed src="http://210.242.69.206/ramgen/broadcast/kissradio/encoder/kissradio.rm" width=40 height=24 
+controls=StopButton autostart=false console=sale align="absmiddle"> </embed></td>
+          <td><embed src="http://210.242.69.206/ramgen/broadcast/kissradio/encoder/kissradio.rm" width=90 height=24 
+controls=PositionField  autostart=false console=sale align="absmiddle"> </embed></td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr> 
+    <td width="25%" bgcolor="#FF0080"><div align="right"><font color="#CCCCCC" size="2" face="Verdana"> 
+        2&nbsp; </font></div></td>
+    <td width="25%" bgcolor="#0080FF"><div align="right"><font color="#CCCCCC" size="2" face="Verdana">3&nbsp;</font></div></td>
+    <td bgcolor="#FF8000"><div align="right"><font color="#CCCCCC" size="2" face="Verdana">3&nbsp;</font></div></td>
+    <td bgcolor="#8000FF"><div align="right"><font color="#CCCCCC" size="2" face="Verdana">7&nbsp;</font></div></td>
+  </tr>
+</table>
+<br>
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FFFFFF">
+  <tr> 
+    <td width="25%" height="25" bgcolor="#FF0080">&nbsp;</td>
+    <td width="25%" bgcolor="#0080FF">&nbsp;</td>
+    <td width="25%" bgcolor="#FF8000">&nbsp;</td>
+    <td width="25%" align="center" bgcolor="#009900"><font color="#FFFFFF">班级QQ列表</font></td>
+  </tr>
+  <tr> 
+    <td colspan="2">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td rowspan="9" bgcolor="#ddFFdd"><div align="center"><br>
+        按姓氏拼音首字母顺序<br>
+        (粗体为新增或更改的号码) <br>
+      </div>
+      <table width="100%" border="0" cellpadding="1" cellspacing="0">
+        <tr align="center"> 
+          <td colspan="2"><img src="boy.gif" width="177" height="40"></td>
+        </tr>
+        <tr align="center"> 
+          <td width="50%">毕克达</td>
+          <td width="50%">93539400</td>
+        </tr>
+        <tr align="center"> 
+          <td>陈卓</td>
+          <td>17541203</td>
+        </tr>
+        <tr align="center"> 
+          <td>傅建欣</td>
+          <td>93505419</td>
+        </tr>
+        <tr align="center"> 
+          <td>宫伟</td>
+          <td>124241949</td>
+        </tr>
+        <tr align="center"> 
+          <td>姜可山</td>
+          <td>174870822</td>
+        </tr>
+        <tr align="center"> 
+          <td>李德峰</td>
+          <td>83214395</td>
+        </tr>
+        <tr align="center"> 
+          <td>李风春</td>
+          <td>93505404</td>
+        </tr>
+        <tr align="center"> 
+          <td>李岳</td>
+          <td>63099235</td>
+        </tr>
+        <tr align="center"> 
+          <td>刘锐</td>
+          <td>22257512</td>
+        </tr>
+        <tr align="center"> 
+          <td>刘文东</td>
+          <td>77187394</td>
+        </tr>
+        <tr align="center"> 
+          <td>刘一民</td>
+          <td>50413942</td>
+        </tr>
+        <tr align="center"> 
+          <td>刘中禹</td>
+          <td>54738812</td>
+        </tr>
+        <tr align="center"> 
+          <td>马超</td>
+          <td>55222658</td>
+        </tr>
+        <tr align="center"> 
+          <td>宋广浩</td>
+          <td>84439769</td>
+        </tr>
+        <tr align="center"> 
+          <td><strong>孙超</strong></td>
+          <td><strong>945163</strong></td>
+        </tr>
+        <tr align="center"> 
+          <td><strong>万欣</strong></td>
+          <td><strong>398733</strong></td>
+        </tr>
+        <tr align="center">
+          <td><strong>王宝全</strong></td>
+          <td><strong>174870653</strong></td>
+        </tr>
+        <tr align="center"> 
+          <td>王家勃</td>
+          <td>93539397</td>
+        </tr>
+        <tr align="center"> 
+          <td>王亮</td>
+          <td>80575333</td>
+        </tr>
+        <tr align="center"> 
+          <td>王伟</td>
+          <td>56933077</td>
+        </tr>
+        <tr align="center"> 
+          <td>王哲</td>
+          <td>35120604</td>
+        </tr>
+        <tr align="center"> 
+          <td>谢政翰</td>
+          <td>81385115</td>
+        </tr>
+        <tr align="center"> 
+          <td>杨超</td>
+          <td>93505423</td>
+        </tr>
+        <tr align="center"> 
+          <td>杨东冬</td>
+          <td>2780224</td>
+        </tr>
+        <tr align="center"> 
+          <td>叶恩伟</td>
+          <td>6248170</td>
+        </tr>
+        <tr align="center"> 
+          <td>于永澎</td>
+          <td>78448190</td>
+        </tr>
+        <tr align="center"> 
+          <td>张化川</td>
+          <td>21662513</td>
+        </tr>
+        <tr align="center"> 
+          <td>张庆</td>
+          <td>54068758</td>
+        </tr>
+        <tr align="center"> 
+          <td>张逸鹏</td>
+          <td>33183475</td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="1">
+        <tr align="center"> 
+          <td colspan="2"><img src="girl.gif" width="177" height="40"></td>
+        </tr>
+        <tr align="center"> 
+          <td>丁俊芳</td>
+          <td>65130541</td>
+        </tr>
+        <tr align="center"> 
+          <td>郭冬梅</td>
+          <td>67003470</td>
+        </tr>
+        <tr align="center"> 
+          <td>蒋弘</td>
+          <td>85758161</td>
+        </tr>
+        <tr align="center"> 
+          <td>林林</td>
+          <td>55871752</td>
+        </tr>
+        <tr align="center"> 
+          <td>刘冬梅</td>
+          <td>76597623</td>
+        </tr>
+        <tr align="center">
+          <td><strong>刘婷婷</strong></td>
+          <td><strong>156425835</strong></td>
+        </tr>
+        <tr align="center"> 
+          <td>刘音</td>
+          <td>67132386</td>
+        </tr>
+        <tr align="center"> 
+          <td>聂淼</td>
+          <td>103192894</td>
+        </tr>
+        <tr align="center"> 
+          <td>孙爽</td>
+          <td>84245545</td>
+        </tr>
+        <tr align="center"> 
+          <td>王玉</td>
+          <td>55636710</td>
+        </tr>
+        <tr align="center"> 
+          <td width="50%">解娇</td>
+          <td width="50%">93505403</td>
+        </tr>
+        <tr align="center"> 
+          <td>徐楠</td>
+          <td>87249536</td>
+        </tr>
+        <tr align="center"> 
+          <td>张丽</td>
+          <td>87246845</td>
+        </tr>
+        <tr align="center"> 
+          <td>周时蕊</td>
+          <td>25887675</td>
+        </tr>
+      </table>
+      <p align="right"><img src="2.gif" width="36" height="36"><br>
+        <img src="3.gif" width="36" height="36">&nbsp;&nbsp;<br>
+        <img src="3.gif" width="36" height="36"><br>
+        <img src="7.gif" width="36" height="36">&nbsp; </p></td>
+  </tr>
+  <tr> 
+    <td colspan="2" valign="top"><p><span class="big">&nbsp;&nbsp;- <a href="http://alumni.163.com/alumni/main.jsp?prov=5&schid=9480&clsid=573132&year=1999" target="_blank"><font color="#99DB75"><strong>网易校友录</strong></font></a></span> 
+        -<br>
+        &nbsp;&nbsp;吃葡萄不吐葡萄皮， &nbsp;&nbsp;不吃葡萄倒吐葡萄皮...<br>
+        <br>
+        &nbsp;&nbsp;<span class="big">- 校友录最新消息</span> 2002.11.13<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;什么破网易，什么烂升级。不就是缺了两个钱吗，我呸！大家用起<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;来都不爽！实在不行就换ChinaRen吧，不过也收钱，至少速度快，<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;留言不要钱！ 
+      <hr width="80%" size="1"> </td>
+    <td><a href="http://alumni.163.com/alumni/main.jsp?prov=5&schid=9480&clsid=573132&year=1999" target="_blank"><img src="lt.gif" width="180" height="120" border="0"></a></td>
+  </tr>
+  <tr> 
+    <td><a href="http://www.osoon.com/alumni/class/sober/index.php?class_id=79608" target="_blank"><img src="xyl.gif" width="180" height="120" border="0"></a></td>
+    <td valign="top"><p><span class="big">- <a href="http://www.osoon.com/alumni/class/sober/index.php?class_id=79608" target="_blank"><font color="#FF97FF"><strong>傲行校友录</strong></font></a></span> 
+        -<br>
+        &nbsp;&nbsp;时间，请不要将记忆带走...</p>
+      <p>走过岁月，才知道世界多少完美，<br>
+        成功或失败总会有一些挫折。<br>
+        当年的往事，您是否依然清楚记得！当年的高三七班，<br>
+        您是否历历在目....</p></td>
+    <td valign="top"><span class="big">- 校友录最新消息</span> 2002.11.13<br> <br>
+      &nbsp;&nbsp;大家注意一下QQ，新增了两个人还有一个修改的。保持联系很重要啊！</td>
+  </tr>
+  <tr> 
+    <td colspan="2" valign="top"><span class="big"> </span> <hr width="80%" size="1"> 
+      <span class="big"> &nbsp;&nbsp;- <a href="http://i37.my163.com" target="_blank"><font color="#8080FF"><strong>班级相册</strong></font></a></span> 
+      -<br> &nbsp;&nbsp;共同度过的生活是灿烂的，也是沉重的。<br> &nbsp;&nbsp;这份灿烂与沉重也是一种生活<br> &nbsp;&nbsp;也是一种记忆<br> 
+      &nbsp;&nbsp;至少它是<br> &nbsp;&nbsp;至少我认为它是“人生大树”上最红的那一片小叶<br> &nbsp;&nbsp;虽无百花之香，却有其神<br> 
+      &nbsp;&nbsp;虽小，却有其重<br> &nbsp;&nbsp;愿与诸君佳人共赏，共识之...</td>
+    <td><a href="http://i37.my163.com" target="_blank"><img src="bjxc.gif" width="180" height="120" border="0"></a></td>
+  </tr>
+  <tr> 
+    <td><a href="http://2337cs.126.com" target="_blank"><img src="2337cs.gif" width="180" height="120" border="0"></a></td>
+    <td colspan="2" valign="top"><hr width="80%" size="1">
+      <span class="big">- <a href="http://2337cs.126.com" target="_blank"><font color="#FF8080"><strong> 2337CS</strong></font></a></span> 
+      -<br> &nbsp;&nbsp;虽然大家马上就要各奔东西了，可千万别忘了２３３７的兄弟们，别忘了我们体育课上的“警匪大决战”。记得放假一定要回大连，大家组织在一起，再显我们２３３７的风采！<br> 
+      <br>
+      &nbsp;<span class="big">- 2337CS最新消息</span> 2002.10.3<br>
+      &nbsp;&nbsp;2337的战士真是厉害，沈阳人都被我们打怕了！</td>
+  </tr>
+  <tr> 
+    <td colspan="2"><hr width="80%" size="1"> <span class="big">&nbsp;&nbsp;- 
+      <font color="#0099CC"><strong>强力搜索</strong></font></span> -<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;唉，我在高考考试后一个小时就知道答案了，知道我的厉害了吧。<br>
+      &nbsp;&nbsp;其实也就靠的这些东西，我收集了一些常用的，大家慢慢找吧！</td>
+    <td rowspan="2"><p><img src="qlss.gif" width="180" height="120"></p></td>
+  </tr>
+  <tr> 
+    <td><table border="0" align="center" cellpadding="1" cellspacing="0">
+        <tr> 
+          <td><div align="center">
+              <select style="font-size:12px;border:1 solid #000000" name=select2>
+                <option value="http://search.sogua.com/search/search.asp?key=" selected>SoGua</option>
+              </select>
+            </div></td>
+          <td><input name=text2 style="font-size:12px;border:1 solid #000000" value="音乐" size=10></td>
+          <td><input style="font-size:12px;border:1 solid #000000" name=button2 onClick=window.open(select2.value+text2.value) type=button value=搜索></td>
+        </tr>
+        <tr> 
+          <td><select style="font-size:12px;border:1 solid #000000" name=select3>
+              <option value="http://www8.pconline.com.cn/download/newswsearch.phtml?st=" selected>太平洋</option>
+            </select></td>
+          <td><input name=text3 style="font-size:12px;border:1 solid #000000" value="软件" size=10></td>
+          <td><input style="font-size:12px;border:1 solid #000000" name=button3 onClick=window.open(select3.value+text3.value) type=button value=搜索></td>
+        </tr>
+      </table></td>
+    <td><table border="0" align="center" cellpadding="1" cellspacing="0">
+        <tr> 
+          <td><div align="center">
+              <select style="font-size:12px;border:1 solid #000000" name=select4>
+                <option value="http://images.google.com/images?q=" selected>Google</option>
+              </select>
+            </div></td>
+          <td><input name=text4 style="font-size:12px;border:1 solid #000000" value="图片" size=10></td>
+          <td><input style="font-size:12px;border:1 solid #000000" name=button4 onClick=window.open(select4.value+text4.value) type=button value=搜索></td>
+        </tr>
+        <tr> 
+          <td><select style="font-size:12px;border:1 solid #000000" name=select5>
+              <option value="http://www.rongshu.com/rss/search.rs?keys=" selected>榕树下</option>
+            </select></td>
+          <td><input name=text5 style="font-size:12px;border:1 solid #000000" value="文章" size=10></td>
+          <td><input style="font-size:12px;border:1 solid #000000" name=button5 onClick=window.open(select5.value+text5.value) type=button value=搜索></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td><img src="qjfh.gif" width="180" height="120"></td>
+    <td colspan="2"><hr width="80%" size="1"> <span class="big">- <font color="#8080C0"><strong>轻松上网</strong></font></span> 
+      -<br> &nbsp;&nbsp;经常上网的人会发现有一些人的昵称或签名中含有一些输入法打不出来还很有趣的特殊符号，今天我们就收集了一些常用的符号来打造你的个性签名！<br> 
+      <font color="#0000FF">常用符号：</font>♂♀◎■□◆◇▲△●○★☆▼▽⊙【】〖〗『』＄‰∑§αβγ￥℃∏※±＝＿-＋×÷⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽㈠㈡㈢㈣㈤㈥㈦㈧㈨㈩⒈⒉⒊⒋⒌⒍⒎⒏⒐⒑ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩ｀～↓─→↑←</p></td>
+  </tr>
+  <tr> 
+    <td>
+<p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      </td>
+    <td colspan="2"><p>网站制作：东冬<br>
+        当然还有我的朋友们，谢谢大家的支持，不会忘了你们的！</p>
+      </td>
+  </tr>
+  <tr> 
+    <td height="16" bgcolor="#FF0080">&nbsp;</td>
+    <td bgcolor="#0080FF">&nbsp;</td>
+    <td bgcolor="#FF8000">&nbsp;</td>
+    <td bgcolor="#009900">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="16" colspan="4">&nbsp;</td>
+  </tr>
+</table>
+</body></html>
