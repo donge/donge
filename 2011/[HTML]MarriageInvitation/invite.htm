@@ -1,0 +1,215 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0029)http://xitie.hun99.com/520111 -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><META content="IE=7.0000" 
+http-equiv="X-UA-Compatible">
+<TITLE>邀请各亲们参加杨东冬与孔婷婚礼的喜帖</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META name=robots contect="noindex">
+<SCRIPT type=text/javascript src="invite_files/jquery.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="invite_files/DD_belatedPNG.js"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+function postreplay(){
+	var url = "post_wish_ajax.php";
+	var bid=3;
+	var vname=$('#fromWho')[0].value;
+	var gwish=$('#wishs')[0].value;
+	if(!vname){blinkOn('fromWho',6);$('#fromWho')[0].focus();return false;}
+	if(!gwish){blinkOn('wishs',6);$('#wishs')[0].focus();return false;}
+	if(gwish=="给新人写点祝福语吧"){$('#wishs')[0].value="";blinkOn('wishs',6);$('#wishs')[0].focus();return false;}
+	if(gwish.length/2>50){alert("祝福太长了，不能大于50个中文");return false;}
+		
+	$.post(  
+      'post_wish_ajax.php',  
+      {  
+        yname:vname,  
+        wish:gwish,
+		bid:"0"
+      },  
+      function(data) //回传函数  
+      {  
+        if(data==1){
+			alert("感谢您的贺词");
+			window.location.href='http://www.hun99.com/zhufu/';
+		}else{
+			alert("留言失败，可能有单引号之类的特殊符号");}
+      }  
+    ); 
+}
+function cmp3(){
+	$.post(  
+      'changemusic.php',  
+      {  
+        mp3url:$('#mp3url')[0].value
+      },  
+      function(data) //回传函数  
+      {  
+        if(data==1){
+			alert("更换成功");
+			location.reload();
+			//window.location.href='http://www.hun99.com/zhufu/';
+		}else{
+			alert("更换失败");}
+      }  
+    );
+}
+function changebackground(img){
+	//alert(img);
+	$.get(  
+		'zhufuimg.php',  
+		{bimg:img},  
+		function(data) //回传函数  
+		{
+			//alert(data);
+			eval(data);
+			if(returnmsg.status){
+				if(img){
+					$("body").css("backgroundImage","url("+img+")");
+				}
+				tb_remove();
+			}
+		}
+	); 
+
+}
+</SCRIPT>
+<LINK rel=stylesheet type=text/css href="invite_files/fbfootpanel.css" 
+media=screen><LINK rel=stylesheet type=text/css 
+href="invite_files/thickbox.css">
+<SCRIPT type=text/javascript src="invite_files/thickbox.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="invite_files/jquery.pngFix.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="invite_files/fbaction.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="invite_files/jq_setMiddle.js"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+setmiddle('.xitie');
+</SCRIPT>
+
+<STYLE type=text/css>BODY {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 12px normal Verdana, Arial, Helvetica, sans-serif; BACKGROUND: url(http://style.hun99.com/img/xt/wallpaper_mark.jpg); PADDING-TOP: 0px
+}
+.xitie_img {
+	WIDTH: 800px; HEIGHT: 500px; OVERFLOW: hidden
+}
+.xitie_bg {
+	POSITION: relative; PADDING-BOTTOM: 20px; PADDING-LEFT: 20px; WIDTH: 800px; PADDING-RIGHT: 20px; BACKGROUND: url(http://style.hun99.com/img/xt/xitie_bg.png) no-repeat; HEIGHT: 550px; PADDING-TOP: 20px
+}
+.xitie {
+	MARGIN: 0px auto; WIDTH: 840px; PADDING-TOP: 10px
+}
+.xitie_bg_cover {
+	POSITION: absolute; WIDTH: 220px; BACKGROUND: url(http://style.hun99.com/img/xt/xitie_bg_cover.png) no-repeat; HEIGHT: 110px; RIGHT: 0px; TOP: 460px
+}
+#alertpanel .alerts {
+	BACKGROUND: url(http://style.hun99.com/img/xt/balloon-notice.gif) no-repeat center 50%
+}
+#chatpanel A.chat {
+	BACKGROUND: url(http://style.hun99.com/img/fugue-ico/user-share.png) no-repeat 15px 5px
+}
+#footpanel {
+	TEXT-ALIGN: left
+}
+#footpanel #mainpanel LI .home {
+	BACKGROUND: url(http://style.hun99.com/img/fugue-ico/heart.png) no-repeat 15px 5px; FONT-WEIGHT: 700
+}
+#wishs {
+	BORDER-BOTTOM-STYLE: none; LINE-HEIGHT: 32px; MARGIN: 10px auto; BORDER-LEFT-STYLE: none; WIDTH: 420px; BORDER-TOP-STYLE: none; BACKGROUND: url(http://style.hun99.com/img/zf/bg_line.png); HEIGHT: 150px; COLOR: #000; BORDER-RIGHT-STYLE: none; FONT-SIZE: 14px; OVERFLOW: hidden
+}
+.postIn {
+	TEXT-ALIGN: right; MARGIN-TOP: -62px; HEIGHT: 50px
+}
+#fromWho {
+	BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-TOP-STYLE: none; HEIGHT: 25px; BORDER-RIGHT-STYLE: none
+}
+.btn_postwish {
+	TEXT-ALIGN: center
+}
+.btn_postwish INPUT {
+	BORDER-BOTTOM: #ff3366 1px outset; BORDER-LEFT: #ff3366 1px outset; PADDING-BOTTOM: 3px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; BACKGROUND: #ff0033 0px 0px; COLOR: #ffffff; BORDER-TOP: #ff3366 1px outset; CURSOR: pointer; BORDER-RIGHT: #ff3366 1px outset; PADDING-TOP: 3px
+}
+.btn_send_wish {
+	POSITION: absolute; WIDTH: 70px; HEIGHT: 45px; TOP: 40px; LEFT: 20px
+}
+.btn_send_wish A {
+	POSITION: absolute; WIDTH: 70px; DISPLAY: block; BACKGROUND: url(http://style.hun99.com/img/ecard/btn_send_wish.png) no-repeat 0px 0px; HEIGHT: 45px; CURSOR: pointer
+}
+#footpanel UL LI A.changemusic {
+	WIDTH: 60px; BACKGROUND: url(http://style.hun99.com/img/fugue-ico/music-change.png) no-repeat 50% 50%
+}
+#mp3url {
+	BORDER-BOTTOM: #bbb 1px solid; BORDER-LEFT: #bbb 1px solid; WIDTH: 280px; HEIGHT: 22px; BORDER-TOP: #bbb 1px solid; BORDER-RIGHT: #bbb 1px solid
+}
+.changemusic #mp3btn {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; HEIGHT: 25px; PADDING-TOP: 0px
+}
+.changemusic {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 20px
+}
+.changemusic A {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 0px
+}
+#footpanel UL LI A.album {
+	BORDER-LEFT: #efefef 1px solid; WIDTH: 60px; BACKGROUND: url(http://style.hun99.com/img/fugue-ico/photo-album.png) no-repeat 50% 50%; BORDER-RIGHT: #bbb 1px solid
+}
+#footpanel UL LI A.uploadphoto {
+	WIDTH: 60px; BACKGROUND: url(http://style.hun99.com/img/fugue-ico/ico_upphoto.png) no-repeat 50% 50%
+}
+.uploadphoto {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 20px
+}
+.uploadphoto A {
+	
+}
+#footpanel UL LI A.viewmap {
+	WIDTH: 60px; BACKGROUND: url(http://style.hun99.com/img/fugue-ico/map-pin.png) no-repeat 50% 50%
+}
+.viewmap {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 20px
+}
+.viewmap A {
+	
+}
+#footpanel UL LI A.setmark {
+	WIDTH: 60px; BACKGROUND: url(http://style.hun99.com/img/fugue-ico/ico_marker.png) no-repeat 50% 50%
+}
+#google_ads_frame1 TD {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+</STYLE>
+
+<META name=GENERATOR content="MSHTML 9.00.8112.16421"></HEAD>
+<BODY>
+<DIV class=xitie>
+<DIV class=xitie_bg>
+<DIV class=xitie_img><IMG src="invite_files/cardimg.png"></DIV><!-- <div class="xitie_bg_cover"></div> --></DIV></DIV>
+<DIV id=footpanel>
+<UL id=mainpanel>
+ </SCRIPT>
+  </LI>
+  <LI id=alertpanel><A class="alerts active" 
+  href="http://xitie.hun99.com/520111#">Alerts<SMALL>信息</SMALL></A> 
+  <DIV style="DISPLAY: block; HEIGHT: 306px" class=subpanel>
+  <H3><SPAN>– </SPAN>喜帖信息</H3>
+  <UL style="HEIGHT: 281px">
+    <LI>
+    <P>这是杨东冬与孔婷在给您送出的电子请帖！</P></LI>
+    <LI>
+    <P><STRONG>恭请：</STRONG></P>
+    <P>各亲们</P></LI>
+    <LI>
+    <P><STRONG>时 间：</STRONG></P>
+    <P>2011-10-30（农历十月初四）上午十一点整 </P></LI>
+    <LI>
+    <P><STRONG>地 点：</STRONG></P>
+    <P>大连军械宾馆<br>
+甘井子区迎客路九号 </P></LI>
+    <LI>
+    <P><STRONG>备注：</STRONG></P>
+    <P></P></LI></UL></DIV></LI>
+  <LI id=chatpanel><A class=chat href="http://xitie.hun99.com/520111#">传递幸福</A> 
+ 
+</BODY></HTML>

@@ -1,0 +1,162 @@
+#footpanel {
+	Z-INDEX: 9999; BORDER-BOTTOM: #c3c3c3 1px; POSITION: fixed; BORDER-LEFT: #c3c3c3 1px solid; MARGIN: 0px 3%; WIDTH: 94%; BOTTOM: 0px; BACKGROUND: #e3e2e2; BORDER-TOP: #c3c3c3 1px solid; BORDER-RIGHT: #c3c3c3 1px solid; LEFT: 0px
+}
+* HTML #footpanel {
+	POSITION: absolute; MARGIN-TOP: -1px; ; TOP: expression(eval(document.compatMode &&document.compatMode=='CSS1Compat') ?documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight) : document.body.scrollTop +(document.body.clientHeight-this.clientHeight))
+}
+#footpanel UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; FLOAT: left; FONT-SIZE: 1.1em; BORDER-TOP: #fff 1px solid; PADDING-TOP: 0px
+}
+#footpanel UL LI {
+	POSITION: relative; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FLOAT: left; PADDING-TOP: 0px
+}
+#footpanel UL LI A {
+	POSITION: relative; PADDING-BOTTOM: 5px; TEXT-INDENT: -9999px; PADDING-LEFT: 5px; WIDTH: 16px; PADDING-RIGHT: 5px; FLOAT: left; HEIGHT: 16px; COLOR: #333; TEXT-DECORATION: none; PADDING-TOP: 5px
+}
+HTML #footpanel UL LI A:hover {
+	BACKGROUND-COLOR: #fff
+}
+HTML #footpanel UL LI A.active {
+	Z-INDEX: 200; BORDER-BOTTOM: #ff513f 1px solid; POSITION: relative; BORDER-LEFT: #ff513f 1px solid; BACKGROUND-COLOR: #fff; MARGIN-TOP: -2px; HEIGHT: 17px; BORDER-TOP: #ff513f 1px; BORDER-RIGHT: #ff513f 1px solid
+}
+#footpanel A.home {
+	TEXT-INDENT: 0px; PADDING-LEFT: 40px; WIDTH: 50px; BACKGROUND: url(home.png) no-repeat 15px center; BORDER-RIGHT: #bbb 1px solid
+}
+A.profile {
+	BACKGROUND: url(user.png) no-repeat center center
+}
+A.contacts {
+	BACKGROUND: url(address_book.png) no-repeat center center
+}
+A.playlist {
+	BACKGROUND: url(document_music_playlist.png) no-repeat center center
+}
+A.videos {
+	BACKGROUND: url(film.png) no-repeat center center
+}
+A.messages {
+	BACKGROUND: url(mail.png) no-repeat center center
+}
+A.editprofile {
+	BACKGROUND: url(wrench_screwdriver.png) no-repeat center center
+}
+#footpanel A.chat {
+	BORDER-LEFT: #bbb 1px solid; TEXT-INDENT: 0px; PADDING-LEFT: 40px; WIDTH: 126px; BACKGROUND: url(balloon.png) no-repeat 15px center; BORDER-RIGHT: #bbb 1px solid
+}
+A.alerts {
+	BACKGROUND: url(newspaper.png) no-repeat center center
+}
+#footpanel LI#chatpanel {
+	FLOAT: right
+}
+#footpanel LI#alertpanel {
+	FLOAT: right
+}
+#footpanel A SMALL {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 11px; TEXT-INDENT: 0px; PADDING-LEFT: 5px; WIDTH: 70px; PADDING-RIGHT: 5px; DISPLAY: none; BACKGROUND: url(http://style.hun99.com/img/comm/pop_arrow.png) no-repeat center bottom; COLOR: #fff; FONT-SIZE: 12px; PADDING-TOP: 5px
+}
+#footpanel A:hover SMALL {
+	Z-INDEX: 10; POSITION: absolute; DISPLAY: block; MARGIN-LEFT: -40px; TOP: -35px; LEFT: 50%
+}
+#footpanel UL LI DIV A {
+	POSITION: static; PADDING-BOTTOM: 0px; TEXT-INDENT: 0px; PADDING-LEFT: 0px; WIDTH: auto; PADDING-RIGHT: 0px; FLOAT: none; HEIGHT: auto; COLOR: #df3a29; PADDING-TOP: 0px
+}
+#footpanel UL LI DIV A:hover {
+	TEXT-DECORATION: underline
+}
+#footpanel .subpanel {
+	BORDER-BOTTOM: #ff513f 1px solid;
+	POSITION: absolute;
+	BORDER-LEFT: #ff513f 1px solid;
+	PADDING-BOTTOM: 2px;
+	WIDTH: 198px;
+	BOTTOM: 0px;
+	DISPLAY: none;
+	BACKGROUND: #fff;
+	OVERFLOW: hidden;
+	BORDER-TOP: #ff513f 1px solid;
+	BORDER-RIGHT: #ff513f 1px solid;
+	LEFT: 0px
+}
+#footpanel H3 {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BACKGROUND: #df210d; COLOR: #fff; FONT-SIZE: 1.1em; CURSOR: pointer; PADDING-TOP: 5px
+}
+#footpanel H3 SPAN {
+	LINE-HEIGHT: 0.6em; FLOAT: right; FONT-SIZE: 1.5em; FONT-WEIGHT: normal
+}
+#footpanel .subpanel UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; BACKGROUND: #fff; OVERFLOW: auto; PADDING-TOP: 0px
+}
+#footpanel .subpanel LI {
+	POSITION: static; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: block; BACKGROUND: #fff; FLOAT: none; CLEAR: both; FONT-SIZE: 0.9em; OVERFLOW: hidden; PADDING-TOP: 0px
+}
+#chatpanel .subpanel LI {
+	BACKGROUND: url(dash.gif) repeat-x left center
+}
+#chatpanel .subpanel LI SPAN {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BACKGROUND: #fff; FLOAT: left; COLOR: #777; PADDING-TOP: 5px
+}
+#chatpanel .subpanel LI A IMG {
+	MARGIN: 0px 5px; FLOAT: left
+}
+#chatpanel .subpanel LI A {
+	PADDING-BOTTOM: 3px; LINE-HEIGHT: 22px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: block; BACKGROUND: #fff; HEIGHT: 22px; PADDING-TOP: 3px
+}
+#chatpanel .subpanel LI A:hover {
+	BACKGROUND: #ff6958; COLOR: #fff; TEXT-DECORATION: none
+}
+#alertpanel .subpanel {
+	RIGHT: 7px;
+	LEFT: auto
+}
+#alertpanel .subpanel LI {
+	DISPLAY: block; BORDER-TOP: #f0f0f0 1px solid
+}
+#alertpanel .subpanel LI P {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 5px
+}
+#alertpanel .subpanel LI A.delete {
+	TEXT-INDENT: -9999px; MARGIN: 5px; WIDTH: 13px; BACKGROUND: url(delete_x.gif) no-repeat; FLOAT: right; HEIGHT: 14px; VISIBILITY: hidden
+}
+#alertpanel .subpanel LI A.delete:hover {
+	BACKGROUND-POSITION: left bottom
+}
+#footpanel #alertpanel LI.view {
+	TEXT-ALIGN: right; PADDING-BOTTOM: 5px; PADDING-LEFT: 0px; PADDING-RIGHT: 10px; PADDING-TOP: 5px
+}
+* {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; OUTLINE-STYLE: none; PADDING-LEFT: 0px; OUTLINE-WIDTH: medium; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+#chatpanel .subpanel LI.qzone {
+	PADDING-LEFT: 25px; BACKGROUND: url(http://style.hun99.com/img/ico/16-qzone.png) no-repeat 2px 7px; MARGIN-LEFT: 30px
+}
+#chatpanel .subpanel LI.baidu {
+	PADDING-LEFT: 25px; BACKGROUND: url(http://style.hun99.com/img/ico/16-baidu.png) no-repeat 2px 7px; MARGIN-LEFT: 30px
+}
+#chatpanel .subpanel LI.tsina {
+	PADDING-LEFT: 25px; BACKGROUND: url(http://style.hun99.com/img/ico/16-sinaweibo.png) no-repeat 2px 7px; MARGIN-LEFT: 30px
+}
+#chatpanel .subpanel LI.tsohu {
+	PADDING-LEFT: 25px; BACKGROUND: url(http://style.hun99.com/img/ico/16-sohuweibo.png) no-repeat 2px 7px; MARGIN-LEFT: 30px
+}
+#chatpanel .subpanel LI.douban {
+	PADDING-LEFT: 25px; BACKGROUND: url(http://style.hun99.com/img/ico/16-douban.png) no-repeat 2px 7px; MARGIN-LEFT: 30px
+}
+#chatpanel .subpanel LI.kaixin {
+	PADDING-LEFT: 25px; BACKGROUND: url(http://style.hun99.com/img/ico/16-kaixin001.png) no-repeat 2px 7px; MARGIN-LEFT: 30px
+}
+#chatpanel .subpanel LI.renren {
+	PADDING-LEFT: 25px; BACKGROUND: url(http://style.hun99.com/img/ico/16-renren.png) no-repeat 2px 7px; MARGIN-LEFT: 30px
+}
+#chatpanel .subpanel LI.copy {
+	PADDING-LEFT: 25px; BACKGROUND: url(http://style.hun99.com/img/ico/16-bookmark.png) no-repeat 2px 7px; MARGIN-LEFT: 30px
+}
+#alertpanel .alerts {
+	BACKGROUND: url(http://style.hun99.com/img/fugue-ico/question-balloon.png) no-repeat center 50%
+}
+#chatpanel A.chat {
+	BACKGROUND: url(http://style.hun99.com/img/fugue-ico/user-share.png) no-repeat 15px 5px
+}
+#footpanel #mainpanel LI .home {
+	BACKGROUND: url(http://style.hun99.com/img/fugue-ico/heart.png) no-repeat 15px 5px; FONT-WEIGHT: 700
+}
