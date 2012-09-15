@@ -1,0 +1,33 @@
+#!/bin/bash
+# $1:  fetion_account
+# $2:  message
+# 插件说明：
+# 当有新的消息到来时，系统将调用此插件:
+# 调用的第一个参数:飞信账号
+# 调用的第二个参数：消息
+
+buddy=$1
+message=$2
+
+# 下面只是简单的演示，加上内容后发回去
+
+if [ "$message" = "a" ];then
+	cmd="add $buddy 飞信股票 飞信股票"
+elif [ "$message" = "i" ];then
+	cmd="invite $buddy 飞信股票"
+elif [ "$message" = "d" ];then
+	sendback="删除$buddy成功！"
+	cmd="sms $buddy $sendback"
+	echo $cmd
+	cmd="del $buddy"
+	echo $cmd
+elif [ "$message" = "h" ];then
+	sendback="欢迎使用飞信股票:回复小写字母,i邀请, a加入, d删除, h帮助,股票编号."
+	cmd="sms $buddy $sendback"
+else
+	python /root/fetion/plugins/main.py $2
+	sendback=$(</root/fetion/1.txt)
+	cmd="sms $buddy $sendback"
+fi
+
+echo $cmd
