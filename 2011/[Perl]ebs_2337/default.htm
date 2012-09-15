@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>ENDLESS BATTLE</title>
+<META http-equiv="Page-Exit" content="blendTrans(Duration=3.0)">
+<META HTTP-EQUIV="Refresh" CONTENT="0;URL=http://bbs.veryclub.com/forumdisplay.php?s=a4d84465ee4e0b83633d6e8e858a330f&forumid=35">
+
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var shd = 20;          // 色の分割数。
+var interval = 100;    // 色が変わるスピード。1=1/1000秒
+
+var hextbl='0123456789ABCDEF';
+function num2hex(n){
+        return hextbl.charAt(Math.floor(n / 16)) + hextbl.charAt(n % 16);
+}
+
+function makeColor(redS,greenS,blueS,redE,greenE,blueE){    // 色を計算する
+        var rd = redE - redS , gd = greenE - greenS , bd = blueE - blueS;
+        var r = Math.floor(rd * mcCount / (shd-1)) + redS;
+        var g = Math.floor(gd * mcCount / (shd-1)) + greenS;
+        var b = Math.floor(bd * mcCount / (shd-1)) + blueS;
+        return "#" + num2hex(r) + num2hex(g) + num2hex(b);
+}
+
+var mcCount = 0;
+function fadeBgColor(){
+        if (mcCount < shd) {
+                // #FF3366から #0066FFまで変えるなら値を２桁ずつに区切って
+                // 0xを頭に付け下記の例のように,で区切って指定する
+                document.bgColor = makeColor(0x00,0x00,0x00,0xFF,0xFF,0xFF);
+                mcCount++;
+                tim=setTimeout("fadeBgColor()",interval);
+        }
+}
+
+fadeBgColor();
+
+// -->
+</SCRIPT>
+
+</head>
+<body>
+<p>
+<p>
+<b><DIV align="center"><font size=16 color=red>ChinaUo</font><font size=5 color=white>BBS</font></div></b>
+<p>
+<b><DIV align="center"><font size=3 color=yellow>ChinaUo</font></div></b>
+
+
+</body>
+</html>

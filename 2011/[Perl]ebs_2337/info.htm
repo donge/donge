@@ -1,0 +1,316 @@
+<HTML><HEAD>
+<meta http-equiv=content-type content="text/html; charset=gb2312">
+<META http-equiv=Pragma content=no-cache>
+<title>机器人大战完美说明手册</title>
+<SCRIPT language=JavaScript>
+<!--
+history.forward();
+function Convert_rep(ja,jb,jc,jd,je,jf,jg,jh,ji){
+timerID=10;	h = H = ja;			h2 = H2 = jb;		h3 = jc;		h4 = jd;
+e = E = je;		e2 = E2 = jf;		e3 = jg;		e4 = jh;		cc = ji;	HERepair();
+}
+var hflg=eflg=sbmitflag=0
+myDate = new Date();
+var b_time=myDate.getTime();
+function HERepair(){
+myDate = new Date();
+n_time=myDate.getTime();
+sasi = (b_time - n_time)/-1000;
+
+if (h2 < 200){h2 = H2 + h3 * sasi;}else{h2 = 200;}
+if (e2 < 200){e2 = E2 + e3 * sasi;}else{e2 = 200;}
+if (h < h4){h = H + sasi;}
+if (e < e4){e = E + sasi*0.1;}
+if (h >= h4){h = h4;hflg=1;}
+if (e >= e4){e = e4;eflg=1;}
+if (cc != 2 && j_hp_b.innerText >= h4){
+cond.innerText='?     ;cond.style.color='#0000ff';
+	}
+j_hp_a.style.pixelWidth=Math.round (h2);
+j_en_a.style.pixelWidth=Math.round (e2);
+j_hp_b.innerText=Math.round (h);
+j_en_b.innerText=Math.round (e);
+clearTimeout(timerID);
+timerID = setTimeout("HERepair()",5000);
+}
+// -->
+</SCRIPT>
+
+<STYLE type=text/css>.button {
+FONT-SIZE: 14px; BACKGROUND: #a0522f; CURSOR: hand; COLOR: #dddddd; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 18px; BORDER-BOTTOM-STYLE: none
+}
+.winbar {
+BORDER-RIGHT: medium none; BORDER-TOP: #f3f3d2 1px solid; FONT-SIZE: 17px; Z-INDEX: 15; BORDER-LEFT: medium none; BORDER-BOTTOM: #000000 1px solid; POSITION: relative; HEIGHT: 20px; BACKGROUND-COLOR: #a7a787
+}
+.sdw {
+FONT-SIZE: 19px; FILTER: dropshadow(offx=2,offy=2,color=#000000); COLOR: #fefefe; POSITION: relative; HEIGHT: 19px
+}
+.num {
+FONT-SIZE: 15px; COLOR: #ffffff; LINE-HEIGHT: 16px; FONT-FAMILY: monospace; LETTER-SPACING: -2px
+}
+.u {
+FONT-SIZE: 12px; COLOR: #ffffed; FONT-FAMILY: monospace; LETTER-SPACING: -1px
+}
+.buttonA {
+BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-WEIGHT: bold; FONT-SIZE: 20px; FILTER: dropshadow(offx=2,offy=2,color=#ffffff); BORDER-LEFT: medium none; WIDTH: 59px; CURSOR: hand; COLOR: #ffffff; BORDER-BOTTOM: medium none; POSITION: relative; HEIGHT: 59px; BACKGROUND-COLOR: #000000
+}
+.b_exit {
+border:medium none; FONT-WEIGHT: bold; FONT-SIZE: 20px; BACKGROUND-IMAGE: url('faq/button0.jpg'); WIDTH: 59px; CURSOR: hand; COLOR: #ffffff; HEIGHT: 59px; BACKGROUND-COLOR: #000000
+}
+</STYLE>
+<META content="Microsoft FrontPage 5.0" name=GENERATOR></HEAD>
+<LINK href=miuler.css type=text/css rel=stylesheet>
+<BODY oncontextmenu="return false;" style="SCROLLBAR-FACE-COLOR: #a7a787; MARGIN: 0pt" text=#f0f0f0 bgColor=#000000>
+<TABLE id=kaisetu style="Z-INDEX: 50; VISIBILITY: hidden; POSITION: absolute" height="100%" width="100%">
+<TBODY>
+<TR>
+<TD align=middle>
+<TABLE style="BORDER-RIGHT: #ffffff 4px solid; BORDER-TOP: #ffffff 4px solid; BORDER-LEFT: #ffffff 4px solid; BORDER-BOTTOM: #ffffff 4px solid" width=350 bgColor=#000000>
+<TBODY>
+<TR>
+<TD align=middle>
+<DIV id=mtitle style="FONT-SIZE: 20px; COLOR: #eccdbc" align=center></DIV><BR>
+<DIV id=mmsg style="FONT-SIZE: 15px; COLOR: #fefeee" align=left></DIV><BR>
+<INPUT value="" class=buttonA style="BACKGROUND-IMAGE: url('faq/button12.jpg')" onclick="kaisetu.style.visibility='hidden';" type=submit><BR><BR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE id=comnd style="Z-INDEX: 5; VISIBILITY: hidden; POSITION: absolute" height="100%" width="100%">
+<TBODY>
+<TR>
+<TD align=middle>
+<TABLE style="BORDER-RIGHT: #ffffff 1px outset; BORDER-TOP: #ffffff 1px outset; FONT-WEIGHT: bold; FONT-SIZE: 20px; BORDER-LEFT: #ffffff 1px outset; COLOR: #efefff; BORDER-BOTTOM: #ffffff 1px outset" cellSpacing=0 cellPadding=0 align=center bgColor=#909090 border=0>
+<TBODY>
+<TR>
+<TD style="BACKGROUND-IMAGE: url('faq/sttop.gif'); COLOR: #deed49; HEIGHT: 20px" noWrap align=middle>
+<SPAN style="BORDER-RIGHT: #8e3a61 1px solid; BORDER-LEFT: #8e3a61 1px solid; WIDTH: 75px; POSITION: relative; HEIGHT: 18px; BACKGROUND-COLOR: #aa5b7d"><B class=sdw>战斗指令</B></SPAN></TD></TR>
+<TR>
+<TD id=page0 align=middle bgColor=#000000><BR>&nbsp;&nbsp;
+<INPUT class=buttonA onmouseover="value='战斗';" style="BACKGROUND-IMAGE: url('faq/button1.jpg')" onclick=SK(22); onmouseout="value='';" type=button>&nbsp;&nbsp;
+<INPUT value="" class=buttonA onmouseover="value='移动';" style="BACKGROUND-IMAGE: url('faq/button2.jpg')" onclick=SK(23); onmouseout="value='';" type=button>&nbsp;&nbsp;
+<INPUT value="" class=buttonA onmouseover="value='TOWN';" style="BACKGROUND-IMAGE: url('faq/button3.jpg')" onclick=SK(24); onmouseout="value='';" type=button>&nbsp;&nbsp;
+<INPUT value="" class=buttonA onmouseover="value='部队';" style="BACKGROUND-IMAGE: url('faq/button4.jpg')" onclick=SK(25); onmouseout="value='';" type=button>&nbsp;&nbsp;
+<INPUT value="" class=buttonA onmouseover="value='情报';" style="BACKGROUND-IMAGE: url('faq/button5.jpg')" onclick=SK(26); onmouseout="value='';" type=button>&nbsp;&nbsp;<BR><BR>&nbsp;&nbsp;
+<INPUT value="" class=buttonA onmouseover="value='详细';" style="BACKGROUND-IMAGE: url('faq/button6.jpg')" onclick=SK(27); onmouseout="value='';" type=button>&nbsp;&nbsp;
+<INPUT value="" class=buttonA onmouseover="value='MAP';" style="BACKGROUND-IMAGE: url('faq/button7.jpg')" onclick=SK(28); onmouseout="value='';" type=button>&nbsp;&nbsp;
+<INPUT value="" class=buttonA onmouseover="value='RANK';" style="BACKGROUND-IMAGE: url('faq/button8.jpg')" onclick=SK(29); onmouseout="value='';" type=button>&nbsp;&nbsp;
+<INPUT value="" class=buttonA onmouseover="value='发言';" style="BACKGROUND-IMAGE: url('faq/button9.jpg')" onclick=SK(30); onmouseout="value='';" type=button>&nbsp;&nbsp;
+<INPUT value="" class=buttonA onmouseover="value='交流';" style="BACKGROUND-IMAGE: url('faq/button10.jpg')" onclick=SK(31); onmouseout="value='';" type=button>&nbsp;&nbsp;<BR>
+<BR><INPUT class=b_exit onclick="comnd.style.visibility='hidden';acButton.style.visibility='visible';" type=button><BR><BR><A style="FONT-SIZE: 15px; COLOR: #c0c0c0; TEXT-DECORATION: none" href="http://www.verytown.com/"target=link>高达在线<BR>EBS Web</A>
+</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%">
+<TBODY><TR>
+<TD vAlign=top width=220>
+<DIV style="BACKGROUND-IMAGE: url('faq/sttop.gif'); WIDTH: 220px; COLOR: #deed49; HEIGHT: 20px" align=center>
+<SPAN style="BORDER-RIGHT: #8e3a61 1px solid; BORDER-LEFT: #8e3a61 1px solid; WIDTH: 75px; HEIGHT: 18px; BACKGROUND-COLOR: #aa5b7d"><B class=sdw>Status</B></SPAN></DIV>
+<TABLE id=pilot style="BORDER-RIGHT: 1px outset; BORDER-TOP: medium none; FONT-SIZE: 14px; BORDER-LEFT: 1px outset; WIDTH: 220px; COLOR: #808080; BORDER-BOTTOM: 1px outset; BACKGROUND-COLOR: #000000" cellSpacing=0 background=faq/stbg.gif>
+<TBODY><TR>
+<TD style="PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; PADDING-TOP: 3px">
+<DIV style="FILTER: dropshadow(offx=3,offy=3,color=#000000); HEIGHT: 23px" align=right><INPUT id=rldbtn onmouseover="style.color='#aa5b7d';style.background='#ffdede';" style="BORDER-RIGHT: #fedede 1px outset; BORDER-TOP: #fedede 1px outset; FONT-SIZE: 12px; BACKGROUND: #aa5b7d; BORDER-LEFT: #fedede 1px outset; CURSOR: hand; COLOR: #ffdede; BORDER-BOTTOM: #fedede 1px outset; HEIGHT: 14px" onclick=SK(21); onmouseout="this.style.color='#ffdede';style.background='#aa5b7d';" type=button value=刷新>
+<INPUT id=acButton onmouseover="style.color='#aa5b7d';style.background='#ffdede';" style="BORDER-RIGHT: #fedede 1px outset; BORDER-TOP: #fedede 1px outset; FONT-SIZE: 12px; BACKGROUND: #aa5b7d; BORDER-LEFT: #fedede 1px outset; CURSOR: hand; COLOR: #ffdede; BORDER-BOTTOM: #fedede 1px outset; HEIGHT: 14px" onclick="acButton.style.visibility='hidden';comnd.style.visibility='visible';page0.style.display='block';" onmouseout="this.style.color='#ffdede';style.background='#aa5b7d';" type=button value=指令> &nbsp;&nbsp;</DIV>
+<SCRIPT language=JavaScript>
+function SK(no){
+switch(no){
+case 1:t='登录时的设定';m='&nbsp;&nbsp;请不要将IE或其他浏览器的cookie选项关闭,<br>&nbsp;&nbsp;以免登录游戏时反覆的登录所造成的不方便.';break;
+case 2:t='国籍';m='&nbsp;&nbsp;开始时若你不想加入任何国家, 你可以选择<br>&nbsp;&nbsp;自由战士, 将来可以自己建立国家, 或者你选择<br>&nbsp;&nbsp;一个以建立的国籍';break;
+case 3:t='个人等级';m='&nbsp;&nbsp;你机器人个人的等级, 等级必须达到经验值上限<br>&nbsp;&nbsp;才会提升, 等级是决定你使用战术的多寡, 等级<br>&nbsp;&nbsp;越高, 战术越多.';break;
+case 4:t='武器等级';m='&nbsp;&nbsp;目前装备的武器等级.';break;
+case 5:t='资金';m='&nbsp;&nbsp;与任何机器人或一项任战斗所得到的金钱, 金钱可以用来建国, 改造, 买装备....等等';break;
+case 6:t='ARMS Name';m='&nbsp;&nbsp;??     廲?   @? iARMS乯?         B搊榐??       A?                   X?   \丅';break;
+case 7:t='ARMS图表';m='&nbsp;&nbsp;攻击, 防御, 命中, 敏捷';break;
+case 8:t='攻击力';m='&nbsp;&nbsp;使用武器的攻击威力, 增加攻击力取决於你使用的武器攻击威力';break;
+case 9:t='防御力';m='&nbsp;&nbsp;使用武器的防御力, 增加防御力取决於你使用的武器防御力';break;
+case 10:t='命中率';m='&nbsp;&nbsp;使用武器的命中率, 增加命中率取决於你使用的武器命中率';break;
+case 11:t='敏捷度';m='&nbsp;&nbsp;使用武器的敏捷度, 增加敏捷度取决於你使用的武器敏捷度';break;
+case 12:t='还未开发';m='&nbsp;&nbsp;未开发之功能';break;
+case 13:t='主机CPU';m='&nbsp;&nbsp;EBS Server所使用的CPU';break;
+case 14:t='未开发';m='&nbsp;&nbsp;未开发之功能';break;
+case 15:t='未开发';m='&nbsp;&nbsp;未开发之功能';break;
+case 16:t='HP';m='&nbsp;&nbsp;机器人的生命值, 若机体遭受毁损, 也会随时间逐渐回复';break;
+case 17:t='行动状态';m='&nbsp;&nbsp;机器人可否行动的状态显示';break;
+case 18:t='EN';m='&nbsp;&nbsp;机器人的使用武器的能源, 若能源不够, 将无法参加战斗, 能源消耗也会随时间逐渐回复';break;
+case 19:t='消费EN';m='&nbsp;&nbsp;目前装备所需要的最低消耗能源数值';break;
+case 20:t='武器装备';m='&nbsp;&nbsp;目前的武器装备';break;
+case 21:t='刷新';m='&nbsp;&nbsp;机器人大战不是随时都处於正确数值状态, 所以有时候你必须适时的使用刷新来观看正确的状态';break;
+case 22:t='战斗';m='&nbsp;&nbsp;战斗的先决条件, 你行动状态必须是可以行动, 能源必须符合目前武器所需要的最低限制.';break;
+case 23:t='移动';m='&nbsp;&nbsp;此功能现在是关闭的';break;
+case 24:t='TOWN';m='&nbsp;&nbsp;争霸是占据城市的唯一方法.';break;
+case 25:t='部队';m='&nbsp;&nbsp;总帅可以编辑部队与管理.';break;
+case 26:t='情报';m='&nbsp;&nbsp;查看各国基本的资料, 以作为你发动攻势的准备';break;
+case 27:t='详细';m='&nbsp;&nbsp;详细资料必须是本国人才能观看.';break;
+case 28:t='MAP';m='&nbsp;&nbsp;目前没有地图功能';break;
+case 29:t='RANK';m='&nbsp;&nbsp;排行榜是依照各人数值取得所计算, 某些排行必须达到某一种条件才可以看得到.';break;
+case 30:t='发言';m='&nbsp;&nbsp;目前发言可以对自己国家发言, 还可以增加对战时的台词与必杀技的取名等功能.';break;
+case 31:t='交流';m='&nbsp;&nbsp;你可以来机器人大战留言板交流你宝贵的意见, 或发发牢骚也可以.';break;
+case 32:t='性格';m='&nbsp;&nbsp;创建新机器人时你决定机器器人的性格, 这跟开始机器人某一个威力走向有关系.';break;
+case 33:t='类型';m='&nbsp;&nbsp;创建新机器人时你决定机器器人的类型, 这跟开始机器人某一个威力走向有关系.';break;
+}
+
+kaisetu.style.visibility='visible';
+mtitle.innerText=t;
+mmsg.innerHTML=m;
+}
+</SCRIPT>
+
+<DIV class=sdw id=j_pname onmouseover="style.background='#656521';"
+style="CURSOR: hand" onclick=SK(1); onmouseout="style.background='';">登录说明</DIV>
+<SPANid=j_class><SPAN class=sdw id=j_unit></SPAN>
+<DIV style="FILTER: dropshadow(offx=8,offy=8,color=#000000); POSITION: relative; HEIGHT: 110px">
+<TABLE cellSpacing=0 cellPadding=0>
+<TBODY>
+<TR>
+<TD style="BORDER-RIGHT: #89a078 2px solid; BORDER-TOP: #89a078 2px solid; FONT-SIZE: 15px; BORDER-LEFT: #89a078 2px solid; COLOR: #efef80; BORDER-BOTTOM: medium none" noWrap align=middle width=140 bgColor=#000000>名字</TD>
+<TD style="BORDER-RIGHT: #23a012 1px solid; BORDER-TOP: #23a012 1px solid; FONT-SIZE: 15px; BORDER-LEFT: medium none; BORDER-BOTTOM: #89a078 2px solid; BACKGROUND-COLOR: #000000" width=50>元帅</TD></TR>
+<TR>
+<TD style="BORDER-RIGHT: #89a078 2px solid; PADDING-RIGHT: 4px; BORDER-TOP: medium none; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; BORDER-LEFT: #89a078 2px solid; PADDING-TOP: 4px; BORDER-BOTTOM: #89a078 2px solid" bgColor=#000000 colSpan=2>
+<TABLE style="FONT-SIZE: 13px; COLOR: #d0d0d0" cellSpacing=0 cellPadding=0>
+<TBODY><TR>
+<TD onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(2); onmouseout="style.background='';" align=right>
+<img border="0" src="faq/0.gif" width="48" height="48"></TD>
+<TD class=num style="COLOR: #efef80" noWrap align=right colSpan=2>熟练度:
+<font color="#800080">E</font><br>
+                          击墜数: 265<br>
+                          世代: 1型 </TD></TR>
+<tr><SPANid=j_class>
+<TD onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(2); onmouseout="style.background='';" align=right>国籍</TD>
+<SPANid=j_class>
+                        <TD class=num style="COLOR: #efef80" noWrap align=right colSpan=2><B id=j_area>地球聯邦</B></TD>
+</tr><TR>
+<TD onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(3); onmouseout="style.background='';" noWrap align=right>个人等级</TD>
+<TD noWrap align=right width=30><B class=num id=j_plevel>15</B></TD>
+<TD noWrap align=right width=70>exp<B class=num id=j_plexp>151</B><B class=num id=j_plexp_next>/3200</B></TD></TR><TR>
+<TD onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(4); onmouseout="style.background='';" noWrap align=right><SPAN id=j_pstyle>武器等级</SPAN></TD>
+<TD noWrap align=right><B class=num id=j_pstlv>15</B></TD>
+<TD noWrap align=right>exp<B class=num id=j_pstex></B><B class=num>85/100</B></TD></TR><TR>
+<TD onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(32); onmouseout="style.background='';" noWrap align=right>性格</TD>
+<TD class=num noWrap align=middle colSpan=2><font color="#FF0000">热血</font></TD></TR>
+<TR>
+<TD onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(33); onmouseout="style.background='';" noWrap align=right>类型</TD>
+<TD class=num noWrap align=middle colSpan=2><b><font color="#FF00FF">攻击</font><span style="color: #EFEF80">型</span></b></TD></TR>
+<tr>
+<SPANid=j_class><TD onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(5); onmouseout="style.background='';" noWrap align=right>资金</TD>
+<SPANid=j_class><TD class=num noWrap align=middle colSpan=2>$<B id=j_money style="COLOR: #efef80">15012</B></TD>
+</tr></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV><br>
+
+<DIV style="FILTER: dropshadow(offx=8,offy=8,color=#000000); POSITION: relative; HEIGHT: 140px">
+<TABLE cellSpacing=0 cellPadding=0><TBODY><TR>
+<TD style="BORDER-RIGHT: #89a078 2px solid; BORDER-TOP: #89a078 2px solid; FONT-SIZE: 15px; BORDER-LEFT: #89a078 2px solid; COLOR: #efef80; BORDER-BOTTOM: medium none" noWrap align=middle width=50 bgColor=#000000 ?>ARMS</TD>
+<TD style="PADDING-RIGHT: 1px; PADDING-LEFT: 0px; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; BORDER-BOTTOM: #89a078 2px solid" width=150>
+<SPAN id=j_arms style="BORDER-RIGHT: #23a012 1px solid; BORDER-TOP: #23a012 1px solid; FONT-SIZE: 16px; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BACKGROUND-COLOR: #000000">
+<B onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(6); onmouseout="style.background='';">ProtoTypeARMS</B></SPAN></TD></TR><TR>
+<TD id=j_icon style="BORDER-RIGHT: #89a078 2px solid; BORDER-TOP: medium none; BORDER-LEFT: #89a078 2px solid; BORDER-BOTTOM: medium none; BACKGROUND-REPEAT: no-repeat" vAlign=top bgColor=#000000 colSpan=3 height=70>
+<TABLE style="FONT-SIZE: 14px; LINE-HEIGHT: 16px" cellSpacing=0 cellPadding=0 align=right><TBODY><TR>
+<TD rowSpan=4>
+<IMG onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(7); onmouseout="style.background='';" src="faq/AE1c.gif" width="60" height="60"></TD>
+<TD onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(8); onmouseout="style.background='';" align=middle width=27><IMG src="faq/fight.gif" width="15" height="15"></TD>
+<TD class=num noWrap align=right width=25><B id=j_am_fight>65</B></TD>
+<TD onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(9); onmouseout="style.background='';" align=right width=20><IMG src="faq/gu.gif" width="15" height="15"></TD>
+<TD class=num noWrap align=right><B id=j_am_guard>35</B></TD>
+<TD noWrap align=right><SPAN class=u id=j_am_up_g>亇0</SPAN></TD></TR><TR>
+<TD onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(10); onmouseout="style.background='';" align=middle><IMG src="faq/short.gif" width="15" height="15"></TD>
+<TD class=num noWrap align=right><B id=j_am_short>15</B></TD>
+<TD onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(11); onmouseout="style.background='';" align=middle height=16><IMG src="faq/speed.gif" width="15" height="15"></TD>
+<TD class=num noWrap align=right><B id=j_am_speed>65</B></TD>
+<TD noWrap align=right><SPAN class=u id=j_am_up_s>-35</SPAN></TD></TR><TR>
+<TD onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(12); onmouseout="style.background='';" align=middle><IMG src="faq/long.gif" width="15" height="15"></TD>
+<TD class=num noWrap align=right><B id=j_am_long>22</B></TD>
+<TD onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(13); onmouseout="style.background='';" align=middle><IMG src="faq/cpu.gif" width="15" height="15"></TD>
+<TD class=num noWrap align=right><B id=j_am_cpu>1.5</B></TD><TD></TD></TR><TR>
+<TD class=num onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(14);
+onmouseout="style.background='';" noWrap align=right colSpan=5>奼?   <B id=j_am_cust>255</B></TD></TR></TBODY></TABLE></TD></TR><TR>
+<TD style="BORDER-RIGHT: #89a078 2px solid; BORDER-TOP: medium none; FONT-SIZE: 12px; BORDER-LEFT: #89a078 2px solid; BORDER-BOTTOM: #89a078 2px solid; BACKGROUND-REPEAT: no-repeat" bgColor=#000000 colSpan=2>
+                    <DIV id=j_armsinfo onmouseover="style.background='#656521';" style="CURSOR: hand; COLOR: gray" onclick=SK(15); onmouseout="style.background='';"><font color="#FF00FF">必杀技</font> 
+                      <font color="#FEFEFE">飛翔砲</font> <br>
+                      <font color="#FF0000">超必杀技</font> <font color="#FEFEFE">高出力光束刀</font><br>
+<font color="#FEFEFE">备武 高周波刀 LV.4/EXP.52<br>备武</font></DIV></TD></TR></TBODY></TABLE></DIV><br>
+
+<DIV style="FILTER: dropshadow(offx=8,offy=8,color=#000000); POSITION: relative; HEIGHT: 50px">
+<TABLE cellSpacing=0 cellPadding=0><TBODY><TR>
+<TD style="BORDER-RIGHT: #89a078 2px solid; BORDER-TOP: #89a078 2px solid; FONT-SIZE: 15px; BORDER-LEFT: #89a078 2px solid; COLOR: #efef80; BORDER-BOTTOM: medium none" noWrap align=middle width=50 bgColor=#000000>HP</TD>
+<TD style="PADDING-RIGHT: 1px; PADDING-LEFT: 0px; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; BORDER-BOTTOM: #89a078 2px solid" width=140><SPAN style="BORDER-RIGHT: #23a012 1px solid; BORDER-TOP: #23a012 1px solid; FONT-SIZE: 16px; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BACKGROUND-COLOR: #000000">
+<SPAN class=num id=j_hp_b onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(16); onmouseout="style.background='';">350</SPAN>/<B class=num id=j_hp_c>1700</B>[<font color="#99CCFF">动</font>]</SPAN></TD></TR><TR>
+<TD style="BORDER-RIGHT: #89a078 2px solid; PADDING-RIGHT: 4px; BORDER-TOP: medium none; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; BORDER-LEFT: #89a078 2px solid; PADDING-TOP: 4px; BORDER-BOTTOM: #89a078 2px solid" width=208 bgColor=#000000 colSpan=2><IMG id=j_hp_a height=10 src="faq/mater.gif"></TD>
+</TR></TBODY></TABLE></DIV>
+<DIV style="FILTER: dropshadow(offx=8,offy=8,color=#000000); POSITION: relative; HEIGHT: 50px">
+<TABLE cellSpacing=0 cellPadding=0><TBODY><TR>
+<TD style="BORDER-RIGHT: #89a078 2px solid; PADDING-RIGHT: 4px; BORDER-TOP: #89a078 2px solid; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; BORDER-LEFT: #89a078 2px solid; PADDING-TOP: 4px; BORDER-BOTTOM: medium none" width=208 bgColor=#000000 colSpan=2><IMG id=j_en_a height=10 src="faq/mater.gif"></TD></TR>
+<TR>
+<TD style="PADDING-RIGHT: 1px; BORDER-TOP: #89a078 2px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 1px; PADDING-TOP: 1px" align=right width=150>
+<SPAN style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-SIZE: 16px; BORDER-LEFT: #23a012 1px solid; BORDER-BOTTOM: #23a012 1px solid; BACKGROUND-COLOR: #000000">
+<SPAN  class=num id=j_en_b onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(18); onmouseout="style.background='';">80</SPAN>/<B class=num id=j_en_c>250</B></SPAN></TD>
+<TD style="BORDER-RIGHT: #89a078 2px solid; BORDER-TOP: medium none; FONT-SIZE: 15px; BORDER-LEFT: #89a078 2px solid; COLOR: #efef80; BORDER-BOTTOM: #89a078 2px solid" noWrap align=middle width=50 bgColor=#000000>EN</TD></TR></TBODY></TABLE></DIV><br>
+
+<DIV style="FILTER: dropshadow(offx=8,offy=8,color=#000000); POSITION: relative; HEIGHT: 65px">
+<TABLE cellSpacing=0 cellPadding=0><TBODY><TR>
+<TD style="BORDER-RIGHT: #89a078 2px solid; PADDING-RIGHT: 0px; BORDER-TOP: #89a078 2px solid; PADDING-LEFT: 0px; FONT-SIZE: 15px; PADDING-BOTTOM: 0px; BORDER-LEFT: #89a078 2px solid; COLOR: #efef80; PADDING-TOP: 0px; BORDER-BOTTOM: medium none" noWrap align=middle width=50 bgColor=#000000>武器</TD>
+<TD style="BORDER-BOTTOM: #89a078 2px solid" width=150><SPAN style="BORDER-RIGHT: #23a012 1px solid; BORDER-TOP: #23a012 1px solid; FONT-SIZE: 12px; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BACKGROUND-COLOR: #000000">
+<B class=num id=j_equip_main_en onmouseover="style.background='#656521';" style="CURSOR: hand" onclick=SK(19); onmouseout="style.background='';">EN 40</B></SPAN></TD></TR><TR>
+                  <TD style="BORDER-RIGHT: #89a078 2px solid; PADDING-RIGHT: 4px; BORDER-TOP: medium none; PADDING-LEFT: 4px; FONT-SIZE: 15px; PADDING-BOTTOM: 4px; BORDER-LEFT: #89a078 2px solid; COLOR: #e0e0e0; PADDING-TOP: 4px; BORDER-BOTTOM: #89a078 2px solid" width=208 bgColor=#000000 colSpan=2><b>導爆索</b><BR>
+                    <B id=j_equip_sub_name></B></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE></TD>
+<TD vAlign=top noWrap>
+<DIV style="BACKGROUND-IMAGE: url('faq/sttop.gif'); COLOR: #deed49; HEIGHT: 20px" align=center><SPAN style="BORDER-RIGHT: #8e3a61 1px solid; BORDER-LEFT: #8e3a61 1px solid; WIDTH: 75px; HEIGHT: 18px; BACKGROUND-COLOR: #aa5b7d"><B class=sdw>机器人大战使用说明</B></SPAN></DIV><SPAN style="FONT-SIZE: 15px; COLOR: #dddddd">游戏基本说明与图片解说</SPAN>
+
+<div align="center"><center><table width="95%" border="1" style="border-collapse: collapse; color: #FFFFFF" ><tr>
+<td colspan="2"><font size="2"><b>一、首先教习如何登录</b></font></td>
+</tr><tr>
+<td width="100%" align="right" colspan="2" class="NavJump">
+<font color="#000000" size="2">
+<p align="center"><a target="_blank" href="faq/sample1.jpg">sample</a></font></td></tr><tr>
+<td width="11%" height="22" align="right"><font size="2">用户名</font></td>
+<td width="89%" height="22"><font size="2">机师名（英文，中文都可以），日後登录时所用的登录帐号。</font></td>
+</tr><tr>
+<td width="11%" align="right"><font size="2">機机体名</font></td>
+<td width="89%"><font size="2">以後就会显示你在使用这个机体。但也只是随便输入的名字</font></td>
+</tr><tr>
+<td width="11%" align="right"><font size="2">密码</font></td>
+<td width="89%"><font size="2">使用者的密码，日後登录时所用的登录密码。</font></td>
+</tr><tr>
+<td width="11%" align="right"><font size="2">机体</font></td>
+<td width="89%"><font size="2">机器人图像，可以更改上方的icon显示。如果想知道哪个编号是什麽图像 或一共有多少个。<br>
+请查看战士图库来选择喜欢的机器人。</font></td>
+</tr><tr>
+<td width="11%" align="right"><font size="2">机体属性</font></td>
+<td width="89%"><font size="2">MS
+type，分别有攻击、防御、回避、命中重视型以及平均5种这个会决定你进去後的状态与基础数值。但更重要的是，以後在游戏中等级上升後，增加的数据会根据重视型优先增加。
+</font></td></tr><tr>
+              <td width="11%" align="right" height="88"><font size="2">性格</font></td>
+              <td width="89%" height="88"><font size="2">强气、弱气、普通、激情、冷酷、冷静 共6种性格会影响到你战斗时的数据修正。但具体怎麽修正无官方资料。值得一提的是，隐藏性格&quot;觉醒,強化人,New 
+                Type,</font> 是不能選的，只有戰鬥的時候才能獲得，但是如果被別人擊破，那麽有1/8的可能會變成對方的性格，所以盡量不要讓自己被別人擊破吧，呵呵</td>
+</tr><tr>
+<td width="11%" align="right"><font size="2">武器</font></td><td width="89%">
+<font size="2">一开始进入的武器。当然有威力、命中率、攻击回数的差别。但一开始能选的都是最低级的武器。随着游戏进行，积累武器经验，可以进化成厉害的兵器。初期很烂的东西，比如格斗，究级是愤怒吧！究极石破天惊拳！！！武器的升级也有好几个分支与路径。种类则因各网站的配置情况不同而不同。值得推荐的，是米加流粒子
+和BIT，这是初级武器中最贵的。（10000和36000） 前者的威力非常大，几乎一击杀，缺点是命中率低。後者****後能进化成funnel 即浮游炮！</font></td>
+</tr><tr>
+<td width="11%" align="right"><font size="2">颜色</font></td>
+<td width="89%"><font size="2">代表自己特色的色彩，游戏中显示的文字色彩</font></td>
+</tr><tr>
+<td width="11%" align="right"><font size="2">国籍</font></td>
+              <td width="89%"> <font size="2">可以选择国籍，则加入後即为该国国民。建议是先选流浪者，然後用情报调查各国势力後，再亡命去也（笑）不要误入非常差的国家，被人围殴，却因为打不过国家内的其他人，不能叛国。</font></td>
+</tr><tr>
+<td colspan="2"><font size="2"><b>二、游戏画面</b></font></td>
+</tr><font color="#000000" size="2"><tr>
+<td align="right" height="14" colspan="2" class="NavJump">
+<p align="center"><a target="_blank" href="faq/sample.gif">sample</a></td></tr>
+</font><tr>
+<td colspan="2"><font size="2"><b>叁、各按钮的说明</b></font> (请点左边上部的<span style="background-color: #FF0000">指令</span>)</td>
+</tr><tr>
+<td align="right" colspan="2" class="NavJump">
+<p align="center"><font color="#000000"><a target="_blank" href="faq/menu03.gif"><font size="2">sample</font></a></font></td></tr>
+<tr><td colspan="2">
+<p align="center"><font size="2">
+<img border="0" src="faq/menu04.gif" width="134" height="92">&nbsp;
+<img border="0" src="faq/newhand.gif" width="195" height="41"></font></td></tr><tr>
+<td colspan="2"><font size="2"><b>四、国家手册</b></font></td></tr><tr>
+<td align="right"><font size="2">武器</font></td>
+<td><font size="2">武器种类的设置由於site的不同而型型样样。但是无论哪个站都有登录时与购入时不能选择的武器。这种武器是在其他武器升级後得到的。比如初始版的110mm
+Machine Gun，4段lv up後可以变成120mm Machine
+Gun。而升级的途中还有进化分歧的问题。分歧时选择，此後就只能按照这个进化形态变化下去。而武器的种类与形态各站点也不同（查阅数据介竟武器列表可以得知</font></td></tr><tr>
+              <td align="right"><font size="2">皇帝</font></td>
+              <td> <font size="2">建国或内乱成功後就能就任皇帝。皇帝可以实行特殊命令，例如战略发动、要塞修理与强化、部顺竟解散与国家是否继续存在等重要的指令。身为总帅就要有相应的觉悟。自己的国家常常灭亡还是不要建立算了。</font></td>
+            </tr><tr>
+<td align="right"><font size="2">国</font></td>
+              <td> <font size="2">国家如果存在则必定有要塞存在。而这个要塞大破後，国家就灭亡了。但是并不是谁都可以随便对要塞进行攻击。只能是总帅战略发动功略指定的国家。而这个国家的兵士全员（包括修理中）也会出现在要塞。国家一旦灭亡，则该国的player全员无国籍要塞被攻击後，皇帝与部顺报可以进行修理。而修理则需要国费。皇帝还能对要塞的能力进行强化。</font></td>
+</tr><tr>
+<td align="right" height="31"><font size="2">部队</font></td>
+              <td height="31"> <font size="2">发动战略、对他国作战首先要有部队。然後皇帝发动战略时命令部队进行功略。则战略中部队介竟兵士会率先功略。直至战略任务完成。而战略期间离队改进行其他作战也是可能的。</font></td>
+</tr></table></center></div></TD></TR></TBODY></TABLE>
+<SCRIPT language=JavaScript>
+Convert_rep(350,41,0.1176,1700,100,80,0.08,250,1);
+</SCRIPT></BODY></HTML>

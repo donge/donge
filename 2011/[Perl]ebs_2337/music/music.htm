@@ -1,0 +1,27 @@
+<html><head>
+<META HTTP-EQUIV=REFRESH CONTENT="300;URL=music.htm">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Music</title>
+</head><body>
+<SCRIPT language=javascript>
+<!--背景音樂隨機產生
+var lct= new Array();
+var a
+var b
+lct[2]="<bgsound src='gd.mid' loop='1'>";
+lct[5]="<bgsound src='gd2.mid' loop='1'>";
+lct[1]="<bgsound src='gd3.mid' loop='1'>";
+lct[3]="<bgsound src='gd4.mid' loop='1'>";
+lct[0]="<bgsound src='gd5.mid' loop='1'>";
+lct[4]="<bgsound src='gd6.mid' loop='1'>";
+lct[6]="<bgsound src='J1.mid' loop='1'>";
+lct[7]="<bgsound src='J2.mid' loop='1'>";
+lct[8]="<bgsound src='J3.mid' loop='1'>";
+lct[9]="<bgsound src='J4.mid' loop='1'>";
+lct[10]="<bgsound src='J5.mid' loop='1'>";
+a=Math.random()*11;
+b=a-a%1;
+//--></SCRIPT>
+  <SCRIPT>document.write(lct[b]);</SCRIPT>
+
+</body></html>
