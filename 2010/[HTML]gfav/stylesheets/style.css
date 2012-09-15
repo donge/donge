@@ -1,0 +1,117 @@
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: Tahoma, "Lucida Grande", Verdana, hei; BACKGROUND-COLOR: #fff; webkit-text-size-adjust: none; webkit-user-select: none
+}
+A:link {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+DIV#top {
+	CLEAR: both; PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND-IMAGE: url(./img/bg_top.png); PADDING-BOTTOM: 5px; VERTICAL-ALIGN: middle; PADDING-TOP: 5px; HEIGHT: 42px; BACKGROUND-COLOR: #000
+}
+DIV#bottom {
+	CLEAR: both; PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 13px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: middle; COLOR: #ccc; PADDING-TOP: 5px; BACKGROUND-COLOR: #000; TEXT-ALIGN: right
+}
+DIV#top DIV#left {
+	FONT-SIZE: 14px; FLOAT: left; COLOR: #fff; PADDING-TOP: 2px; TEXT-ALIGN: left
+}
+DIV#top DIV#right {
+	FONT-SIZE: 14px; FLOAT: right; COLOR: #fff; PADDING-TOP: 2px; TEXT-ALIGN: right
+}
+DIV#top DIV#center {
+	FONT-SIZE: 25px; COLOR: #fff; LINE-HEIGHT: 40px; FONT-FAMILY: Helvetica, Hei; TEXT-ALIGN: center; text-shadow: rgba(0, 0, 0, 0.6) 0 1px 0
+}
+DIV.class {
+	CLEAR: both; PADDING-RIGHT: 4px; BACKGROUND-POSITION: 12px 10px; BORDER-TOP: #333 1px solid; PADDING-LEFT: 48px; BACKGROUND-IMAGE: url(./img/site.png); PADDING-BOTTOM: 10px; PADDING-TOP: 10px; BORDER-BOTTOM: #000 1px solid; BACKGROUND-REPEAT: no-repeat
+}
+DIV.item {
+	CLEAR: both; PADDING-RIGHT: 0px; BACKGROUND-POSITION: 20px 14px; BORDER-TOP: #333 1px solid; PADDING-LEFT: 48px; BACKGROUND-IMAGE: url(./img/site1.png); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; BACKGROUND-REPEAT: no-repeat
+}
+DIV.item A:link {
+	PADDING-RIGHT: 2px; DISPLAY: block; PADDING-LEFT: 2px; BACKGROUND: url(./img/listArrow.png) no-repeat right center; PADDING-BOTTOM: 2px; MARGIN: 2px; COLOR: #222; LINE-HEIGHT: 42px; PADDING-TOP: 2px
+}
+DIV.item A:visited {
+	PADDING-RIGHT: 2px; DISPLAY: block; PADDING-LEFT: 2px; BACKGROUND: url(./img/listArrow.png) no-repeat right center; PADDING-BOTTOM: 2px; MARGIN: 2px; COLOR: #222; LINE-HEIGHT: 42px; PADDING-TOP: 2px
+}
+DIV.item A:active {
+	
+}
+DIV.tel {
+	CLEAR: both; PADDING-RIGHT: 0px; BACKGROUND-POSITION: 20px 14px; BORDER-TOP: #333 1px solid; PADDING-LEFT: 48px; BACKGROUND-IMAGE: url(./img/tel.png); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; BACKGROUND-REPEAT: no-repeat
+}
+DIV.tel A:link {
+	PADDING-RIGHT: 2px; DISPLAY: block; PADDING-LEFT: 2px; BACKGROUND: url(./img/listArrow.png) no-repeat right center; PADDING-BOTTOM: 2px; MARGIN: 2px; COLOR: #222; LINE-HEIGHT: 42px; PADDING-TOP: 2px
+}
+DIV.tel A:visited {
+	PADDING-RIGHT: 2px; DISPLAY: block; PADDING-LEFT: 2px; BACKGROUND: url(./img/listArrow.png) no-repeat right center; PADDING-BOTTOM: 2px; MARGIN: 2px; COLOR: #222; LINE-HEIGHT: 42px; PADDING-TOP: 2px
+}
+DIV.navbar {
+	CLEAR: both; PADDING-RIGHT: 10px; BORDER-TOP: #000 1px solid; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; COLOR: #222; PADDING-TOP: 10px; BORDER-BOTTOM: #000 1px solid; BACKGROUND-COLOR: #fff; TEXT-ALIGN: center
+}
+TABLE.nav {
+	FONT-SIZE: 12px; COLOR: #222; BORDER-COLLAPSE: collapse
+}
+DIV.navbar A:link {
+	BORDER-RIGHT: #ddd 2px solid; PADDING-RIGHT: 2px; BORDER-TOP: #ddd 2px solid; DISPLAY: block; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #ddd 2px solid; COLOR: #222; LINE-HEIGHT: 18px; PADDING-TOP: 2px; BORDER-BOTTOM: #ddd 2px solid; webkit-border-radius: 10px; moz-border-radius: 10px
+}
+DIV.navbar A:visited {
+	BORDER-RIGHT: #ddd 2px solid; PADDING-RIGHT: 2px; BORDER-TOP: #ddd 2px solid; DISPLAY: block; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #ddd 2px solid; COLOR: #222; LINE-HEIGHT: 18px; PADDING-TOP: 2px; BORDER-BOTTOM: #ddd 2px solid; webkit-border-radius: 10px; moz-border-radius: 10px
+}
+TABLE.info {
+	WIDTH: 93%
+}
+DIV.detail {
+	DISPLAY: none; BACKGROUND-COLOR: #e0e0e0; TEXT-ALIGN: left
+}
+UL.nav LI.normal {
+	PADDING-RIGHT: 7px; DISPLAY: block; PADDING-LEFT: 7px; FLOAT: left; PADDING-BOTTOM: 4px; MARGIN-RIGHT: 10px; PADDING-TOP: 4px; BACKGROUND-COLOR: #222; webkit-border-radius: 10px
+}
+DIV.bottomHigher {
+	PADDING-BOTTOM: 15px
+}
+.star {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: left; MARGIN: 0px 10px 0px 8px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+SPAN.title {
+	FONT-SIZE: 18px; MARGIN-BOTTOM: 8px; COLOR: #000; text-shadow: #888 1px 1px 5px
+}
+DIV.addr {
+	DISPLAY: none; FONT-SIZE: 12px; MARGIN: 5px 0px 0px; COLOR: #222
+}
+DIV.c {
+	CLEAR: both; HEIGHT: 0px
+}
+DIV.topSep {
+	BORDER-TOP: #333 1px solid
+}
+.button {
+	DISPLAY: block; FONT-WEIGHT: bold; FONT-SIZE: 14px; WIDTH: 110px; COLOR: #ffffff; LINE-HEIGHT: 32px; FONT-FAMILY: Heveltica; TEXT-ALIGN: center; TEXT-DECORATION: none; text-shadow: rgba(0, 0, 0, 0.4) 0 -1px 0
+}
+.blackLeft {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 12px; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 3px auto; COLOR: white; BORDER-RIGHT-WIDTH: 5px; text-shadow: #000 0px 1px 1px; webkit-border-image: url("./img/leftButton.png") 0 5 0 12
+}
+.blackRight {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 5px; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 3px auto; COLOR: white; BORDER-RIGHT-WIDTH: 12px; text-shadow: #000 0px 1px 1px; webkit-border-image: url("./img/rightButton.png") 0 12 0 5
+}
+.black {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 10px; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 3px auto; COLOR: white; BORDER-RIGHT-WIDTH: 10px; text-shadow: #000 0px 1px 1px; webkit-border-image: url("./img/grayButton.png") 0 14 0 14
+}
+A.white:link {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 10px; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 3px auto; COLOR: black; BORDER-RIGHT-WIDTH: 10px; text-shadow: #fff 0px 1px 1px; webkit-border-image: url("./img/whiteButton.png") 0 14 0 14
+}
+A.white:visited {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 10px; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 3px auto; COLOR: black; BORDER-RIGHT-WIDTH: 10px; text-shadow: #fff 0px 1px 1px; webkit-border-image: url("./img/whiteButton.png") 0 14 0 14
+}
+A.sl {
+	DISPLAY: block
+}
+SPAN.red A:link {
+	COLOR: #f60
+}
+SPAN.red A:visited {
+	COLOR: #f60
+}
+#desc {
+	DISPLAY: none
+}
