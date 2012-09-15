@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script language = JScript>
+server="http://www.cnpics.com/"
+nurl=document.location;
+nurl=""+nurl;
+n=nurl.indexOf("?");
+m=nurl.length-n-1;
+id=nurl.substr(n+1,m);
+p=id.indexOf("-");
+k=id.lastIndexOf("-");
+s1=id.substr(0,p);
+s2=id.substr(p+1,k-p-1);
+s3=id.substr(k+1,id.length-k-1);
+</script>
+<script language = JScript src="cnpics.js"></script>
+<title>SeekMM</title></head>
+<body bgcolor=#ffffff topmargin=0 leftmargin=0>
+<script language = JScript src=top_cnpics.js></script>
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center"></td>
+</tr><tr><td align="center">
+<table border="0" width="100%" cellpadding="0"><tr>
+<script language = JScript>
+for(i=141;i<151;i++)
+{
+cc=i+"";
+if (cc.length==1){cc="0"+cc;}
+document.write("<td width=25% align=center>第"+cc+"张<br><a href=page_2.htm?"+s1+"-"+s2+"/"+s3+"-"+cc+">"+"<img src="+server+s1+"/"+s2+"/"+s3+"/pic/pic0"+cc+"_thumb.jpg border=0 alt=SeekMM></a></td>");
+if (i%145==0 && i<151){document.write("</tr><tr>");}
+if (i==145){document.write("<td width=100% colspan=5 align=center>"+ads+"</td></tr><tr>");}
+}
+</script>
+</tr></table></td></tr><tr><td align="center"></td></tr></table>
+<script language = JScript src="bottom_cnpics.js"></script>
+</body></html>

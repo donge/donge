@@ -1,0 +1,111 @@
+.input_button {
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #999999 1px solid; COLOR: #000000; BORDER-BOTTOM: #999999 1px solid; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; BACKGROUND-COLOR: #e0e0e0
+}
+HR {
+	BORDER-RIGHT: dashed; BORDER-TOP: dashed; BORDER-LEFT: dashed; COLOR: #888888; BORDER-BOTTOM: dashed; HEIGHT: 1px
+}
+IMG {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+A:link {
+	COLOR: #003399; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #003399; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff9900; TEXT-DECORATION: underline
+}
+A.link-navbar:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.link-navbar:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.link-navbar:hover {
+	COLOR: #0066ff; TEXT-DECORATION: underline
+}
+UL {
+	LIST-STYLE-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/47KJ8NU3/images/misc_arrow.gif); LIST-STYLE-TYPE: square
+}
+LI {
+	MARGIN: 5px
+}
+.sidebar-border {
+	BACKGROUND-POSITION: 50% top; BACKGROUND-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/47KJ8NU3/images/title_bg.gif); BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #f0f0f0
+}
+.sidebar {
+	BORDER-RIGHT: #cccccc 1px; BACKGROUND-POSITION: left top; BORDER-TOP: #cccccc 1px; BACKGROUND-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/47KJ8NU3/images/title_text.gif); BORDER-LEFT: #cccccc 1px solid; WIDTH: 150px; BORDER-BOTTOM: #cccccc 1px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #f0f0f0
+}
+.titlebar-top {
+	
+}
+.titlebar-bottom {
+	BACKGROUND-POSITION: 50% top; BACKGROUND-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/47KJ8NU3/images/title_bg.gif); BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #fcfcfc
+}
+TD {
+	FONT-SIZE: 12px
+}
+.copyright {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-ALIGN: right
+}
+.contentbox {
+	OVERFLOW: auto; BACKGROUND-COLOR: #fcfcfc
+}
+.copyright-top {
+	BACKGROUND-POSITION: 50% top; BACKGROUND-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/47KJ8NU3/images/page_bottom_line.gif); VERTICAL-ALIGN: top; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #fcfcfc
+}
+.sidebar-bottom {
+	BACKGROUND-POSITION: 50% top; BACKGROUND-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/47KJ8NU3/page_bottom_line.gif); BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #f0f0f0
+}
+.content {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.tab-on {
+	BORDER-RIGHT: #8C8C8C 1px; BACKGROUND-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/47KJ8NU3/tb_bg.gif); PADDING-RIGHT: 2px; BORDER-TOP: #FFFFFF 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; BORDER-LEFT: #FFFFFF 1px solid; WIDTH: 60px; CURSOR: default; COLOR: #000000; PADDING-TOP: 2px; BORDER-BOTTOM: #8C8C8C 1px; BACKGROUND-COLOR: #D4D0C8
+}
+.tab-off {
+	BORDER-RIGHT: #8C8C8C 1px; BACKGROUND-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/47KJ8NU3/tb_bg.gif); PADDING-RIGHT: 2px; BORDER-TOP: #FFFFFF 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; BORDER-LEFT: #FFFFFF 1px solid; WIDTH: 60px; CURSOR: default; COLOR: #555555; PADDING-TOP: 2px; BORDER-BOTTOM: #FFFFFF 1px solid; BACKGROUND-COLOR: #D4D0C8
+}
+.tab-none {
+	BORDER-RIGHT: #D4D0C8 1px; PADDING-RIGHT: 2px; BORDER-TOP: #FFFFFF 1px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; BORDER-LEFT: #D4D0C8 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #FFFFFF 1px solid
+}
+.tab-content {
+	BORDER-RIGHT: #8C8C8C 1px solid; BORDER-TOP: #FFFFFF 1px; VERTICAL-ALIGN: top; BORDER-LEFT: #FFFFFF 1px solid; BORDER-BOTTOM: #8C8C8C 1px solid; BACKGROUND-COLOR: #D4D0C8
+}
+.panel_main {
+	BORDER-RIGHT: #ececec 1px solid; BORDER-TOP: #ececec 1px solid; BORDER-LEFT: #ececec 1px solid; BORDER-BOTTOM: #ececec 1px solid
+}
+.panel_header {
+	BORDER-RIGHT: #ececec 1px; BORDER-TOP: #ececec 1px; BORDER-LEFT: #ececec 1px; COLOR: #666666; BORDER-BOTTOM: #ececec 1px dashed; BACKGROUND-COLOR: #ffffff
+}
+.text_inline_header {
+	FONT-WEIGHT: bold; COLOR: #000066
+}
+.text_comment {
+	COLOR: #999999
+}
+.text_note_blue {
+	COLOR: #003399
+}
+.text_note_red {
+	COLOR: #ff0000
+}
+.text_note_yellow {
+	COLOR: #ff8800
+}
+.td_heading {
+	BORDER-RIGHT: #cccccc 1px; PADDING-RIGHT: 3px; BORDER-TOP: #cccccc 1px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; PADDING-BOTTOM: 3px; BORDER-LEFT: #cccccc 1px; COLOR: #666666; PADDING-TOP: 3px; BORDER-BOTTOM: #cccccc 1px dashed
+}
+.td_title {
+	BORDER-RIGHT: #e0e0e0 1px solid; BORDER-TOP: #e0e0e0 1px solid; BORDER-LEFT: #e0e0e0 1px solid; COLOR: #666666; BORDER-BOTTOM: #e0e0e0 1px solid; BACKGROUND-COLOR: #f6f6f6
+}
+.td_text {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.td_download_title {
+	COLOR: #ffffff; BACKGROUND-COLOR: #5874ad
+}
+.td_download_main {
+	BACKGROUND-COLOR: #f6f6f6
+}

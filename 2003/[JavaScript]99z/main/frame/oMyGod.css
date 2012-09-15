@@ -1,0 +1,45 @@
+.menubar {
+	FONT-SIZE: 12px; BACKGROUND-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/UTKDEJGB/bak_images/bg_D4D0C8.gif); HEIGHT: 18px; BACKGROUND-COLOR: #d4d0c8
+}
+.barbg {
+	FONT-SIZE: 12px; BACKGROUND-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/UTKDEJGB/bak_images/bg_D4D0C8.gif); HEIGHT: 25px
+}
+.toolbar {
+	FONT-SIZE: 12px; BACKGROUND-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/UTKDEJGB/bak_images/bg_DBD8D1.gif); HEIGHT: 24px; BACKGROUND-COLOR: #dbd8d1
+}
+.status {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-SIZE: 12px; BACKGROUND-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/UTKDEJGB/bak_images/bg_D4D0C8.gif); BORDER-LEFT: medium none; COLOR: #000000; BORDER-BOTTOM: medium none; HEIGHT: 20px; BACKGROUND-COLOR: #d4d0c8
+}
+.menuOver {
+	BORDER-RIGHT: #0a246a 1px solid; BORDER-TOP: #0a246a 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #0a246a 1px solid; CURSOR: default; PADDING-TOP: 2px; BORDER-BOTTOM: #0a246a 1px solid; HEIGHT: 16px; BACKGROUND-COLOR: #b6bdd2
+}
+.menuOut {
+	FONT-SIZE: 12px; BACKGROUND-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/UTKDEJGB/bak_images/bg_D4D0C8.gif); CURSOR: default; PADDING-TOP: 2px; HEIGHT: 16px; BACKGROUND-COLOR: #d4d0c8
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; BACKGROUND-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/UTKDEJGB/bak_images/bg_D4D0C8.gif); PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; BACKGROUND-COLOR: #d4d0c8
+}
+TD {
+	FONT-SIZE: 12px
+}
+.uptitle {
+	BORDER-RIGHT: #808080 1px solid; BORDER-TOP: #ffffff 1px solid; FONT-SIZE: 12px; BACKGROUND-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/UTKDEJGB/bak_images/bg_D4D0C8.gif); BORDER-LEFT: #ffffff 1px solid; COLOR: #000000; PADDING-TOP: 2px; BORDER-BOTTOM: #808080 1px solid; HEIGHT: 20px; BACKGROUND-COLOR: #d4d0c8
+}
+.dowmBorder {
+	BORDER-RIGHT: #ffffff 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #808080 1px solid; PADDING-LEFT: 0px; BACKGROUND-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/UTKDEJGB/bak_images/bg_DBD8D1.gif); PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: #808080 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #ffffff 1px solid; BACKGROUND-COLOR: #dbd8d1
+}
+.upBorder {
+	BORDER-RIGHT: #808080 1px solid; BORDER-TOP: #ffffff 1px solid; BACKGROUND-IMAGE:  url(file:///C|/Documents%20and%20Settings/donge/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/UTKDEJGB/bak_images/bg_DBD8D1.gif); BORDER-LEFT: #ffffff 1px solid; BORDER-BOTTOM: #808080 1px solid; BACKGROUND-COLOR: #dbd8d1
+}
+.dowmBorder2 {
+	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #808080 1px solid; BORDER-LEFT: #808080 1px solid; BORDER-BOTTOM: #ffffff 1px solid; BACKGROUND-COLOR: #ffffff
+}
+.maginTable {
+	MARGIN: 5px 5px 5px 0px
+}
+INPUT {
+	FONT-SIZE: 12px; COLOR: #000000; HEIGHT: 20px; TEXT-DECORATION: none
+}
+.inputButton5 {
+	FONT-SIZE: 12px; WIDTH: 80px; COLOR: #000000; HEIGHT: 20px; TEXT-DECORATION: none
+}

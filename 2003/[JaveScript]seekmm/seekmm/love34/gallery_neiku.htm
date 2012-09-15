@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script>
+server="http://www.love34.com/schoolgirls/neiku/"
+nurl=document.location;
+nurl=""+nurl;
+n=nurl.indexOf("?");
+m=nurl.length-n-1;
+id=nurl.substr(n+1,m);
+p=id.indexOf("-");
+k=id.lastIndexOf("-");
+s1=id.substr(0,p);
+s2=id.substr(p+1,k-p-1);
+s3=id.substr(k+1,id.length-k-1);
+</script>
+<script src="love34.js"></script>
+<title>SeekMM</title></head>
+<body bgcolor=#ffffff topmargin=0 leftmargin=0>
+<script src=top_love34.js></script>
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center"></td>
+</tr><tr><td align="center">
+<table border="0" width="100%" cellpadding="0"><tr>
+<script>
+for(i=1;i<11;i++)
+{
+cc=i-1+"";
+if (cc.length==1){cc="0"+cc;}
+document.write("<td width=20% align=center>第"+cc+"张<br><a href=page_neiku.htm?"+s1+"-"+cc+">"+"<img src="+server+s1+"/"+s2+"xiao/school00"+s1+cc+".jpg border=0 alt=SeekMM></a></td>");
+if (i%5==0 && i<11){document.write("</tr><tr>");}
+if (i==5){document.write("<td width=100% colspan=5 align=center>"+ads+"</td></tr><tr>");}
+}
+</script>
+</tr></table></td></tr><tr><td align="center"></td></tr></table>
+<script src="bottom_love34.js"></script>
+</body></html>
