@@ -1,0 +1,2 @@
+<%
+response.write"<center><img border='0' src='pic/down.gif'><br>Powered By： <a href=http://gdca.zhiyuanit.com>沈阳工业大学 计算机协会</a></u>&nbsp;&nbsp;&nbsp; 程序修改：<u>东冬</u><br>本论坛言论纯属发表者个人意见，与 <a href=http://gdca.zhiyuanit.com>工大计算机协会</a></u> 立场无关</center><hr size=1 color="&c1&" width=94% >"%>

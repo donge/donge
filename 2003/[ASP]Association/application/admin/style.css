@@ -1,0 +1,27 @@
+.main {
+	FONT-SIZE: 12px
+}
+.main1 {
+	FONT-SIZE: 14px
+}
+.main2 {
+	FONT-SIZE: 12px
+}
+.main3 {
+	FONT-SIZE: 7px
+}
+.main4 {
+	FONT-SIZE: 10px
+}
+A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #aa0000; TEXT-DECORATION: underline
+}

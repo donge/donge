@@ -1,0 +1,347 @@
+<html>
+<head>
+<title>Computer Association</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>body,td{FONT-SIZE:9pt}.big{FONT-SIZE:10.5pt}A:link{COLOR: #FFFFFF;TEXT-DECORATION: none}A:visited{COLOR: #FFFFFF;TEXT-DECORATION: none}A:hover{COLOR: #99FFFF;TEXT-DECORATION: none}</style>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+
+<body bgcolor="#003366" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" text="#FFFFFF" link="#FFFF00" vlink="#99FFFF" alink="#99FFFF">
+
+<div id="Layer9" style="position:absolute; left:352px; top:362px; width:43px; height:90px; z-index:3"> 
+  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="160" height="120">
+    <param name="movie" value="image/ca.swf">
+    <param name="quality" value="high">
+    <embed src="image/ca.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="160" height="120"></embed></object>
+</div>
+<script language="JavaScript">
+if (document.all){
+with (document){
+write('<div id="starsDiv" style="position:absolute;top:0px;left:0px">')
+write('<div style="position:relative;width:1px;height:1px;background:#ffffff;font-size:1px;visibility:visible"></div>')
+write('<div style="position:relative;width:1px;height:1px;background:#ffffff;font-size:1px;visibility:visible"></div>')
+write('<div style="position:relative;width:1px;height:1px;background:#ffffff;font-size:1px;visibility:visible"></div>')
+write('<div style="position:relative;width:1px;height:1px;background:#ffffff;font-size:1px;visibility:visible"></div>')
+write('<div style="position:relative;width:1px;height:1px;background:#ffffff;font-size:1px;visibility:visible"></div>')
+write('<div style="position:relative;width:2px;height:2px;background:#ffffff;font-size:2px;visibility:visible"></div>')
+write('<div style="position:relative;width:2px;height:2px;background:#ffffff;font-size:2px;visibility:visible"></div>')
+write('<div style="position:relative;width:2px;height:2px;background:#ffffff;font-size:2px;visibility:visible"></div>')
+write('<div style="position:relative;width:2px;height:2px;background:#ffffff;font-size:2px;visibility:visible"></div>')
+write('<div style="position:relative;width:3px;height:3px;background:#ffffff;font-size:3px;visibility:visible"></div>')
+write('</div>')
+}
+}
+
+if (document.layers)
+{window.captureEvents(Event.MOUSEMOVE);}
+var yBase = 200;
+var xBase = 200;
+var step = 1;
+var currStep = 0;
+var Xpos = 1;
+var Ypos = 1;
+
+if (document.all)
+{
+  function MoveHandler(){
+  Xpos = document.body.scrollLeft+event.x;
+  Ypos = document.body.scrollTop+event.y;
+  }
+  document.onmousemove = MoveHandler;
+}
+
+else if (document.layers)
+{
+  function xMoveHandler(evnt){
+  Xpos = evnt.pageX;
+  Ypos = evnt.pageY;
+  }
+  window.onMouseMove = xMoveHandler;
+}
+
+function animateLogo() {
+if (document.all)
+{
+ yBase = window.document.body.offsetHeight/6;
+ xBase = window.document.body.offsetWidth/6;
+}
+else if (document.layers)
+{
+ yBase = window.innerHeight/8;
+ xBase = window.innerWidth/8;
+}
+
+if (document.all)
+{
+ for ( i = 0 ; i < starsDiv.all.length ; i++ )
+ {
+  starsDiv.all[i].style.top = Ypos + yBase*Math.sin((currStep + i*4)/12)*Math.cos(400+currStep/200);
+ starsDiv.all[i].style.left = Xpos + xBase*Math.sin((currStep + i*3)/10)*Math.sin(currStep/200);
+ }
+}
+
+else if (document.layers)
+{
+ for ( j = 0 ; j < 10 ; j++ ) //number of NS layers!
+ {
+  var templayer="a"+j
+  document.layers[templayer].top = Ypos + yBase*Math.sin((currStep + j*4)/12)*Math.cos(400+currStep/200);
+  document.layers[templayer].left = Xpos + xBase*Math.sin((currStep + j*3)/10)*Math.sin(currStep/200);
+ }
+}
+currStep+= step;
+setTimeout("animateLogo()", 30);
+}
+animateLogo();
+</script>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td background="image/obj_top.jpg" height="175" valign="top"> 
+      <table border="0" cellspacing="0" cellpadding="0" background="">
+        <tr> 
+          <td width="8"><img src="image/transparent.gif" width="30" height="155"></td>
+          <td width="143">&nbsp;</td>
+          <td> 
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p><img src="image/banner.gif" width="468" height="60"></p></td>
+        </tr>
+        <tr> 
+          <td width="8" height="20">&nbsp;</td>
+          <td width="143" height="20"><img src="image/title.gif" width="215" height="34"></td>
+          <td width="143" height="20">&nbsp;</td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td background="image/obj_menu.gif" height="9"> 
+      <table border="0" cellspacing="0" cellpadding="0" background="" width="441">
+        <tr> 
+          <td colspan="2" height="2"><img src="image/transparent.gif" width="4" height="4"></td>
+        </tr>
+        <tr> 
+          <td width="40" height="7"><img src="image/transparent.gif" width="40" height="20"></td>
+          <td valign="top"> 
+            <p><a href="index.html">网站首页</a> | <a href="html/message_fset.html">最新动态</a> 
+              | <a href="html/about_fset.html">协会介绍</a> | <a href="html/plofile_fset.html">活动安排</a> 
+              | <a href="html/link_fset.html">友情链接</a> | <a href="application/register_1.asp" target="_blank">网上报名</a></p>
+            </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td height="18">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="338" background="image/bg.jpg"> 
+      <table border="0" cellspacing="0" cellpadding="0" width="389"background="">
+        <tr> 
+          <td width="30">&nbsp;</td>
+          <td width="359"><img src="image/obj_text_news.gif" width="359" height="16"></td>
+        </tr>
+        <tr> 
+          <td width="30"><img src="image/transparent.gif" width="30" height="20"></td>
+          <td width="359">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="30"><img src="image/transparent.gif" width="30" height="20"></td>
+          <td width="359">&nbsp;&nbsp;&nbsp;&nbsp;计算机协会是校团委所属二十个注册协会之一。计算机协会一方面不断自我完善，加强了组织的严密性和分工的准确性，通过内部的整合提高了工作效率，另一方面则积极利用各种学校资源和社会资源的禀赋，开创出一整套适合高校学生参与的规则，推出了大量内容充实、形式新颖的活动。<br> 
+            <br> </td>
+        </tr>
+        <tr> 
+          <td width="30">&nbsp;</td>
+          <td width="359"><img src="image/obj_text_whats_new.gif" width="359" height="16"></td>
+        </tr>
+        <tr> 
+          <td width="30">&nbsp;</td>
+          <td width="359"> <br>
+            <table width="300" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="31"><img src="image/p_new_anime.gif" width="28" height="14"></td>
+                <td width="269">2003/09/05</td>
+              </tr>
+            </table>
+            迎新生入校，计算机协会网上注册系统启动...<a href="application/register_1.asp" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif"><strong><font color="#FFFF00">Join 
+            Now!</font><br>
+            </strong></font></a><br> <br> <table width="300" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="31"><img src="image/p_new_anime.gif" width="28" height="14"></font></td>
+                <td width="269">2003/09/01</font></td>
+              </tr>
+            </table>
+            由计算机协会主办的攒机大赛以及CS大赛正在筹划之中...<br> <br> <br> <table width="300" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="31"><img src="image/p_new_anime.gif" width="28" height="14"></td>
+                <td width="269">2003/09/01</td>
+              </tr>
+            </table>
+            计算机协会网站正式启动。<br>
+            网址 <a href="http://gdca.zhiyuanit.com"><font color="#FFFF00">http://gdca.zhiyuanit.com</font></a></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="30">&nbsp;</td>
+          <td width="359"><div align="right">沈阳工业大学 计算机协会</div></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p><div id="dd" style="position:absolute; left:215px; top:92px; width:100px; height:100px; z-index:2"><a href="application/register_1.asp" target="_blank"><img src="image/baoming.gif" width="100" height="100" border="0"></a></div>
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+
+var xPos = 20;
+
+var yPos = document.body.clientHeight;
+
+var step = 1;
+
+var delay = 15; 
+
+var height = 0;
+
+var Hoffset = 0;
+
+var Woffset = 0;
+
+var yon = 0;
+
+var xon = 0;
+
+var pause = true;
+
+var interval;
+
+dd.style.top = yPos;
+
+function changePos() {
+
+width = document.body.clientWidth;
+
+height = document.body.clientHeight;
+
+Hoffset = dd.offsetHeight;
+
+Woffset = dd.offsetWidth;
+
+dd.style.left = xPos + document.body.scrollLeft;
+
+dd.style.top = yPos + document.body.scrollTop;
+
+if (yon) {
+
+yPos = yPos + step;
+
+}
+
+else {
+
+yPos = yPos - step;
+
+}
+
+if (yPos < 0) {
+
+yon = 1;
+
+yPos = 0;
+
+}
+
+if (yPos >= (height - Hoffset)) {
+
+yon = 0;
+
+yPos = (height - Hoffset);
+
+}
+
+if (xon) {
+
+xPos = xPos + step;
+
+}
+
+else {
+
+xPos = xPos - step;
+
+}
+
+if (xPos < 0) {
+
+xon = 1;
+
+xPos = 0;
+
+}
+
+if (xPos >= (width - Woffset)) {
+
+xon = 0;
+
+xPos = (width - Woffset);
+
+   }
+
+}
+
+function start() {
+
+dd.visibility = "visible";
+
+interval = setInterval('changePos()', delay);
+
+}
+
+function pause_resume() {
+
+if(pause) {
+
+clearInterval(interval);
+
+pause = false;
+
+}
+
+else {
+
+interval = setInterval('changePos()',delay);
+
+pause = true;
+
+   }
+
+}
+
+start();
+
+//  End -->
+
+</script>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
