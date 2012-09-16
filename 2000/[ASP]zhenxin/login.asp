@@ -1,0 +1,18 @@
+<html>
+
+<head>
+<title>π‹¿Ì’ﬂµ«¬Ω</title>
+<link rel="stylesheet" href="article/style.CSS">
+</head>
+
+<body>
+<div align="center"> 
+  <center>
+    <form method="post" action="check.asp">
+      <input type="password" name="password" maxlength="30" class="smallInput"
+              size="30">
+    </form>
+  </center>
+</div>
+</body>
+</html>

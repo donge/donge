@@ -1,0 +1,17 @@
+str=str+"<table border='0' cellspacing='0' cellpadding='0' width='500'><tr><td>";
+str=str+"<table border='0' cellspacing='0' cellpadding='0' width='100%' align='center'><tr><td>";
+str=str+"<table width='30%' border='0' cellpadding='0' cellspacing='0' bordercolordark='#FFFFFF'><tr> <td width='15' height='15' bgcolor='#000000'><a href='http://www.zhiyuanit.com/link' target='_blank'><img src='http://www.zhiyuanit.com/link/images/xin.gif' width='15' height='15' border='0'></a></td><td valign='bottom' bgcolor='#000000'><font  style='font-size: 9pt' color='#ffffff'>&nbsp;<a href='http://www.zhiyuanit.com/link' style='color: rgb(255,255,255); text-decoration: none'>真心链</a> - <a href='http://www.zhiyuanit.com/link/view.asp?oid=<%=oid%>' target=_blank  style='color: rgb(255,255,255); font-size: 9pt; text-decoration: none' title='<%=jiji(10)%>'><%=zcount%></a></font></td><td width='15' height='15'><img src='http://www.zhiyuanit.com/link/images/blank.gif' width='15' height='15'></td></tr></table></td>";
+str=str+"</tr></table></td></tr><tr><td>";
+str=str+"<table borderColorDark='#ffffff' borderColorLight='#000000' border='1' width='100%' cellPadding='0' cellSpacing='0' <%=bcstr%>>";
+str=str+"<tr align='center'>";
+str=str+" <td><a href='http://ligangde.xiloo.com/' style='font-size: 9pt; text-decoration: none' title='少女最迷人之处图库' target=_blank><b><font color='#FF0000'>少女最迷人之处</font></b></a></td>          <td><a href='http://www.zhiyuanit.com/link/' style='font-size: 9pt; text-decoration: none' title='现在注册真心链！可得10000次的广告发放！' target=_blank><b><font color='#FF0000'>狂增你的访问量</font></b></a></td>          <td width='60%' colspan='3' align='left'><div align='center'><a href='http://www.zhiyuanit.com/link' style='font-size: 9pt; text-decoration: none' title='你还在为访问量发愁吗？赶快加入真心链。她能使你的访问量狂增10倍！' target=_blank>真心链10:1文本广告交换系统正式启动，快来注册啊！</a></div></td></tr>";
+str=str+"<tr align='center'><td><a href=<%=url(0)%> target=_blank  style='font-size: 9pt; text-decoration: none' title='<%=jiji(0)%>'><%=urlname(0)%></a></td>";
+str=str+"<td width='20%'><a href=<%=url(1)%>  style='font-size: 9pt; text-decoration: none' target=_blank title='<%=jiji(1)%>'><%=urlname(1)%></a></td>";
+str=str+"<td width='20%'><a href=<%=url(2)%>  style='font-size: 9pt; text-decoration: none' target=_blank title='<%=jiji(2)%>'><%=urlname(2)%></a></td>";
+str=str+"<td width='20%'><a href=<%=url(3)%>  style='font-size: 9pt; text-decoration: none' target=_blank title='<%=jiji(3)%>'><%=urlname(3)%></a></td>";
+str=str+"<td width='20%'><a href=<%=url(4)%>  style='font-size: 9pt; text-decoration: none' target=_blank title='<%=jiji(4)%>'><%=urlname(4)%></a></td> </tr>";
+str=str+"<tr align='center'><td><a href=<%=url(5)%> target=_blank  style='font-size: 9pt; text-decoration: none' title='<%=jiji(5)%>' ><%=urlname(5)%></a></td>";
+str=str+"<td><a href=<%=url(6)%> target=_blank  style='font-size: 9pt; text-decoration: none' title='<%=jiji(6)%>'><%=urlname(6)%></a></td> ";
+str=str+"<td><a href=<%=url(7)%> target=_blank style='font-size: 9pt; text-decoration: none' title='<%=jiji(7)%>'><%=urlname(7)%></a></td> ";
+str=str+"<td><a href=<%=url(8)%> target=_blank style='font-size: 9pt; text-decoration: none' title='<%=jiji(8)%>'><%=urlname(8)%></a></td>";
+str=str+"<td><a href=<%=url(9)%> target=_blank style='font-size: 9pt; text-decoration: none' title='<%=jiji(9)%>'><%=urlname(9)%></a></td></tr></table></td></tr></table>";
