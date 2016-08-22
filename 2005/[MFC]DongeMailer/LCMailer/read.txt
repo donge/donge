@@ -1,0 +1,611 @@
+
+
+华夏黑客同盟论坛 -> 『 底层核心程序设计 』 -> 我朋友的作品：用汇编语言写ESMTP邮件发送程序  
+
+
+
+风般的男人 2003-05-30 20:30 
+
+
+******************************************** 
+* 作者：老罗 * 
+* 来源：www.luocong.com * 
+******************************************** 
+最近在CSDN论坛上看到许多人问着同一个问题——如何编写带服务器验证的 ESMTP 邮件发送程序，回答的人还真不少：有建议用 MAPI 的、有建议使用别人的类库的……其实我对此是颇不以为然的。ESMTP 的编写并不困难，关键是弄清楚了协议——只要严格按照协议来进行，就一定能OK，反而编程的技巧在此倒是无足轻重的。换句话说，写这个程序是Easy job，没有必要用到 MAPI 等“庞然大物”啊。 
+既然如此，让我们来使用 Win32ASM 编写一个自己的 ESMTP “引擎”，可以用在你的病毒或者木马上哦！ ：） 
+
+我们先来看看 SMTP 的发送协议，在 rfc821(smtp) 和 rfc1521(mime) 里面写得非常清楚，读者请自行参考这两个文档。什么？看不懂英文？……没关系，我给大家整理一下。ESMTP 的整个发送过程如下： 
+
+Socket连接后，按 ESMTP 协议通讯（注意每条命令结尾符“回车\换行\.\回车\换行”结束）： 
+1、EHLO \r\n 
+这条命令可以不要，但是按照标准的写法，还是加上好。 
+Example： EHLO smtp.163.net\r\n 
+2、AUTH LOGIN\r\n 
+告诉服务器，要进行验证了。 
+3、Base64_Username\r\n 
+发送经过 Base64 编码的用户名给服务器。 
+4、Base64_Password\r\n 
+发送经过 Base64 编码的密码给服务器。 
+5、MAIL FROM:\r\n 
+发送者的Email地址。 
+Example： MAIL FROM: lcother@163.net\r\n 
+6、RCPT TO:\r\n 
+目标Email地址。 
+Example： RCPT TO: target@163.net\r\n 
+7、DATA\r\n 
+开始传送数据。 
+8、发送数据\r\n.\r\n 
+注意：SMTP协议只发送信息，至于如何区分CC、BCC、Subject、Body等不属于SMTP的范围，详情请查看RFC文档MAIL格式部分 
+简单说一下MAIL格式：Sunject:<主题>\r\n\r\n<内容>，还有好多…… 
+返回值为“250 ***”表示正常，同时***里含有MessageID等信息（前面的命令都有相应的返回信息） 
+9、QUIT\r\n 
+Over，走人…… 
+
+上面的是 ESMTP 的协议，如果我们严格按照上面的协议，就可以写出 ESMTP 的发送程序了。大家看出来了吗？其实 ESMTP 与 SMTP 唯一不同的地方，就是在于第三步和第四步——缺少了这两个步骤， ESMTP 就等于 SMTP 了。 
+
+至于如何区分正文和附件，其实是在 DATA\r\n 后，通过一个叫做“Boundary”的分隔字符串来分隔开来的，这个“Boundary”可以是任意的字符串，随你喜欢怎么取都行，但是必须注意的是，分隔的时候要按照“--Boundary”的格式，结束的时候要用“--Boundary--”。而附件的内容，是通过 Base64 编码，包含在 DATA 里面进行发送；如果有多个附件，就要进行循环，把每个附件的内容包含进去，直至结束。 
+
+这样说会不会太抽象了？好吧，我举个例子： 
+
+"EHLO smtp.163.net", 13, 10 
+"AUTH LOGIN", 13, 10 
+"lcother", 13, 10 
+"lcother_password", 13, 10 
+"MAIL FROM:lcother@163.net", 13, 10 
+"RCPT TO:target@163.net", 13, 10 
+"DATA", 13, 10 
+"From: 老罗", 13, 10,\ 
+"To: Somebody", 13, 10, \ 
+"Subject: 你好吗？", 13, 10, 0 
+"MIME-Version: 1.0", 13, 10, \ 
+"X-Mailer: LCMailer by LC", 13, 10, \ 
+"Content-type:multipart/mixed;Boundary=www.LuoCong.com", 13, 10, 13, 10, \ 
+"--www.LuoCong.com", 13, 10, \ 
+"Content-type:text/plain;Charset=GB2312", 13, 10, \ 
+"Content-Transfer-Encoding:8bit", 13, 10, 13, 10, \ 
+"好久不见，最近过得好吗？（正文内容）", 13, 10, 13, 10, 0, \ 
+.if (有附件) 
+"--www.luocong.com", 13, 10, \ 
+.while (files to be sent) 
+13, 10, \ 
+13, 10, \ 
+"--", 13, 10, \ 
+"Content-Type:application/octet-stream;Name=文件名", 0, \ 
+"Content-Disposition:attachment;FileName=文件名", 0, \ 
+13, 10, \ 
+"Content-Transfer-Encoding:Base64", 13, 10, 13, 10, 0, \ 
+经过 Base64 编码的文件内容, 13, 10, 0\ 
+.endw 
+.endif 
+13, 10, \ 
+"--www.luocong.com--", \ 
+13, 10, ".", 13, 10 
+"QUIT", 13, 10 
+
+最后我再给出一个用 Win32ASM 写的 ESMTP 发送程序。值得注意的是，为了尽量简化程序，我没有处理服务器返回的消息，而且我在内存的动态分配上偷懒了，附件的发送有可能会出错。如果你有兴趣对它进行研究，请自行想办法解决吧。如果它倒了你的胃口，那……我真的是实在抱歉！ （代码写得很糟糕，我没有时间去 debug 了，见谅！！） 
+
+
+--------------- 主程序 --------------- 
+文件名： smtp.asm 
+-------------------------------------- 
+
+;*********************************************** 
+;程序名称：演示ESmtp发送原理 
+;作者：罗聪 
+;日期：2002-11-2 
+;出处：http://www.luocong.com（老罗的缤纷天地） 
+;注意事项：如欲转载，请保持本程序的完整，并注明： 
+;转载自“老罗的缤纷天地”（http://www.luocong.com） 
+;*********************************************** 
+
+.386 
+.model flat, stdcall 
+option casemap:none 
+
+include \masm32\include\windows.inc 
+include \masm32\include\kernel32.inc 
+include \masm32\include\user32.inc 
+include \masm32\include\comdlg32.inc 
+include \masm32\include\wsock32.inc 
+include \masm32\include\masm32.inc 
+includelib \masm32\lib\kernel32.lib 
+includelib \masm32\lib\user32.lib 
+includelib \masm32\lib\comdlg32.lib 
+includelib \masm32\lib\wsock32.lib 
+includelib \masm32\lib\masm32.lib 
+
+
+WndProc proto :DWORD, :DWORD, :DWORD, :DWORD 
+Base64Encode proto :DWORD, :DWORD, :DWORD 
+
+
+.const 
+IDI_LC equ 1 
+IDC_BUTTON_SEND equ 3000 
+IDC_EDIT_SMTPSERVER equ 3001 
+IDC_EDIT_USERNAME equ 3002 
+IDC_EDIT_PASSWORD equ 3003 
+IDC_EDIT_FROM equ 3004 
+IDC_EDIT_TO equ 3005 
+IDC_EDIT_SUBJECT equ 3006 
+IDC_EDIT_CONTENT equ 3007 
+IDC_EDIT_ATTACHMENT equ 3008 
+IDC_BUTTON_BROWSE equ 3009 
+MAXNUM equ 2048 
+MAXFILESIZE equ 87380 
+
+
+.data 
+szDlgName db "lc_dialog", 0 
+szCaption db "ESmtp demo by LC, 2002-10-12", 0 
+szErrNoDll db "装载winsock.dll时出错！", 0 
+szErrSocket db "建立socket时出错！", 0 
+szErrConnect db "进行连接时出错！", 0 
+szErrAuth db "用户名/密码 验证失败！", 0 
+szSuccessSend db "发送成功！", 0 
+szHeloFmt db "EHLO %s", 13, 10, 0 
+szAuth db "AUTH LOGIN", 13, 10, 0 
+szUsernameFmt db "%s", 13, 10, 0 
+szPasswordFmt db "%s", 13, 10, 0 
+szHeaderFmt db "MAIL FROM:%s", 13, 10 
+db "RCPT TO:%s", 13, 10, 0 
+szBody1Fmt db "DATA", 13, 10 
+db "From:%s", 13, 10 
+db "To:%s", 13, 10 
+db "Subject:%s", 13, 10 
+db "MIME_Version:1.0", 13, 10 
+db "Content-type:multipart/mixed;Boundary=www.LuoCong.com", 13, 10, 13, 10 
+db "--www.LuoCong.com", 13, 10 
+db "Content-type:text/plain;Charset=GB2312", 13, 10 
+db "Content-Transfer-Encoding:8bit", 13, 10, 13, 10 
+db "%s", 13, 10, 13, 10, 0 
+szBody2 db "--www.LuoCong.com", 13, 10, 0 
+szBody3 db "Content-Type:application/octet-stream;Name=", 0 
+szBody4 db 13, 10, 0 
+szBody5 db "Content-Disposition:attachment;FileName=", 0 
+szBody6 db 13, 10, 0 
+szBody7 db "Content-Transfer-Encoding:Base64", 13, 10, 13, 10, 0 
+szBody8 db 13, 10, 13, 10, 0 
+szBodyEnd db "--www.LuoCong.com--" 
+db 13, 10, "." , 13, 10, 0 
+szQuit db "QUIT", 13, 10, 0 
+dwSize dd 0 
+ofn OPENFILENAME <> 
+szFilterString db "所有文件", 0, "*.*", 0, 0 
+szMyTitle db "请打开一个文件作为附件！", 0 
+reply_val dd 0 
+wsadata WSADATA <> 
+sin sockaddr_in <> 
+
+;下面是为了方便调试，预设的各项参数： 
+sz1 db "smtp.163.net", 0 
+sz2 db "lcother", 0 
+sz3 db "lcother", 0 
+sz4 db "lcother@163.net", 0 
+sz5 db "lcother@163.net", 0 
+sz6 db "最近如何？", 0 
+sz7 db "你好吗？", 0 
+
+;Base64 -> ASCII mapping table 
+base64_alphabet db "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=" 
+
+
+.data? 
+hInstance dd ? 
+hSocket dd ? 
+szSmtpServer db 255 dup(?) 
+szFileName db 256 dup(?) 
+szBuffer db MAXNUM dup(?) 
+szBuf1 db MAXNUM dup(?) 
+szBuf2 db MAXNUM dup(?) 
+szBuf3 db MAXNUM dup(?) 
+szHelo db MAXNUM dup(?) 
+szUsername db MAXNUM dup(?) 
+szPassword db MAXNUM dup(?) 
+szHeader db MAXNUM dup(?) 
+szContent db MAXFILESIZE + 2048 dup(?) 
+
+
+.code 
+main: 
+invoke GetModuleHandle, NULL 
+mov hInstance, eax 
+invoke DialogBoxParam, hInstance, offset szDlgName, 0, WndProc, 0 
+invoke ExitProcess, eax 
+
+WndProc proc hWnd:HWND, uMsg:UINT, wParam:WPARAM, lParam:LPARAM 
+LOCAL hfile: HANDLE 
+LOCAL hMapfile: HANDLE 
+LOCAL dwFileSize: DWORD 
+LOCAL pMemory: DWORD 
+LOCAL pContent: DWORD 
+LOCAL pFileContent: DWORD 
+
+.if uMsg == WM_CLOSE 
+invoke EndDialog, hWnd, 0 
+
+.elseif uMsg == WM_INITDIALOG 
+invoke LoadIcon, hInstance, IDI_LC 
+invoke SendMessage, hWnd, WM_SETICON, ICON_SMALL, eax 
+
+;下面是为了方便调试，填入预设的各项参数： 
+invoke SetDlgItemText, hWnd, IDC_EDIT_SMTPSERVER, addr sz1 
+invoke SetDlgItemText, hWnd, IDC_EDIT_USERNAME, addr sz2 
+invoke SetDlgItemText, hWnd, IDC_EDIT_PASSWORD, addr sz3 
+invoke SetDlgItemText, hWnd, IDC_EDIT_FROM, addr sz4 
+invoke SetDlgItemText, hWnd, IDC_EDIT_TO, addr sz5 
+invoke SetDlgItemText, hWnd, IDC_EDIT_SUBJECT, addr sz6 
+invoke SetDlgItemText, hWnd, IDC_EDIT_CONTENT, addr sz7 
+
+.elseif uMsg == WM_COMMAND 
+mov eax, wParam 
+mov edx, eax 
+shr edx, 16 
+movzx eax, ax 
+.if edx == BN_CLICKED 
+.if eax == IDC_BUTTON_SEND 
+;以下是初始化 winsock ： 
+invoke WSAStartup, 101h, addr wsadata 
+.if eax != NULL 
+invoke MessageBox, hWnd, addr szErrNoDll, addr szCaption, MB_OK or MB_ICONHAND 
+.else 
+invoke socket, AF_INET, SOCK_STREAM, 0 
+.if eax == INVALID_SOCKET 
+invoke MessageBox, hWnd, addr szErrSocket, addr szCaption, MB_OK or MB_ICONHAND 
+.else 
+mov hSocket, eax 
+mov sin.sin_family, AF_INET 
+invoke htons, 25 
+mov sin.sin_port, ax 
+invoke GetDlgItemText, hWnd, IDC_EDIT_SMTPSERVER, addr 
+
+
+
+
+
+
+ 
+ 
+
+风般的男人 2003-05-30 20:31 
+szSmtpServer, 255 
+invoke gethostbyname, addr szSmtpServer 
+mov eax, [eax + 12] 
+mov eax, [eax] 
+mov eax, [eax] 
+mov sin.sin_addr, eax 
+invoke connect, hSocket, addr sin, sizeof sin 
+.if eax < 0 
+invoke MessageBox, hWnd, addr szErrConnect, addr szCaption, MB_OK or MB_ICONHAND 
+.else 
+invoke RtlZeroMemory, addr szBuffer, MAXNUM 
+invoke RtlZeroMemory, addr szBuf1, MAXNUM 
+invoke RtlZeroMemory, addr szBuf2, MAXNUM 
+invoke RtlZeroMemory, addr szBuf3, MAXNUM 
+;发送 Helo ： 
+invoke wsprintf, addr szHelo, addr szHeloFmt, addr szSmtpServer 
+invoke lstrlen, addr szHelo 
+invoke send, hSocket, addr szHelo, eax, 0 
+invoke RtlZeroMemory, addr szBuffer, MAXNUM 
+
+;发送 Auth ： 
+invoke lstrlen, addr szAuth 
+invoke send, hSocket, addr szAuth, eax, 0 
+
+;发送 username: 
+invoke GetDlgItemText, hWnd, IDC_EDIT_USERNAME, addr szBuffer, 100 
+invoke Base64Encode, addr szBuffer, addr szBuf1, eax 
+invoke wsprintf, addr szUsername, addr szUsernameFmt, addr szBuf1 
+invoke lstrlen, addr szUsername 
+invoke send, hSocket, addr szUsername, eax, 0 
+invoke RtlZeroMemory, addr szBuf1, MAXNUM 
+invoke RtlZeroMemory, addr szBuffer, MAXNUM 
+
+;发送 password: 
+invoke GetDlgItemText, hWnd, IDC_EDIT_PASSWORD, addr szBuffer, 100 
+invoke Base64Encode, addr szBuffer, addr szBuf1, eax 
+invoke wsprintf, addr szPassword, addr szPasswordFmt, addr szBuf1 
+invoke lstrlen, addr szPassword 
+invoke send, hSocket, addr szPassword, eax, 0 
+invoke RtlZeroMemory, addr szBuf1, MAXNUM 
+invoke RtlZeroMemory, addr szBuffer, MAXNUM 
+
+;获得服务器返回的消息： 
+invoke recv, hSocket, addr szBuffer, MAXNUM, 0 
+invoke RtlZeroMemory, addr szBuffer, MAXNUM 
+invoke recv, hSocket, addr szBuffer, MAXNUM, 0 
+invoke RtlZeroMemory, addr szBuffer, MAXNUM 
+invoke recv, hSocket, addr szBuffer, MAXNUM, 0 
+invoke RtlZeroMemory, addr szBuffer, MAXNUM 
+invoke recv, hSocket, addr szBuffer, MAXNUM, 0 
+invoke RtlZeroMemory, addr szBuffer, MAXNUM 
+invoke recv, hSocket, addr szBuffer, MAXNUM, 0 
+
+;得到返回消息的前三个数字： 
+mov byte ptr [szBuffer + 3], 0 
+invoke atodw, addr szBuffer 
+mov reply_val, eax 
+invoke RtlZeroMemory, addr szBuffer, MAXNUM 
+
+;判断用户名/密码是否正确： 
+.if reply_val != 235 
+invoke MessageBox, hWnd, addr szErrAuth, addr szCaption, MB_OK or MB_ICONHAND 
+.else 
+;发送 Header ： 
+invoke GetDlgItemText, hWnd, IDC_EDIT_FROM, addr szBuf1, MAXNUM 
+invoke GetDlgItemText, hWnd, IDC_EDIT_TO, addr szBuf2, MAXNUM 
+invoke wsprintf, addr szHeader, addr szHeaderFmt, addr szBuf1, addr szBuf2 
+invoke lstrlen, addr szHeader 
+invoke send, hSocket, addr szHeader, eax, 0 
+
+;准备好 Body1 的内容： 
+invoke GetDlgItemText, hWnd, IDC_EDIT_SUBJECT, addr szBuf3, MAXNUM 
+add dwSize, eax 
+invoke GetDlgItemText, hWnd, IDC_EDIT_CONTENT, addr szBuffer, MAXNUM 
+add dwSize, eax 
+;分配内存： 
+;（这里为了方便，只分配了 10000000 个字节， 
+;其实应该根据实际需要进行动态分配，否则有可能会导致错误） 
+invoke LocalAlloc, LPTR, 10000000 
+mov pContent, eax 
+invoke wsprintf, pContent, addr szBody1Fmt, addr szBuf1, addr szBuf2, addr szBuf3, addr szBuffer 
+invoke RtlZeroMemory, addr szBuffer, MAXNUM 
+
+;获取文件名： 
+invoke GetDlgItemText, hWnd, IDC_EDIT_ATTACHMENT, addr szBuffer, MAXNUM 
+.if eax != 0 
+;打开文件： 
+invoke CreateFile, addr szFileName, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL 
+mov hFile, eax 
+
+.if hFile != INVALID_HANDLE_value 
+;获得文件长度： 
+invoke GetFileSize, hFile, NULL 
+mov dwFileSize, eax 
+
+;建立内存映射文件： 
+invoke CreateFileMapping, hFile, NULL, PAGE_READONLY, 0, 0, NULL 
+mov hMapFile, eax 
+
+;映射文件进内存： 
+invoke MapViewOfFile, hMapFile, FILE_MAP_READ, 0, 0, 0 
+mov pMemory, eax 
+
+;分配内存： 
+;（这里为了方便，只分配了 10000000 个字节， 
+;其实应该根据实际需要进行动态分配，否则有可能导致错误） 
+invoke LocalAlloc, LPTR, 10000000 
+mov pFileContent, eax 
+
+;进行Base64转换： 
+invoke Base64Encode, pMemory, pFileContent, dwFileSize 
+
+;准备好 Attachment 的内容： 
+invoke lstrcat, pContent, addr szBody2 
+invoke lstrcat, pContent, addr szBody3 
+invoke lstrcat, pContent, addr szFileName 
+invoke lstrcat, pContent, addr szBody4 
+invoke lstrcat, pContent, addr szBody5 
+invoke lstrcat, pContent, addr szFileName 
+invoke lstrcat, pContent, addr szBody6 
+invoke lstrcat, pContent, addr szBody7 
+invoke lstrcat, pContent, pFileContent 
+invoke lstrcat, pContent, addr szBody8 
+
+;释放内存： 
+invoke LocalFree, pFileContent 
+
+;解除文件映射： 
+invoke UnmapViewOfFile, pMemory 
+;关闭内存映射文件： 
+invoke CloseHandle, hMapFile 
+
+;关闭文件： 
+invoke CloseHandle, hFile 
+.endif 
+.endif 
+
+;连接 "\r\n.\r\n" 到 Content 中： 
+invoke lstrcat, pContent, addr szBodyEnd 
+
+;发送 Content ： 
+invoke lstrlen, pContent 
+invoke send, hSocket, pContent, eax, 0 
+
+invoke LocalFree, pContent 
+
+;发送“QUIT”： 
+invoke send, hSocket, addr szQuit, 4, 0 
+invoke MessageBox, hWnd, addr szSuccessSend, addr szCaption, MB_OK or MB_ICONINformATION 
+.endif 
+.endif 
+invoke closesocket, hSocket 
+.endif 
+invoke WSACleanup 
+.endif 
+
+.elseif eax == IDC_BUTTON_BROWSE 
+;“打开文件”对话框： 
+mov ofn.lStructSize, sizeof ofn 
+push hWnd 
+pop ofn.hwndOwner 
+push hWnd 
+pop ofn.hInstance 
+mov ofn.lpstrFilter, offset szFilterString 
+mov ofn.lpstrFile, offset szFileName 
+mov ofn.nMaxFile, 256 
+mov ofn.Flags, OFN_FILEMUSTEXIST or OFN_PATHMUSTEXIST or OFN_LONGNAMES or OFN_EXPLORER 
+mov ofn.lpstrTitle, offset szMyTitle 
+invoke GetOpenFileName, addr ofn 
+.if eax != 0 
+;设置 IDC_EDIT_ATTACHMENT 的内容为文件名： 
+invoke SetDlgItemText, hWnd, IDC_EDIT_ATTACHMENT, addr szFileName 
+.endif 
+.endif 
+.endif 
+
+.else 
+mov eax, FALSE 
+ret 
+.endif 
+mov eax, TRUE 
+ret 
+WndProc endp 
+
+;********************************************************** 
+;函数功能：进行Base64编码 
+;入口参数： 
+; source = 传入的字符串 
+; sourcelen = 传入的字符串的长度 
+;出口参数： 
+; destination = 返回的编码 
+;********************************************************** 
+Base64Encode proc uses ebx edi esi source:DWORD, destination:DWORD, sourcelen:DWORD 
+
+mov esi, source 
+mov edi, destination 
+@@base64loop: 
+xor eax, eax 
+.if sourcelen == 1 
+lodsb ;source ptr + 1 
+mov ecx, 2 ;bytes to output = 2 
+mov edx, 03D3Dh ;padding = 2 byte 
+dec sourcelen ;length - 1 
+.elseif sourcelen == 2 
+lodsw ;source ptr + 2 
+mov ecx, 3 ;bytes to output = 3 
+mov edx, 03Dh ;padding = 1 byte 
+sub sourcelen, 2 ;length - 2 
+.else 
+lodsd 
+mov ecx, 4 ;bytes to output = 4 
+xor edx, edx ;padding = 0 byte 
+dec esi ;source ptr + 3 (+4-1) 
+sub sourcelen, 3 ;length - 3 
+.endif 
+
+xchg al,ah ;flip eax completely 
+rol eax, 16 ;can this be done faster 
+xchg al,ah 
+
+@@: 
+push eax 
+and eax, 0FC000000h ;get the last 6 high bits 
+rol eax, 6 ;rotate them into al 
+mov al, byte ptr [offset base64_alphabet + eax] ;get encode character 
+stosb ;write to destination 
+pop eax 
+shl eax, 6 ;shift left 6 bits 
+dec ecx 
+jnz @B ;loop 
+
+cmp sourcelen, 0 
+jnz @@base64loop ;main loop 
+
+mov eax, edx ;add padding and null terminate 
+stosd 
+
+ret 
+Base64Encode endp 
+
+end main 
+;******************** over ******************** 
+;by LC 
+
+
+---------- 主程序的资源文件 ---------- 
+文件名： smtp.rc 
+-------------------------------------- 
+
+#include "resource.h" 
+
+#define IDI_LC 1 
+#define IDC_BUTTON_SEND 3000 
+#define IDC_EDIT_SMTPSERVER 3001 
+#define IDC_EDIT_USERNAME 3002 
+#define IDC_EDIT_PASSWORD 3003 
+#define IDC_EDIT_FROM 3004 
+#define IDC_EDIT_TO 3005 
+#define IDC_EDIT_SUBJECT 3006 
+#define IDC_EDIT_CONTENT 3007 
+#define IDC_EDIT_ATTACHMENT 3008 
+#define IDC_BUTTON_BROWSE 3009 
+#define IDC_STATIC -1 
+
+IDI_LC ICON "lc.ico" 
+
+LC_DIALOG DIALOGEX 10, 10, 200, 280 
+style DS_SETFONT | DS_CENTER | WS_MINIMIZEBOX | WS_VISIBLE | WS_CAPTION | WS_SYSMENU 
+CAPTION "ESmtp demo by LC, 2002-11-2" 
+FONT 9, "宋体", 0, 0, 0x0 
+BEGIN 
+GROUPBOX "服务器信息", IDC_STATIC, 5, 5, 190, 60 
+LTEXT "SMTP服务器：", IDC_STATIC, 15, 20, 50, 10 
+LTEXT "用 户 名：", IDC_STATIC, 15, 35, 50, 10 
+LTEXT "密 码：", IDC_STATIC, 15, 50, 50, 10 
+GROUPBOX "邮件信息", IDC_STATIC, 5, 75, 190, 170 
+LTEXT "发信人电邮：", IDC_STATIC, 15, 90, 50, 10 
+LTEXT "收信人电邮：", IDC_STATIC, 15, 105, 50, 10 
+LTEXT "主 题：", IDC_STATIC, 15, 120, 50, 10 
+LTEXT "附 件：", IDC_STATIC, 15, 135, 50, 10 
+EDITTEXT IDC_EDIT_SMTPSERVER, 65, 20, 120, 10, ES_AUTOHSCROLL | NOT WS_BORDER, WS_EX_STATICEDGE 
+EDITTEXT IDC_EDIT_USERNAME, 65, 35, 120, 10, ES_AUTOHSCROLL | NOT WS_BORDER, WS_EX_STATICEDGE 
+EDITTEXT IDC_EDIT_PASSWORD, 65, 50, 120, 10, ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_BORDER, WS_EX_STATICEDGE 
+EDITTEXT IDC_EDIT_FROM, 65, 90, 120, 10, ES_AUTOHSCROLL | NOT WS_BORDER, WS_EX_STATICEDGE 
+EDITTEXT IDC_EDIT_TO, 65, 105, 120, 10, ES_AUTOHSCROLL | NOT WS_BORDER, WS_EX_STATICEDGE 
+EDITTEXT IDC_EDIT_SUBJECT, 65, 120, 120, 10, ES_AUTOHSCROLL | NOT WS_BORDER, WS_EX_STATICEDGE 
+EDITTEXT IDC_EDIT_ATTACHMENT, 65, 135, 100, 10, ES_AUTOHSCROLL | NOT WS_BORDER | ES_READONLY | NOT WS_TABSTOP, WS_EX_STATICEDGE 
+PUSHBUTTON "..", IDC_BUTTON_BROWSE, 170, 135, 15, 10, BS_FLAT | BS_RIGHT | BS_BOTTOM 
+EDITTEXT IDC_EDIT_CONTENT, 15, 150, 170, 85, ES_AUTOVSCROLL | NOT WS_BORDER | WS_VSCROLL | ES_WANTRETURN | ES_MULTILINE, WS_EX_STATICEDGE 
+DEFPUSHBUTTON "发送(&G)", IDC_BUTTON_SEND, 70, 255, 50, 15, BS_FLAT 
+END 
+
+
+我相信我已经把 ESMTP 的协议说明白了。如果你还有不太明白的地方，欢迎给我来信。lcother@163.net 
+ 
+ 
+
+Pamino 2003-05-30 22:08 
+强,这麽厉害的人,赶紧介绍来我们坛子阿~~ 
+
+[em04][em04][em04][em04][em04][em04] 
+ 
+
+iyangjian 2003-05-30 22:56 
+我们欢迎他， 
+
+大家要多贴帖子呀！ 
+ 
+
+kxhu 2003-05-30 23:02 
+欢迎 欢迎 
+ 
+
+67yu67 2003-10-07 21:12 
+高手=技术+利害 
+高手要多关照我们这些菜鸟啊！ 
+ 
+
+steersman 2004-01-08 23:12 
+看不懂！ 
+ 
+
+草哲 2004-02-21 00:56 
+呵呵，是个强人！ 
+ 
+
+白狐 2004-02-22 09:16 
+163的SMTP服务老早就加入了验证 
+最好换一个smtp 
+ 
+
+
+
+查看完整版本: [-- 我朋友的作品：用汇编语言写ESMTP邮件发送程序 --] [-- top --]
+
+
+
+Powered by 77169.com v3.3.2 CE Code ? 2003-05 77169.com 
+Gzip enabled
+
+You can contact us 

@@ -1,0 +1,177 @@
+// Attachment.cpp : implementation file
+//
+
+#include "stdafx.h"
+#include "LCMailer.h"
+#include "Attachment.h"
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+// CAttachment dialog
+
+
+//##ModelId=43B25EC901D5
+CAttachment::CAttachment(CWnd* pParent /*=NULL*/)
+	: CDialog(CAttachment::IDD, pParent)
+{
+	//{{AFX_DATA_INIT(CAttachment)
+		// NOTE: the ClassWizard will add member initialization here
+	//}}AFX_DATA_INIT
+}
+
+
+//##ModelId=43B25EC90242
+void CAttachment::DoDataExchange(CDataExchange* pDX)
+{
+	CDialog::DoDataExchange(pDX);
+	//{{AFX_DATA_MAP(CAttachment)
+	DDX_Control(pDX, IDC_BUTTON_DEL, m_ctrlDel);
+	DDX_Control(pDX, IDC_BUTTON_ADD, m_ctrlAdd);
+	DDX_Control(pDX, IDC_LIST_ATTACHMENT, m_ctrlAttachment);
+	DDX_Control(pDX, IDOK, m_ctrlOK);
+	//}}AFX_DATA_MAP
+}
+
+
+BEGIN_MESSAGE_MAP(CAttachment, CDialog)
+	//{{AFX_MSG_MAP(CAttachment)
+	ON_BN_CLICKED(IDC_BUTTON_ADD, OnButtonAdd)
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_ATTACHMENT, OnItemchangedListAttachment)
+	ON_BN_CLICKED(IDC_BUTTON_DEL, OnButtonDel)
+	//}}AFX_MSG_MAP
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// CAttachment message handlers
+
+//##ModelId=43B25EC90261
+BOOL CAttachment::OnInitDialog() 
+{
+	CDialog::OnInitDialog();
+	
+	// TODO: Add extra initialization here
+
+	//设置 ListCtrl 的附加属性：
+	DWORD dwExStyles = m_ctrlAttachment.GetExtendedStyle();
+	dwExStyles |=	LVS_EX_FULLROWSELECT |
+					LVS_EX_GRIDLINES |
+					LVS_EX_ONECLICKACTIVATE |
+					LVS_EX_FLATSB |
+					LVS_EX_TRACKSELECT;
+	m_ctrlAttachment.SetExtendedStyle(dwExStyles);
+
+	//获得 ListCtrl 的 rect：
+	CRect rect;
+	m_ctrlAttachment.GetClientRect(rect);
+
+	//添加 ListCtrl 的 Columns ：
+	m_ctrlAttachment.InsertColumn(0, "文件名称", LVCFMT_LEFT, 2 * rect.Width() / 3);
+	m_ctrlAttachment.InsertColumn(1, "文件大小", LVCFMT_LEFT, rect.Width() / 3);
+
+	//初始化“附件列表”：
+	for(int i = 0; i < m_pLCMailerDlg->m_szFilenames.GetSize(); i++)
+	{
+		//在列表中添加“文件名”：
+		m_ctrlAttachment.InsertItem(i, m_pLCMailerDlg->m_szFilenames.GetAt(i));
+		HANDLE hFile = CreateFile(m_pLCMailerDlg->m_szFilenames.GetAt(i), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+		if(hFile != INVALID_HANDLE_VALUE)
+		{
+			//在列表中添加“文件大小”：
+			DWORD dwFileSize = GetFileSize(hFile, NULL);
+			CString szTemp;
+			szTemp.Format("%2.2f KB", (float)dwFileSize / 1024);
+			m_ctrlAttachment.SetItem(i, 1, LVIF_TEXT, szTemp, 0, LVIS_SELECTED, LVIS_SELECTED, 0);
+			CloseHandle(hFile);
+		}
+	}
+
+	//初始化“删除”按钮的状态，使它成为不可用：
+	m_ctrlDel.EnableWindow(FALSE);
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+	              // EXCEPTION: OCX Property Pages should return FALSE
+}
+
+//##ModelId=43B25EC90263
+void CAttachment::OnButtonAdd() 
+{
+	// TODO: Add your control notification handler code here
+
+	OPENFILENAME ofn;
+	CString szFile;
+
+	//初始化 ofn 的值：
+	ZeroMemory(&ofn, sizeof(OPENFILENAME));
+	ofn.lStructSize = sizeof(OPENFILENAME);
+	ofn.hwndOwner = this->GetSafeHwnd();
+	ofn.lpstrFile = szFile.GetBuffer(256);
+	ofn.nMaxFile = 256;
+	ofn.lpstrFilter = "所有文件 (*.*)\0*.*\0可执行文件 (*.exe)\0*.exe\0Word文档 (*.doc)\0*.doc\0文本文件 (*.txt)\0*.txt\0";
+	ofn.nFilterIndex = 1;
+	ofn.lpstrFileTitle = NULL;
+	ofn.nMaxFileTitle = 0;
+	ofn.lpstrInitialDir = NULL;
+	ofn.lpstrTitle = "请选择附件…";
+	ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST | OFN_LONGNAMES | OFN_EXPLORER;
+
+	//“打开文件”对话框：
+	if(GetOpenFileName(&ofn) == TRUE)
+	{
+		//在列表中添加“文件名”：
+		int nCount = m_ctrlAttachment.GetItemCount();
+		m_ctrlAttachment.InsertItem(nCount, szFile);
+		HANDLE hFile = CreateFile(szFile, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+		if(hFile != INVALID_HANDLE_VALUE)
+		{
+			//在列表中添加“文件大小”：
+			DWORD dwFileSize = GetFileSize(hFile, NULL);
+			CString szTemp;
+			szTemp.Format("%2.2f KB", (float)dwFileSize / 1024);
+			m_ctrlAttachment.SetItem(nCount, 1, LVIF_TEXT, szTemp, 0, LVIS_SELECTED, LVIS_SELECTED, 0);
+			//把“文件名”添加进附件文件列表变量中：
+			m_pLCMailerDlg->m_szFilenames.Add(szFile);
+			CloseHandle(hFile);
+		}
+	}
+	szFile.ReleaseBuffer();
+}
+
+//##ModelId=43B25EC90272
+void CAttachment::OnItemchangedListAttachment(NMHDR* pNMHDR, LRESULT* pResult) 
+{
+	NM_LISTVIEW* pNMListView = (NM_LISTVIEW*)pNMHDR;
+	// TODO: Add your control notification handler code here
+
+	//得到当前被选择的 Item 的 Index ：
+	int nItem = -1;
+	nItem = m_ctrlAttachment.GetNextItem(nItem, LVNI_SELECTED);
+
+	//通过判断当前是否有选择 Item ，如果有的话，就 Enable 按钮"Del" ，否则就 Disable 按钮"Del" ：
+	if(nItem != -1)
+		m_ctrlDel.EnableWindow(TRUE);
+	else
+		m_ctrlDel.EnableWindow(FALSE);
+
+	*pResult = 0;
+}
+
+//##ModelId=43B25EC90290
+void CAttachment::OnButtonDel() 
+{
+	// TODO: Add your control notification handler code here
+
+	//得到当前被选择的 Item 的 Index ：
+	int nItem = -1;
+	nItem = m_ctrlAttachment.GetNextItem(nItem, LVNI_SELECTED);
+	
+	//从列表中删除：
+	m_ctrlAttachment.DeleteItem(nItem);
+
+	//从附件文件列表变量中删除：
+	m_pLCMailerDlg->m_szFilenames.RemoveAt(nItem);
+}

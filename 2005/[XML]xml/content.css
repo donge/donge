@@ -1,0 +1,35 @@
+div#book div.btn_goback{
+	text-align:right;
+	padding:5px;
+	background-color:#555555;
+}
+div.author{margin:0px 10px; line-height:24px;}
+h1{ font-size:16px}
+span.time{ margin:0px 10px;}
+div#frame{
+	color:#000;
+	background:#fff;
+	margin:20px;
+	padding:20px;
+}
+div#framebg{
+	background:url(p_bg.png);
+}
+div#frame p{
+	text-align:left;
+	text-indent:2em;
+	line-height:30px;
+	margin:0px 0px 30px 0px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+div#pages{
+	text-align:right;
+	padding:5px 10px 5px 5px;
+	background-color:#555555;
+	color:#fff;
+}
+div#pages a{
+	padding-right: 10px;
+	padding-left: 10px;
+}

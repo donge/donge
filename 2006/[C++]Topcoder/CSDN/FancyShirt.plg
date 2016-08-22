@@ -1,0 +1,36 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: FancyShirt - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP80.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/FancyShirt.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"F:\Topcoder\SRM\FancyShirt.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP80.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP81.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/FancyShirt.pdb" /debug /machine:I386 /out:"Debug/FancyShirt.exe" /pdbtype:sept 
+.\Debug\FancyShirt.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP81.tmp"
+<h3>Output Window</h3>
+Compiling...
+FancyShirt.cpp
+F:\Topcoder\SRM\FancyShirt.cpp(30) : error C2664: 'int *__thiscall std::vector<int,class std::allocator<int> >::erase(int *)' : cannot convert parameter 1 from 'int' to 'int *'
+        Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+F:\Topcoder\SRM\FancyShirt.cpp(31) : error C2664: 'int *__thiscall std::vector<int,class std::allocator<int> >::erase(int *)' : cannot convert parameter 1 from 'int' to 'int *'
+        Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+FancyShirt.exe - 2 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

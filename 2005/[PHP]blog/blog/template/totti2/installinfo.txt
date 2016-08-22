@@ -1,0 +1,5 @@
+<?
+$thistemname="Totti2# template - Simple Blue";
+$thisauthor="totti";
+$thisdesc="Totti's 2# template";
+$thisthumb="totti2.jpg";

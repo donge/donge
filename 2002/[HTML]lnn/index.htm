@@ -1,0 +1,197 @@
+<HTML><HEAD><TITLE>东北大学秦皇岛分校 3024班</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META content="Insert Description Here" name=description>
+<META content="Insert Keywords Here" name=keywords>
+<STYLE type=text/css>A:link {
+	COLOR: #cbac57; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #cbac57; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #cbac57; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #b28816; TEXT-DECORATION: none
+}
+BODY {
+	OVERFLOW: hidden; scrollbar-face-color: #000000; scrollbar-shadow-color: #CBAC57; scrollbar-highlight-color: #CBAC57; scrollbar-3dlight-color: #000000; scrollbar-darkshadow-color: #000000; scrollbar-track-color: #000000; scrollbar-arrow-color: #CBAC57
+}
+</STYLE>
+
+<META content="Microsoft FrontPage 4.0" name=GENERATOR></HEAD>
+<BODY bgColor=#000000 leftMargin=0 topMargin=0 marginheight="0" marginwidth="0">
+<CENTER>
+<TABLE height="100%" width="100%">
+  <TBODY>
+  <TR>
+        <TD align=middle><img src="images/title.gif" width="406" height="61"><br>
+          <P><font color="#cbac57" size="3">经济管理系 
+          国际经济与贸易专业 2002级四班</font> <BR>
+          <BR><A 
+      href="main.htm"><IMG alt=Enter 
+      border=0 height=116 src="images/enter.gif" width=168></A> 
+      <BR><BR><BR><BR>
+            <!-- Copyright -->
+            <FONT color=#cbac57 face=Arial  
+      size=1><STRONG>Copyright &copy; 2002 XSFH Design. All rights reserved.<BR> 
+            Best viewed in IE5+ 1024x768 16bit colors.</STRONG></FONT></TD></TR></TBODY></TABLE></CENTER><Object ID="AgentControl" Width=0 Height=0 ClassID="CLSID:D45FD31B-5C6E-11D1-9EC1-00C04FD7081F" CodeBase="#VERSION=2,0,0,0"> 
+</Object> 
+<Script Language="JavaScript"> 
+<!--// 
+// * Character Objects 
+var Merlin; 
+ 
+// * Variables 
+var UsedChars; 
+var MerlinID; 
+var MerlinACS; 
+var MerlinURL; 
+var MerlinStates; 
+var MerlinAnimations; 
+var MerlinReq; 
+var MerlinStatesReq; 
+var MerlinAnimationsReq; 
+var MerlinLoaded; 
+var LoadReq; 
+var HideReq; 
+var MerlinLeftX, MerlinCenterX, MerlinRightX; 
+var MerlinTopY, MerlinCenterY, MerlinBottomY; 
+ 
+// * Initialize 
+UsedChars = "Merlin"; 
+ 
+// * Merlin 
+MerlinID = "Merlin"; 
+MerlinACS = "merlin.acs"; 
+MerlinURL = "http://agent.microsoft.com/agent2/chars/merlin/merlin.acf"; 
+MerlinStates = "Showing, Hiding, Speaking, Moving, Gesturing, Idling, Hearing, Listening"; 
+MerlinAnimations = "GestureLeft, Surprised,GestureRight"; 
+MerlinLoaded = false; 
+ 
+ 
+Window_OnLoad(); 
+ 
+function Window_OnLoad() { 
+    // Purpose:  Runs automatically when page is loaded 
+ 
+    // * INSERT ANY NON-AGENT RELATED SCRIPTING HERE 
+ 
+    AgentControl.Connected = true; 
+ 
+    MerlinLoaded = LoadLocalAgent(MerlinID, MerlinACS); 
+ 
+    if (MerlinLoaded) { 
+        SetCharObj(); 
+    } 
+    CheckLoadStatus(); 
+} 
+ 
+function LoadLocalAgent(CharID, CharACS) { 
+    // Purpose:  Attempts to load the specified character 
+    // Returns:  true if successful, false if not 
+ 
+    AgentControl.RaiseRequestErrors = false; 
+    LoadReq = AgentControl.Characters.Load(CharID, CharACS); 
+    AgentControl.RaiseRequestErrors = true; 
+ 
+    if (LoadReq.Status != 1) { 
+        return(true); 
+    } 
+    return(false); 
+} 
+ 
+function SetCharObj() { 
+    // Purpose:  Sets the character reference and TTS Language ID 
+ 
+    Merlin = AgentControl.Characters.Character(MerlinID); 
+    Merlin.LanguageID = 0x409; 
+} 
+ 
+function CheckLoadStatus() { 
+    // Purpose:  Determines if required characters have been loaded. 
+    //           If not, issue request to load next character 
+    //           else run the AgentIntro routine 
+ 
+    if (!MerlinLoaded) { 
+        window.status = "Loading " + MerlinID + " Character.  Please Wait..."; 
+        MerlinReq = AgentControl.Characters.Load(MerlinID, MerlinURL); 
+        return(false); 
+    } 
+ 
+    window.status = ""; 
+    AgentIntro(); 
+    return(true); 
+} 
+ 
+function LoadError() { 
+    var strMsg; 
+    window.status = ""; 
+    strMsg = "Error Loading Character: " + MerlinID + "\n"; 
+    strMsg = strMsg + "This Microsoft Agent Script requires the character(s):\n"; 
+    strMsg = strMsg + UsedChars; 
+    alert(strMsg); 
+} 
+function GetScreenPositions() { 
+    var ScreenWidth = window.screen.width; 
+    var ScreenHeight = window.screen.height; 
+ 
+    if ((ScreenWidth == 0) || (ScreenHeight == 0)) { 
+        ScreenWidth = 800; 
+        ScreenHeight = 600; 
+    } 
+ 
+    MerlinCenterX = (parseInt(ScreenWidth / 2) - parseInt(Merlin.Width / 2)); 
+    MerlinRightX = (ScreenWidth - Merlin.Width); 
+    MerlinCenterY = (parseInt(ScreenHeight / 2) - parseInt(Merlin.Height / 2)); 
+    MerlinBottomY = (ScreenHeight - Merlin.Height); 
+} 
+ 
+function InitAgentCommands() { 
+    // Purpose:  Initialize the Commands menu 
+ 
+    Merlin.Commands.RemoveAll(); 
+    Merlin.Commands.Caption = "My Menu Name"; 
+    Merlin.Commands.Add("ACO", "Advanced Character Options", "Advanced Character Options"); 
+} 
+ 
+function AgentIntro() { 
+    GetScreenPositions(); 
+    InitAgentCommands(); 
+ 
+//修改默林的行为 
+    Merlin.MoveTo(MerlinLeftX, MerlinTopY); 
+    Merlin.Show(); 
+    Merlin.MoveTo(400,250); 
+    Merlin.Speak("Hello! Welcome to NorthEast University! "); 
+    Merlin.Speak("What do you want to know about me?"); 
+    Merlin.Speak("This web will show you our class."); 
+    Merlin.Play("GestureLeft"); 
+    Merlin.Speak("It is every day happy to wish you!"); 
+    Merlin.Play("GestureRight"); 
+    Merlin.Speak("Of course, you can see this web on the Internet !"); 
+    Merlin.Play("Gestureup"); 
+    Merlin.Think("http://021411.126.com"); 
+    Merlin.Play("Surprised"); 
+    Merlin.Play("Surprised"); 
+    Merlin.Speak("OK! Welcome to NorthEast University next time!"); 
+    Merlin.Play("Surprised"); 
+    Merlin.MoveTo(800,1); 
+    Merlin.Speak("Bye...! You Lucky!"); 
+    Merlin.Play("Surprised"); 
+    Merlin.Play("Surprised"); 
+    Merlin.hide(); 
+//可修改代码结束     
+ 
+} 
+//--> 
+</Script> 
+
+</BODY></HTML>  
+  
+  
+ 
+ 
+ 
+
+

@@ -1,0 +1,104 @@
+
+<html>
+<head>
+<title></title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312"> 
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="expires" content="wed, 26 Feb 1997 08:21:57 GMT">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script language="JavaScript">
+if (self==top){self.location.href="default.asp"};
+
+var w=160;
+function closenavi() {
+w-=160;
+if (w>-10) {window.parent.testframeset.cols = ''+w+',*';repeat=setTimeout("closenavi()",10);}
+else {clearTimeout(repeat);w=160;}
+}
+
+function initIt(){
+        divCount = document.all.tags("DIV");
+        for (i=0; i<divCount.length; i++) {
+            obj = divCount(i);
+            if (obj.className == "child" || obj.className == "child1") obj.style.display = "none";
+        }
+}
+
+function expandIt(el) {
+
+        obj = eval("page" + el);
+        obj2 = eval("main" + el);
+        if (obj.style.display == "none") {
+            obj.style.display = "block";
+			obj2.all.tags('img')[0].src='../images/icon-folder1-open.gif';
+			obj2.all.tags('img')[1].src='../images/icon-folder-open.gif';
+        }
+        else {
+            obj.style.display = "none";
+			obj2.all.tags('img')[0].src='../images/icon-folder1-close.gif';
+			obj2.all.tags('img')[1].src='../images/icon-folder-close.gif';
+        }
+
+}
+
+onload = initIt;
+
+var judge=0;
+function expandall(o) {
+if (judge==0) {divCount2 = document.all.tags("DIV");
+        for (i=0; i<divCount2.length; i++) {
+            obj2 = divCount2(i);
+            if (obj2.className == "child" || obj.className == "child1" || obj2.style.display == "none") 
+			{obj2.style.display = "block";}
+			if (obj2.className == "menu")
+			{obj2.all.tags('img')[0].src='../images/icon-folder1-open.gif';
+            obj2.all.tags('img')[1].src='../images/icon-folder-open.gif';
+            }
+}
+
+judge=1;
+o.src='../images/icon-closeall.gif';
+o.alt='全部折叠';
+}
+else {divCount2 = document.all.tags("DIV");
+        for (i=0; i<divCount2.length; i++) {
+            obj2 = divCount2(i);
+            if (obj2.className == "child" || obj.className == "child1" || obj2.style.display == "block") 
+			{obj2.style.display = "none";}
+			if (obj2.className == "menu")
+			{obj2.all.tags('img')[0].src='../images/icon-folder1-close.gif';
+            obj2.all.tags('img')[1].src='../images/icon-folder-close.gif';
+            }
+}
+
+judge=0;
+o.src='../images/icon-expandall.gif';
+o.alt='全部展开';
+}
+}
+
+function about() { 
+showModalDialog('../about/about.htm',window,'dialogHeight:245px;dialogWidth:365px;dialogleft:200px;dialogtop:100px;help:no;status:no;scroll:no');
+}
+
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" oncontextmenu="return false;" onselectstart="return false">
+<table id=control width="100%" border="0" cellspacing="0" cellpadding="0" class="borderon"> 
+</table>
+<TABLE class=maginTable height="100%" cellSpacing=0 cellPadding=0 
+      width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=dowmBorder width=130 height="100%"><IFRAME name=menuFrame 
+            marginWidth=0 marginHeight=0 
+            src="frame.htm" frameBorder=0 width="100%" 
+            height="100%"></IFRAME></TD>
+          
+          </TR></TBODY></TABLE>
+
+
+</body>
+</html>

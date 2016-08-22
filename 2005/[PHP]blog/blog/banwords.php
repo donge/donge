@@ -1,0 +1,1 @@
+法轮,法輪,江泽民,李鹏,邓小平,共产党,中共,朱鎔基,胡锦涛,六四,迫害,大法弟,陈水扁,吕秀莲,阿扁,李登辉,温家宝,A片,六合彩,做爱,性交,fuck,shit,sex,suck,falun,台独,性爱,成人,adult,nake,nude,nudity,屌,asshole,slut,bitch,他妈的,你妈的,操你,我操

@@ -1,0 +1,5 @@
+<?
+$thistemname="Clean";
+$thisauthor="Bob";
+$thisdesc="Clean";
+$thisthumb="clean.gif";

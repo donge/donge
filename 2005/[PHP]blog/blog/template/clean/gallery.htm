@@ -1,0 +1,66 @@
+<!-- BEGIN maingal -->
+<span class="title">{galleryname}</span><br><br>
+{gallerymain}
+<!-- END maingal -->
+
+<!-- BEGIN eachgal -->
+<table border="0" cellpadding="0" cellspacing="0" width="80%" align="center">
+	<tr>
+		<td class="comments2">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="comgrey">
+	<tr>
+		<td class="comments-title"><a href="blog.php?job=gallery&amp;a=f&amp;fid={dir}">{name}</a></td>
+	</tr>
+	<tr>
+		<td class="details">{description}</td>
+	</tr>
+	<tr>
+		<td height="20">&nbsp;</td>
+	</tr>
+</table>
+		</td>
+	</tr>
+</table>
+<!-- END eachgal -->
+
+<!-- BEGIN eachpic -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+		<td align="center"><a href="blog.php?job=gallery&amp;pid={url}" onfocus="this.blur()"><img src="{img}" border="0" alt="{pic_des}" /></a></td>
+	</tr>
+	<tr>
+		<td align="center">{pic_des}<br><span class="details">{pic_name}</span><br>&nbsp;</td>
+	</tr>
+</table>
+<!-- END eachpic -->
+
+<!-- BEGIN viewbar -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="comgrey">
+	<tr>
+		<td><b>{galname}</b></td>
+		<td align="right"><a href="#"><img src="blog/template/clean/info.gif" border="0" alt="{gal_des}"/></a> 
+<a href="blog.php?job=gallery"><img src="blog/template/clean/back.gif" border="0" alt="{langup}"/></a> 
+<a href="blog.php?job=gallery&amp;a=s&amp;fid={fid}"><img src="blog/template/clean/slideshow.gif" border="0" alt="{langslide}"/></a></td>
+	</tr>
+</table>
+<br/>
+<!-- END viewbar -->
+
+<!-- BEGIN seepic -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+		<td colspan="3" align="center"><b>{pic_des}</b></td>
+	</tr>
+	<tr>
+		<td colspan="3" align="center"><a href='{trueurl}' title='click to view in new window' target='_blank'><img  src='{trueurl}' border="0" onload='if(this.width>706) {this.resized=true; this.width=706;}'></a></td>
+	</tr>
+	<tr>
+		<td align="left" width="100%" colspan="3">&nbsp;</td>
+	</tr>
+	<tr>
+		<td align="left" width="33%" class="date">{previousone}</td>
+		<td align="center" width="34%" class="date">{return}</td>
+		<td align="right" width="33%" class="date">{nextone}</td>
+	</tr>
+</table>
+<!-- END seepic -->

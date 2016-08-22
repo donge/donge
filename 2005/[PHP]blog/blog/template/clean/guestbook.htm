@@ -1,0 +1,49 @@
+<!-- BEGIN gbfile -->
+<div class="title">{gbtitle}</div>
+<div class="artwidth">
+<div class="artmain">
+{submitformpart} {gbmainpart}
+<div class="date">{pagepart1}&nbsp;&nbsp;&nbsp;&nbsp;{pagepart2}</div>
+</div>
+</div>
+<!-- END gbfile -->
+
+<!-- BEGIN submitform -->
+<form name="form" method="post" action="{gbaction}">
+{gbname} <input name="gname" type="text" id="name" size="15" maxlength="95" value="{nowuserid}"/> <span class="red">
+*</span><br/>
+{gbpage} <input name="ghomepage" type="text"  id="homepage" value="{nowuserhomepage}" size="20" maxlength="95"/> <br/>
+{gbmail} <input name="gemail" type="text"  id="email" value="{nowuseremail}" size="20" maxlength="95"/> <br/>
+{gbcontent}{ubbextension} <br/>
+<textarea name="gmessage" cols="60" rows="7" id="message"></textarea><span class="red">
+*</span>{emots} 
+<br/><br/>
+{validation}
+ <input name="grestrict" type="checkbox"  value="1" />{gbonly} &nbsp;&nbsp;<input type='checkbox' name='closeubbonce' value='1'/>{noubb}  &nbsp;&nbsp;<input type="submit" value="{submit}" />  
+&nbsp;&nbsp;<input type="reset" value="{clear}" /><br/>
+</form>
+<!-- END submitform -->
+
+<!-- BEGIN gbmain -->
+<table border="0" cellpadding="0" cellspacing="0" width="94%">
+	<tr>
+		<td>
+<div class="comments-title">
+{whoandwhen}
+</div>
+<div class="date" align="right"><a href="mailto:{gemail}" title="{altmail}">{langgb01}</a>&nbsp;&nbsp;<a href="{ghomepage}" rel="nofollow" target="_blank" title="{altpage}">{langgb02}</a>&nbsp;&nbsp;<a href="{urlreply}" title="{altreply}">{langgb03}</a>&nbsp;&nbsp;<a href="{urldel}" title="{altdel}">{langgb04}</a></div>
+<div class="comments-body">
+{gsubmessage}
+<div class="gbreply" style="display: {ifshow}">
+<div class="title">
+{replytimeinfo}
+</div>
+<div>
+{greplymessage}
+</div>
+</div>
+</div>
+</td>
+	</tr>
+</table><br/>
+<!-- END gbmain -->

@@ -1,0 +1,59 @@
+/*
+ * Definitions for POP3 interfaces. 
+ *
+ * HeGang<dchg2000@mail.com>
+ */
+
+#ifndef _HEGANG_POP3_H_
+#define _HEGANG_POP3_H_
+
+#include "wsocket.h"
+
+class CPop3 {
+
+public:
+	CPop3();
+	~CPop3();
+
+	// Init POP3 attributes 
+	bool Create(const char* username, const char* userpwd, const char* svraddr, 
+				unsigned short port = 110);
+	
+	// Connect POP3 server
+	bool Connect();
+
+	// Login server
+	bool Login();
+
+	// List mail
+	bool List(int& sum);
+	
+	// Fetch mail
+	bool Fetch(char* buf, int num = 1);
+	bool FetchEx(int num = 1);
+
+	// Quit
+	bool Quit();
+
+	// Get subject 
+	bool GetSubject(char* subject, const char* buf);
+
+	// Write file
+	static bool WriteFile(const char* filename, const char* buffer, unsigned int len);
+
+protected:
+	int GetMailSum(const char* buf);
+
+	WSocket m_sock;
+	char m_username[32];
+	char m_userpwd[32];
+	char m_svraddr[32];
+	unsigned short m_port;
+
+private:
+	int Pop3Recv(char* buf, int len, int flags = 0);
+
+};
+
+#endif
+

@@ -1,0 +1,59 @@
+ESMTP身份验证机制探索手记
+
+
+文章类别：Visual C++  发表日期：2005-05-04   来源: csdn  作者: bhw98   
+
+--------------------------------------------------------------------------------
+ 
+  
+
+为了限制非本系统的正式用户利用邮件服务器散发垃圾邮件或进行其他不当行为，国内各大免费/收费邮箱提供商纷纷升级到ESMTP方式，开设了安全认证服务。在ESMTP服务器上，发送邮件需要对用户的身份进行验证。与传统的SMTP方式相比，多了一道用户身份的验证手续，验证之后的邮件发送过程与传统的SMTP方式一致。 
+
+几乎所有的ESMTP服务器都继承了POP3服务器的账号和密码设置体系，也就是说收发邮件用相同的账号和密码。当然，也可以用不同的账号和密码，但那样无论是电子邮件服务提供商的维护还是用户的使用都会很麻烦，故而很少采用。 
+
+ESMTP身份验证的机制有很多种，最常见的是LOGIN机制，类似于POP3的身份验证方式，即分两步输入账号和密码。在所有的验证机制中，信息全部采用Base64编码。 
+
+例如，用smtp.elong.com邮件服务器发送邮件，从开始连接到身份验证的过程如下(红色和蓝色分别代表客户端和服务器)： 
+
+(连接到smtp.elong.com:25)
+220 sp1 ESMTP v2.1
+EHLO ABCDEFG
+250-smtp.elong.com
+250-PIPELINING
+250-SIZE 20480000
+250-ETRN
+250-AUTH LOGIN PLAIN DIGEST-MD5 CRAM-MD5  (支持的身份验证机制种类: LOGIN, PLAIN等)
+250 8BITMIME
+AUTH LOGIN
+334 VXNlcm5hbWU6                      (Base64解码后: Username:)
+Ymh3YW5n                              (Base64编码前: bhwang)
+334 UGFzc3dvcmQ6                      (Base64解码后: Password:)
+bXlwYXNzd29yZCFteXBhc3N3b3JkISE=      (Base64编码前: ********)
+235 Authentication successful
+
+另外一种较常见的机制是PLAIN。与LOGIN机制的不同之处在于一次性输入账号和密码，格式为“<NUL>账号<NUL>密码”，其中<NUL>为字节0。用PLAIN机制代替上面的身份验证过程： 
+
+AUTH PLAIN
+334 
+AGJod2FuZwBteXBhc3N3b3JkIW15cGFzc3dvcmQhIQ==  (Base64编码前: <NUL>bhwang<NUL>********)
+235 Authentication successful
+
+有的ESMTP服务器，例如采用CoreMail系统的smtp.163.com, smtp.163.net, smtp.tom.com, smtp.netease.com等，不回复334代码行，客户端在输入AUTH PLAIN后，直接输入符合格式要求的账号和密码即可。 
+
+LOGIN和PLAIN机制没有对账号和密码进行加密，相当于明文传输，Base64编码只是一层纸而已。DIGEST-MD5, CRAM-MD5, GSSAPI, KERBEROS_V4等身份验证机制能够加密传输内容。 
+
+以CRAM-MD5为例，身份验证过程为：
+a. 客户端声明用CRAM-MD5验证方式
+b. 服务器提供一个标记(戳)
+c. 客户端用邮箱密码做密钥，以MD5方式加密此标记，生成HMAC；然后将用户名连同HMAC发送出去
+d. 服务器收到用户名与HMAC，检验其正确性，给出回复
+
+
+AUTH CRAM-MD5
+334 PDExMjc5NDA4MTYuMTgwMDM5NEBzbXRwLmVsb25nLmNvbT4=    (Base64解码后: <1127940816.1800394@smtp.elong.com>)
+Ymh3YW5nIDVmZWIwYzcxMWVlMGQzYWU1ZTNlYjA4N2VhMGU2YTI3    (Base64编码前: bhwang 5feb0c711ee0d3ae5e3eb087ea0e6a27)
+235 Authentication successful
+
+其中，“5feb0c711ee0d3ae5e3eb087ea0e6a27”是用“<1127940816.1800394@smtp.elong.com>”与邮箱密码进行MD5运算得到的HMAC。具体算法可参考RFC 1321, RFC 2104等。 
+
+ 

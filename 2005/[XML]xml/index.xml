@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="gb2312"?>
+<?xml-stylesheet type="text/xsl" href="index.xsl"?>
+<booksort> 
+	<info> 
+		 <sortname>donge.org</sortname> 
+		 <edit>东冬</edit> 
+		 <time>QQ:2780224</time> 
+	</info> 
+	<booklist> 
+		<item> 
+			 <bookname> 
+				自我介绍 
+			 </bookname> 
+			 <author> donge
+			 </author> 
+			 <links> 
+				donge.xml</links> 
+			 <booktime> 
+				2005-11-16 00:00:00 
+			 </booktime> 
+		</item> 
+		<item> 
+			 <bookname> 
+				XML技术 
+			 </bookname> 
+			 <author> donge
+				 
+			 </author> 
+			 <links> 
+				http://www.xml.org.cn</links> 
+			 <booktime> 
+				2005-11-16 00:00:00 
+			 </booktime> 
+		</item> 
+
+	</booklist> 
+</booksort> 

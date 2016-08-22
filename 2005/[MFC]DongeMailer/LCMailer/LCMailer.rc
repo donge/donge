@@ -1,0 +1,388 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\LCMailer.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\LCMailer.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 280, 210
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 DongeMail ..."
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "看完啦！",IDOK,115,183,50,19,WS_GROUP
+    LTEXT           "",IDC_STATIC_STARWAR,7,7,265,167,WS_BORDER
+    PUSHBUTTON      "给我写信",IDC_BUTTON_MAILME,28,183,50,19
+    PUSHBUTTON      "我的主页",IDC_BUTTON_HOMEPAGE,202,183,50,19
+END
+
+IDD_LCMAILER_DIALOG DIALOGEX 0, 0, 372, 258
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "DongeMail"
+MENU IDR_MENU_MAIN
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT_MAILTO,73,18,210,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SUBJECT,73,35,210,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_BODY,18,53,338,71,ES_MULTILINE | ES_WANTRETURN | 
+                    WS_VSCROLL
+    PUSHBUTTON      "附件(&F)",IDC_BUTTON_ATTACHMENT,297,23,54,18
+    PUSHBUTTON      "发送(&S)",IDC_BUTTON_SEND,15,213,54,18
+    PUSHBUTTON      "SMTP设置(&I)",IDC_BUTTON_SERVERSETUP,129,213,54,18
+    PUSHBUTTON      "关于(&A)",IDC_BUTTON_ABOUT,243,213,54,18
+    PUSHBUTTON      "退出(&X)",IDC_BUTTON_EXIT,301,213,54,18
+    LTEXT           "收信人信箱：",IDC_STATIC,19,22,49,8
+    LTEXT           "主      题：",IDC_STATIC,19,39,49,8
+    GROUPBOX        "邮件内容",IDC_STATIC,7,7,358,200
+    PUSHBUTTON      "接收(&R)",IDC_BUTTON_RECV,73,213,54,18
+    PUSHBUTTON      "POP3设置",IDC_BTN_POP3SETUP,187,213,54,18
+    CONTROL         "List2",IDC_LIST_MAIL,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,18,130,338,71
+    LTEXT           "状态",IDC_STATIC_STATE,7,239,101,9
+END
+
+IDD_SERVERSETUP_DIALOG DIALOG DISCARDABLE  0, 0, 197, 207
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置"
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT_SERVERNAME,71,16,104,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PORT,71,33,104,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "SMTP 服务器需要身份验证",IDC_CHECK_NEEDAUTH,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,19,52,109,10
+    EDITTEXT        IDC_EDIT_ACCOUNT,71,67,104,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PASSWORD,71,84,104,14,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_FROM,71,128,104,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_USERNAME,71,145,104,14,ES_AUTOHSCROLL
+    LTEXT           "服  务  器：",IDC_STATIC,19,20,49,8
+    LTEXT           "端      口：",IDC_STATIC,19,37,49,8
+    LTEXT           "发信人信箱：",IDC_STATIC,19,132,49,8
+    GROUPBOX        "服务器设置",IDC_STATIC,7,7,183,99
+    LTEXT           "用户帐号：",IDC_STATIC,27,70,41,8
+    LTEXT           "用户密码：",IDC_STATIC,27,87,41,8
+    GROUPBOX        "个人信息",IDC_STATIC,7,117,183,49
+    LTEXT           "发信人姓名：",IDC_STATIC,19,148,49,8
+    PUSHBUTTON      "确定",IDOK,46,177,50,19
+    PUSHBUTTON      "取消",IDCANCEL,101,177,50,19
+END
+
+IDD_SEND_DIALOG DIALOG DISCARDABLE  0, 0, 187, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "发送"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,69,58,50,14
+    CONTROL         "Progress1",IDC_PROGRESS_SEND,"msctls_progress32",
+                    WS_BORDER,7,31,173,14
+    LTEXT           "Static",IDC_STATIC_STATUS,7,15,173,8
+END
+
+IDD_ATTACHMENT_DIALOG DIALOGEX 0, 0, 240, 180
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "附件"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,134,151,50,19
+    CONTROL         "List1",IDC_LIST_ATTACHMENT,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_TABSTOP,7,7,225,133,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "+",IDC_BUTTON_ADD,36,150,20,20
+    PUSHBUTTON      "-",IDC_BUTTON_DEL,60,150,20,20
+END
+
+IDD_POP3SETUP_DIALOG DIALOG DISCARDABLE  0, 0, 187, 152
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "POP3服务器设置"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,39,115,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,98,115,50,14
+    EDITTEXT        IDC_EDIT_USERNAME,87,17,69,12,ES_AUTOHSCROLL
+    LTEXT           "用户名:",IDC_STATIC,32,17,32,8
+    LTEXT           "密码:",IDC_STATIC,32,40,32,8
+    LTEXT           "POP3服务器:",IDC_STATIC,32,63,49,8
+    EDITTEXT        IDC_EDIT_PASSWORD,87,40,69,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_POP3SERVER,87,63,69,12,ES_AUTOHSCROLL
+    LTEXT           "POP3端口:",IDC_STATIC,31,85,41,8
+    EDITTEXT        IDC_EDIT_POP3PORT,86,85,69,12,ES_AUTOHSCROLL
+END
+
+IDD_RECV_DIALOG DIALOG DISCARDABLE  0, 0, 187, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "发送"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,69,58,50,14
+    CONTROL         "Progress1",IDC_PROGRESS_SEND,"msctls_progress32",
+                    WS_BORDER,7,31,173,14
+    LTEXT           "Static",IDC_STATIC_STATUS,7,15,173,8
+END
+
+IDD_DIALOG_VIEWMAIL DIALOGEX 0, 0, 307, 211
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "查看信体"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,250,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,250,24,50,14
+    EDITTEXT        IDC_EDIT_MAIL,14,63,243,135,ES_MULTILINE | ES_OEMCONVERT | 
+                    ES_READONLY | ES_WANTRETURN
+    CONTROL         "主题:",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,23,13,
+                    28,12,WS_EX_STATICEDGE
+    LTEXT           "日期:",IDC_STATIC,24,26,27,11,0,WS_EX_STATICEDGE
+    LTEXT           "收信人:",IDC_STATIC,15,38,36,12,0,WS_EX_STATICEDGE
+    LTEXT           "Static",IDC_STATIC_SUBJECT,53,13,188,8
+    LTEXT           "Static",IDC_STATIC_DATE,53,26,188,8
+    LTEXT           "Static",IDC_STATIC_TO,54,39,188,8
+    PUSHBUTTON      "回复",IDC_BUTTON_RE,250,41,50,14
+    LTEXT           "正文:",IDC_STATIC,23,51,26,12,0,WS_EX_STATICEDGE
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "LCMailer Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "LCMailer\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2002\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "LCMailer.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "LCMailer 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 272
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 202
+    END
+
+    IDD_LCMAILER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 365
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 248
+    END
+
+    IDD_SERVERSETUP_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 190
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 200
+    END
+
+    IDD_SEND_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_ATTACHMENT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 232
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 170
+    END
+
+    IDD_POP3SETUP_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 145
+    END
+
+    IDD_RECV_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_DIALOG_VIEWMAIL, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 300
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 204
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_MAIN MENU DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "发送邮件(&S)",                ID_MENUITEM_SEND
+        MENUITEM "接收邮件(&R)",                ID_MENUITEM_RECV
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_MENUITEM_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 LCMailer(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\LCMailer.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

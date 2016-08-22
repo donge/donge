@@ -1,0 +1,199 @@
+BODY {
+	margin: 0px;
+	background-color: #989fa7;
+	color: #333;
+}
+
+BODY, TD, TABLE, INPUT, TEXTAREA {
+/*	font-family: Verdana, Arial, Helvetica, sans-serif; */
+	font-family: tahoma, arial, sans-serif;
+	font-size: 12px;
+/*	line-height: 17px;*/
+}
+
+PRE {
+	BORDER-RIGHT: #ccc 1px dotted; PADDING-RIGHT: 2px; BORDER-TOP: #ccc 1px dotted; PADDING-LEFT: 2px; BACKGROUND: #eeeeee; PADDING-BOTTOM: 2px; BORDER-LEFT: #ccc 1px dotted; PADDING-TOP: 2px; BORDER-BOTTOM: #ccc 1px dotted
+}
+A {
+	FONT-SIZE: 12px; COLOR: #666; FONT-FAMILY: tahoma, arial, sans-serif; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #333; TEXT-DECORATION: underline
+}
+
+.comments-title {
+	padding: 2px;
+	font-weight: bold;
+	color: #333;
+	border-bottom: #ccc 1px dotted;
+}
+.comments-title A {
+	text-decoration: none;
+}
+.comments-title A:hover {
+	text-decoration: none;
+}
+
+.comments-body {
+	padding: 10px;
+	color: #666;
+}
+/* stariver */
+.maxbox {
+	width: 710px;
+	height: 100%;
+	background-color: White;
+	border-left: 5px solid #EFEBEF;
+	border-right: 5px solid #EFEBEF;
+	border-top: 0px none;
+	border-bottom: 0px none;
+}
+
+.maxbox2 {
+	vertical-align: top;
+}
+
+.logo {
+	padding-bottom: 5px;
+	background-color: #EFEBEF;
+	vertical-align: top;
+}
+
+.topmenu {
+	border-bottom:  #ccc 1px dotted;
+	color: #FFFFFF;
+	vertical-align: middle;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 5px;
+}
+.topmenu A {
+/*	padding-left: 10px;
+	padding-right: 10px;*/
+	color: #FFFFFF;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.topmenu A:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.leftbar {
+	border-right: #ccc 1px dotted;
+	border-bottom: #ccc 1px dotted;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	width: 200px;
+	vertical-align: top;
+}
+
+.side {
+	padding: 2px;
+	color: #333;
+	line-height: 17px;
+	font-size: 12px;
+}
+
+.side A {
+	text-decoration: none;
+}
+
+.sidetitle {
+	padding-top: 5px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	font-weight: bold;
+	color: #0066cc;
+	text-align: left;
+}
+
+.content {
+	padding-top: 7px;
+	padding-right: 10px;
+	padding-left: 10px;
+	width: 500px;
+	vertical-align: top;
+}
+
+.content2 {
+	padding-top: 7px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	vertical-align: top;
+	border-bottom:  #ccc 1px dotted;
+}
+
+.entry {
+	padding: 2px;
+	color: #333;
+	line-height: 17px;
+	font-size: 12px;
+}
+
+.title {
+	padding-top: 5px;
+	font-weight: bold;
+	font-size: 12px;
+	color: #0066cc;
+	text-align: left;
+}
+
+.title A {
+	font-weight: bold;
+	font-size: 12px;
+	color: #0066cc;
+	text-decoration: none;	
+}
+
+.title A:hover {
+	font-weight: bold;
+	font-size: 12px;
+	color: #0066cc;
+	text-decoration: none;	
+}
+
+.date {
+	padding-bottom: 10px;
+	color: #999;
+}
+.date A {
+	text-decoration: none;
+}
+.date A:hover {
+	text-decoration: none;
+}
+
+.posted {
+	border-top: #ccc 1px dotted;
+	padding-bottom: 15px;
+	color: #333;
+}
+.posted A {
+	text-decoration: none;
+}
+.posted A:hover {
+	text-decoration: none;
+}
+
+.footer {
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.footer A {
+	text-decoration: none;
+}
+.footer A:hover {
+	text-decoration: none;
+}
+.me {
+	font-family: "ËÎÌו";
+	font-size: 10px;
+	color: #FFFFFF;
+}

@@ -1,0 +1,26 @@
+<?
+$parts['mobile']="<img src=\"img/mp.gif\" alt=\"{chr}\" title=\"{chr}\"/>";
+$parts['editurl']="| <a href=\"{url}\">{chr}</a>";
+$parts['delurl']="| <a href=\"{url}\">{chr}</a>";
+$parts['noreplyurl']="| <a href=\"{url}\">{chr}</a>";
+$parts['stickinfo']=" | <a href=\"{url}\">{chr}</a>";
+$parts['reurl']="<a href=\"{url}\">{chr}</a>({num})";
+$parts['trackback']="| <a href=\"{url}\">{chr}</a>({num})";
+$parts['articleviews']="| {chr}";
+$parts['ishidden1']= "<p align=\"center\"><span class=\"red\"><strong>{chr}</strong></span></p>";
+$parts['ishidden3']= "<p align=\"center\"><span class=\"red\"><strong>{chr}</strong></span></p>";
+$parts['previousandnext']="<table width=\"100%\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\"><tr><td align=\"left\">{url1}</td><td align=\"right\">{url2}</td></tr></table>";
+$parts['adminreply']="<br/><table width='90%'><tr><td width='30'><td style='background-color:$color2; color:$font2'> {chr1} </td></tr><tr><td width='30'><td>{chr2}</td></tr></table>";
+$parts['listpic']="·";
+$parts['pagevol']=5;
+$parts['eachpage']=" <a href=\"{url}\">[{num}]</a> ";
+$parts['currentpage']=" [{num}] ";
+$parts['gravatar']="<table width=\"100%\"><tr><td valign=\"top\">{chr1}</td><td width=\"55\" align=\"right\" valign=\"top\">{chr2}</td></tr></table>";
+$parts['showcatrss']="<a href=\"{url}\"><img src=\"img/xml2.gif\" alt=\"{chr}\" title=\"{chr}\" border=\"0\"/></a>";
+$parts['morepre']="<br/><div align=\"right\">{chr}</div>";
+$parts['readall']="<br/><strong><a href=\"{url}\">{chr}</a></strong>";
+$parts['emotnum']=16;
+$parts['catbarstring1']="+";
+$parts['catbarstring2']="<br/>";
+$location['weather']="img/weather";
+$location['rss']="img";

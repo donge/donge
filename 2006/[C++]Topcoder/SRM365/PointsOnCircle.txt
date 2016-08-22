@@ -1,0 +1,44 @@
+PROBLEM STATEMENT
+You are given the radius r of a circle centered at the origin.  Your task is to return the number of lattice points (points whose coordinates are both integers) on the circle.  The number of pairs of integers (x, y) that satisfy x^2 + y^2 = n is given by the formula 4*(d1(n) - d3(n)), where di(n) denotes the number of divisors of n that leave a remainder of i when divided by 4.
+
+DEFINITION
+Class:PointsOnCircle
+Method:count
+Parameters:int
+Returns:long long
+Method signature:long long count(int r)
+
+
+CONSTRAINTS
+-r will be between 1 and 2*10^9, inclusive.
+
+
+EXAMPLES
+
+0)
+1
+
+Returns: 4
+
+The only lattice points on the circle are (0, 1), (1, 0), (-1, 0), (0, -1).
+
+1)
+2000000000
+
+Returns: 76
+
+
+
+2)
+3
+
+Returns: 4
+
+The number of lattice points on the circle of radius 3 is the same as the number of integer solutions of the equation x^2 + y^2 = 9. Using the formula from the problem statement we can calculate this number as 4*(d1(9) - d3(9)). It is easy to see that d1(9) = 2 (divisors 1 and 9) and d3(9) = 3 (divisor 3). So the answer is 4*(2 - 1) = 4.
+
+3)
+1053
+
+Returns: 12
+
+

@@ -1,0 +1,2 @@
+<?
+$temname="Totti2# template";

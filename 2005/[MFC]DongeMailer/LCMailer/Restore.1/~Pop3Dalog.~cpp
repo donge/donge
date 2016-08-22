@@ -1,0 +1,81 @@
+// Pop3Dalog.cpp : implementation file
+//
+
+#include "stdafx.h"
+#include "LCMailer.h"
+#include "Pop3Dalog.h"
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+// CPop3Dalog dialog
+
+
+CPop3Dalog::CPop3Dalog(CWnd* pParent /*=NULL*/)
+	: CDialog(CPop3Dalog::IDD, pParent)
+{
+	//{{AFX_DATA_INIT(CPop3Dalog)
+	//}}AFX_DATA_INIT
+}
+
+
+void CPop3Dalog::DoDataExchange(CDataExchange* pDX)
+{
+	CDialog::DoDataExchange(pDX);
+	//{{AFX_DATA_MAP(CPop3Dalog)
+	DDX_Control(pDX, IDC_EDIT_POP3PORT, m_ctrlPop3Port);
+	DDX_Control(pDX, IDC_EDIT_USERNAME, m_ctrlUserName);
+	DDX_Control(pDX, IDC_EDIT_PASSWORD, m_ctrlPassWord);
+	DDX_Control(pDX, IDC_EDIT_POP3SERVER, m_ctrlPop3Server);
+	//}}AFX_DATA_MAP
+}
+
+
+BEGIN_MESSAGE_MAP(CPop3Dalog, CDialog)
+	//{{AFX_MSG_MAP(CPop3Dalog)
+	//}}AFX_MSG_MAP
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// CPop3Dalog message handlers
+
+BOOL CPop3Dalog::OnInitDialog() 
+{
+	CDialog::OnInitDialog();
+	
+	// TODO: Add extra initialization here
+	m_ctrlPop3Server.SetWindowText(m_pLCMailerDlg->m_szPop3Server);
+	m_ctrlPop3Port.SetWindowText(m_pLCMailerDlg->m_nPop3Port);
+	m_ctrlUserName.SetWindowText(m_pLCMailerDlg->m_szAccount);
+	m_ctrlPassWord.SetWindowText(m_pLCMailerDlg->m_szPassword);
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+	              // EXCEPTION: OCX Property Pages should return FALSE
+}
+
+void CPop3Dalog::OnOK() 
+{
+	// TODO: Add extra validation here
+	//返回“SMTP服务器”：
+	CString szBuf;
+
+	m_ctrlPop3Server.GetWindowText(szBuf);
+	m_pLCMailerDlg->m_szPop3Server = szBuf;
+
+	m_ctrlUserName.GetWindowText(szBuf);
+	m_pLCMailerDlg->m_szAccount = szBuf;
+
+	m_ctrlPassWord.GetWindowText(szBuf);
+	m_pLCMailerDlg->m_szPassword = szBuf;
+
+	//返回“端口”：
+	m_ctrlPop3Port.GetWindowText(szBuf);
+	m_pLCMailerDlg->m_nPop3Port = szBuf;
+
+
+	CDialog::OnOK();
+}

@@ -1,0 +1,23 @@
++OK 514 octets
+Received: from smtp.163.com (unknown [60.16.60.163])
+	by smtp14 (Coremail) with SMTP id XcD+ACWRskPo2vEA.17106S2;
+	Wed, 28 Dec 2005 21:20:38 +0800 (CST)
+FROM: 东冬<23jh@163.com>
+TO: <23jh@163.com>
+Date: Wed, 28 Dec 2005 21:20:47 中国标准时间
+Subject: 您好
+X-Mailer: LCMailer [ch]
+MIME_Version:1.0
+Content-type:multipart/mixed;Boundary=donge.org
+Message-Id: <43B29126.0181A4.01765>
+
+
+--donge.org
+Content-type:text/plain;Charset=gb2312
+Content-Transfer-Encoding:8bit
+
+这里写信体正文
+
+--donge.org
+
+.

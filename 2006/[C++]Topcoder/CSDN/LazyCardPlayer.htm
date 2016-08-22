@@ -1,0 +1,50 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><p>A deck of cards contains 52 cards, representing all combinations of
+13 different ranks (in descending order: Ace, King, Queen, Jack, Ten,
+9, 8, 7, 6, 5, 4, 3, 2) and 4 different suits (clubs, diamonds,
+hearts, spades). One of the four suits is chosen as the <b>trump</b>
+suit.</p>
+
+<p>Four players are playing a card game. We will be analyzing a single
+trick. In one trick, every player gets to play one card from his hand.
+The first player may play any card he wishes. The other
+players must play by the following rules:</p>
+
+<ol>
+  <li>If a player has a card of the same suit as the first player's
+  card, he must play it.<br></br>If the trick hasn't been broken (see
+  rule 2) and he has a card of higher rank than the highest played
+  so far (considering only cards of the required suit), then he must play such a card (he may play any card of higher rank than the highest so far).
+  <br></br>If the trick has been broken or he doesn't have a card strong enough, he may play any card of the required suit.</li>
+  <li>If a player doesn't have a card of the required suit, then
+  he must play a card of the trump suit if he has one. When the
+  first trump card in a trick is played, the trick
+  is <i>broken</i>.<br></br>If the trick was already broken, then the player
+  has to play a trump of higher rank if he has one.</li>
+  <li>Otherwise (the player has no cards the same suit as the first
+  card played, and has no trumps), he may play any card.</li>
+</ol>
+
+<p>One of the players is too lazy to think so he wants help in
+determining which cards he may play.</p>
+
+<p>You will be given a String <b>trump</b> and two vector &lt;string&gt;s, <b>cardsPlayed</b>
+and <b>hand</b>. <b>trump</b> represents the chosen trump suit and will be 
+"clubs", "diamonds", "hearts" or "spades" (quotes for clarity). 
+<b>cardsPlayed</b> contains the cards played so far
+in the trick, in the order in which they were played. <b>hand</b> contains
+the cards the lazy player has in his hand.</p>
+
+<p>Each card in the input will be represented as a string of 2
+characters, the rank (one of the characters 'A', 'K', 'Q', 'J', 'T',
+'9', '8', '7', '6', '5', '4', '3', '2') followed by the suit ('C', 'D', 'H' or
+'S').</p>
+
+<p>Return a vector &lt;string&gt; containing all cards the lazy player
+may play. The cards should be in the same relative order as
+in <b>hand</b>.</p>
+</td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>LazyCardPlayer</td></tr><tr><td>Method:</td><td>whichCards</td></tr><tr><td>Parameters:</td><td>string, vector &lt;string&gt;, vector &lt;string&gt;</td></tr><tr><td>Returns:</td><td>vector &lt;string&gt;</td></tr><tr><td>Method signature:</td><td>vector &lt;string&gt; whichCards(string trump, vector &lt;string&gt; cardsPlayed, vector &lt;string&gt; hand)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>trump</b> will be "clubs", "diamonds", "hearts" or "spades".</td></tr><tr><td align="center" valign="top">-</td><td><b>cardsPlayed</b> will contain between 0 and 3 elements, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td><b>hand</b> will contain between 1 and 13 elements, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>cardsPlayed</b> and <b>hand</b> will represent a single card, formatted as described in the problem statement.</td></tr><tr><td align="center" valign="top">-</td><td>No two cards in all of <b>cardsPlayed</b> and <b>hand</b> will be the same.</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;clubs&quot;</pre></td></tr><tr><td><pre>{ }</pre></td></tr><tr><td><pre>{ &quot;TH&quot;, &quot;9C&quot;, &quot;8D&quot;, &quot;2S&quot;, &quot;4D&quot; }</pre></td></tr></table></td></tr><tr><td><pre>Returns: {&quot;TH&quot;, &quot;9C&quot;, &quot;8D&quot;, &quot;2S&quot;, &quot;4D&quot; }</pre></td></tr><tr><td><table><tr><td colspan="2">No cards have been played so far, which means the lazy player is the first to play. The first player may play any card.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;clubs&quot;</pre></td></tr><tr><td><pre>{ &quot;8S&quot; }</pre></td></tr><tr><td><pre>{ &quot;4H&quot;, &quot;5S&quot;, &quot;7S&quot; }</pre></td></tr></table></td></tr><tr><td><pre>Returns: {&quot;5S&quot;, &quot;7S&quot; }</pre></td></tr><tr><td><table><tr><td colspan="2">The first player opened spades. The lazy player doesn't have a card stronger than the 8, so he may play either of his cards.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;diamonds&quot;</pre></td></tr><tr><td><pre>{ &quot;4H&quot;, &quot;9H&quot; }</pre></td></tr><tr><td><pre>{ &quot;AH&quot;, &quot;5H&quot; }</pre></td></tr></table></td></tr><tr><td><pre>Returns: {&quot;AH&quot; }</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;hearts&quot;</pre></td></tr><tr><td><pre>{ &quot;6S&quot;, &quot;9S&quot;, &quot;9C&quot; }</pre></td></tr><tr><td><pre>{ &quot;TC&quot;, &quot;AH&quot;, &quot;5H&quot; }</pre></td></tr></table></td></tr><tr><td><pre>Returns: {&quot;AH&quot;, &quot;5H&quot; }</pre></td></tr><tr><td><table><tr><td colspan="2">With no spades, the player has to break the trick using one of his cards in the trump suit (hearts).
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">4)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;hearts&quot;</pre></td></tr><tr><td><pre>{ &quot;6S&quot;, &quot;9S&quot;, &quot;KH&quot; }</pre></td></tr><tr><td><pre>{ &quot;TC&quot;, &quot;AH&quot;, &quot;5H&quot; }</pre></td></tr></table></td></tr><tr><td><pre>Returns: {&quot;AH&quot; }</pre></td></tr><tr><td><table><tr><td colspan="2">This time the trick has already been broken by the third player, so the lazy player must play his ace to beat the king.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">5)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;hearts&quot;</pre></td></tr><tr><td><pre>{ &quot;6S&quot;, &quot;9S&quot;, &quot;KH&quot; }</pre></td></tr><tr><td><pre>{ &quot;JS&quot;, &quot;4S&quot;, &quot;3S&quot;, &quot;2H&quot; }</pre></td></tr></table></td></tr><tr><td><pre>Returns: {&quot;JS&quot;, &quot;4S&quot;, &quot;3S&quot; }</pre></td></tr><tr><td><table><tr><td colspan="2">The player must play spades, but doesn't need to throw the strongest card because the trick has been broken.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">6)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;diamonds&quot;</pre></td></tr><tr><td><pre>{ &quot;QD&quot; }</pre></td></tr><tr><td><pre>{ &quot;JD&quot;, &quot;KC&quot;, &quot;4D&quot; }</pre></td></tr></table></td></tr><tr><td><pre>Returns: {&quot;JD&quot;, &quot;4D&quot; }</pre></td></tr><tr><td></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

@@ -1,0 +1,34 @@
+div#location{
+	background-color: #555555;
+	color:#fff;
+	padding:5px 10px;
+	text-align:left;
+}
+table#booklist{
+	background-image: url(table_bg.png);
+	background-position: 0px 31px;
+}
+th{text-align:left; color:#fff;	background:#8CB22E; font-size:14px; height:30px; line-height:30px;	padding:0px 10px}
+td{text-align:left; font-size:14px;height:30px; line-height:30px;padding:0px 10px}
+.list1{
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #FFFFFF;
+	width:80%;
+}
+.list2{
+	width:20%;
+}
+div#edit{
+	text-align:right;
+	padding:5px 10px;
+	line-height:25px;
+}
+div.table_frame{padding:20px;background:#fff; width:95%; }
+
+div.btn_goback{
+	text-align:right;
+	padding:5px;
+	background-color:#555555;
+	margin:20px 0px 0px 0px;
+}

@@ -1,0 +1,105 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: LCMailer - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Release/LCMailer.res" /d "NDEBUG" /d "_AFXDLL" "C:\Documents and Settings\Administrator\桌面\LCMailer\LCMailer.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP9F.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Release/" /Fp"Release/LCMailer.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Documents and Settings\Administrator\桌面\LCMailer\Attachment.cpp"
+"C:\Documents and Settings\Administrator\桌面\LCMailer\Base64.cpp"
+"C:\Documents and Settings\Administrator\桌面\LCMailer\FlatEdit.cpp"
+"C:\Documents and Settings\Administrator\桌面\LCMailer\LCMailer.cpp"
+"C:\Documents and Settings\Administrator\桌面\LCMailer\LCMailerDlg.cpp"
+"C:\Documents and Settings\Administrator\桌面\LCMailer\MacButtons.cpp"
+"C:\Documents and Settings\Administrator\桌面\LCMailer\MailViewDlg.cpp"
+"C:\Documents and Settings\Administrator\桌面\LCMailer\pop3.cpp"
+"C:\Documents and Settings\Administrator\桌面\LCMailer\Pop3Dalog.cpp"
+"C:\Documents and Settings\Administrator\桌面\LCMailer\SendDlg.cpp"
+"C:\Documents and Settings\Administrator\桌面\LCMailer\ServerSetup.cpp"
+"C:\Documents and Settings\Administrator\桌面\LCMailer\SMTP.CPP"
+"C:\Documents and Settings\Administrator\桌面\LCMailer\StarWarsCtrl.cpp"
+"C:\Documents and Settings\Administrator\桌面\LCMailer\Wsocket.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP9F.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPA0.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Release/" /Fp"Release/LCMailer.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Documents and Settings\Administrator\桌面\LCMailer\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPA0.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPA1.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/LCMailer.pdb" /machine:I386 /out:"Release/LCMailer.exe" 
+".\Release\Attachment.obj"
+".\Release\Base64.obj"
+".\Release\FlatEdit.obj"
+".\Release\LCMailer.obj"
+".\Release\LCMailerDlg.obj"
+".\Release\MacButtons.obj"
+".\Release\MailViewDlg.obj"
+".\Release\pop3.obj"
+".\Release\Pop3Dalog.obj"
+".\Release\SendDlg.obj"
+".\Release\ServerSetup.obj"
+".\Release\SMTP.OBJ"
+".\Release\StarWarsCtrl.obj"
+".\Release\StdAfx.obj"
+".\Release\Wsocket.obj"
+".\Release\LCMailer.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPA1.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+Attachment.cpp
+Base64.cpp
+FlatEdit.cpp
+LCMailer.cpp
+LCMailerDlg.cpp
+MacButtons.cpp
+MailViewDlg.cpp
+pop3.cpp
+Pop3Dalog.cpp
+SendDlg.cpp
+ServerSetup.cpp
+SMTP.CPP
+StarWarsCtrl.cpp
+Wsocket.cpp
+Generating Code...
+Linking...
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPA3.tmp" with contents
+[
+/nologo /o"Release/LCMailer.bsc" 
+".\Release\StdAfx.sbr"
+".\Release\Attachment.sbr"
+".\Release\Base64.sbr"
+".\Release\FlatEdit.sbr"
+".\Release\LCMailer.sbr"
+".\Release\LCMailerDlg.sbr"
+".\Release\MacButtons.sbr"
+".\Release\MailViewDlg.sbr"
+".\Release\pop3.sbr"
+".\Release\Pop3Dalog.sbr"
+".\Release\SendDlg.sbr"
+".\Release\ServerSetup.sbr"
+".\Release\SMTP.SBR"
+".\Release\StarWarsCtrl.sbr"
+".\Release\Wsocket.sbr"]
+Creating command line "bscmake.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPA3.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+LCMailer.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

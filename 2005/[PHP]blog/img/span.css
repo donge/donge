@@ -1,0 +1,17 @@
+.webdings, .webdings a {
+	font-family: Webdings;
+}
+.red, .red a {
+	color: red;
+}
+table {
+	table-layout: fixed;
+	word-wrap:break-word;
+}
+div {
+	word-wrap:break-word;
+}
+ul {
+	padding-top: 0px; 
+	list-style-image: url(img/liststyle.gif); 
+}

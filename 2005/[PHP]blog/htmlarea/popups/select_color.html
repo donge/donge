@@ -1,0 +1,145 @@
+<!-- note: this version of the color picker is optimized for IE 5.5+ only -->
+
+<html style="width: 125px; height: 170px"><head><title>Select Color</title>
+<META
+HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<script type="text/javascript" src="popup.js"></script>
+
+<script type="text/javascript">
+
+function _CloseOnEsc() {
+  if (event.keyCode == 27) { window.close(); return; }
+}
+
+function Init() {                                                       // run on page load
+  __dlg_init();    // <!-- this can be found in popup.js -->
+  document.body.onkeypress = _CloseOnEsc;
+
+  var color = window.dialogArguments;
+  color = ValidateColor(color) || '000000';
+  View(color);                                                          // set default color
+}
+
+function View(color) {                  // preview color
+  document.getElementById("ColorPreview").style.backgroundColor = '#' + color;
+  document.getElementById("ColorHex").value = '#' + color;
+}
+
+function Set(string) {                   // select color
+  var color = ValidateColor(string);
+  if (color == null) { alert("Invalid color code: " + string); }        // invalid color
+  else {                                                                // valid color
+    View(color);                          // show selected color
+    __dlg_close(color);
+  }
+}
+
+function ValidateColor(string) {                // return valid color code
+  string = string || '';
+  string = string + "";
+  string = string.toUpperCase();
+  var chars = '0123456789ABCDEF';
+  var out   = '';
+
+  for (var i=0; i<string.length; i++) {             // remove invalid color chars
+    var schar = string.charAt(i);
+    if (chars.indexOf(schar) != -1) { out += schar; }
+  }
+
+  if (out.length != 6) { return null; }            // check length
+  return out;
+}
+
+</script>
+</head>
+<body style="background:ButtonFace; margin:0px; padding:0px" onload="Init()">
+
+<form method="get" style="margin:0px; padding:0px" onSubmit="Set(document.getElementById('ColorHex').value); return false;">
+<table border="0px" cellspacing="0px" cellpadding="4" width="100%">
+ <tr>
+  <td style="background:buttonface" valign=center><div style="background-color: #000000; padding: 1; height: 21px; width: 30px"><div id="ColorPreview" style="height: 100%; width: 100%"></div></div></td>
+  <td style="background:buttonface" valign=center><input type="text" name="ColorHex"
+    id="ColorHex" value="" size=10 style="font-size: 12px"></td>
+  <td style="background:buttonface" width=100%></td>
+ </tr>
+</table>
+</form>
+
+<table border="0" cellspacing="1px" cellpadding="0px" width="110" bgcolor="#000000" style="cursor: hand;">
+<tr>
+<td bgcolor=#FFFFFF onMouseOver=View('FFFFFF') onClick=Set('FFFFFF') height="10px" width="10px"></td>
+<td bgcolor=#FFFF00 onMouseOver=View('FFFF00') onClick=Set('FFFF00') height="10px" width="10px"></td>
+<td bgcolor=#FFE000 onMouseOver=View('FFE000') onClick=Set('FFE000') height="10px" width="10px"></td>
+<td bgcolor=#FFC000 onMouseOver=View('FFC000') onClick=Set('FFC000') height="10px" width="10px"></td>
+<td bgcolor=#FFA000 onMouseOver=View('FFA000') onClick=Set('FFA000') height="10px" width="10px"></td>
+<td bgcolor=#FF8000 onMouseOver=View('FF8000') onClick=Set('FF8000') height="10px" width="10px"></td>
+<td bgcolor=#FF6000 onMouseOver=View('FF6000') onClick=Set('FF6000') height="10px" width="10px"></td>
+</tr>
+</table>
+<table border="0" cellspacing="1px" cellpadding="0px" width="110" bgcolor="#000000" style="cursor: hand;">
+<td bgcolor=#FF6000 onMouseOver=View('FF6000') onClick=Set('FF6000') height="10px" width="10px"></td>
+<td bgcolor=#FF0000 onMouseOver=View('FF0000') onClick=Set('FF0000') height="10px" width="10px"></td>
+<td bgcolor=#E00000 onMouseOver=View('E00000') onClick=Set('E00000') height="10px" width="10px"></td>
+<td bgcolor=#C00000 onMouseOver=View('C00000') onClick=Set('C00000') height="10px" width="10px"></td>
+<td bgcolor=#FFC0FF onMouseOver=View('FFC0FF') onClick=Set('FFC0FF') height="10px" width="10px"></td>
+<td bgcolor=#FFA0FF onMouseOver=View('FFA0FF') onClick=Set('FFA0FF') height="10px" width="10px"></td>
+<td bgcolor=#FF80FF onMouseOver=View('FF80FF') onClick=Set('FF80FF') height="10px" width="10px"></td>
+</tr>
+</table>
+<table border="0" cellspacing="1px" cellpadding="0px" width="110" bgcolor="#000000" style="cursor: hand;">
+<td bgcolor=#FF60FF onMouseOver=View('FF60FF') onClick=Set('FF60FF') height="10px" width="10px"></td>
+<td bgcolor=#FF00FF onMouseOver=View('FF00FF') onClick=Set('FF00FF') height="10px" width="10px"></td>
+<td bgcolor=#E000FF onMouseOver=View('E000FF') onClick=Set('E000FF') height="10px" width="10px"></td>
+<td bgcolor=#C000FF onMouseOver=View('C000FF') onClick=Set('C000FF') height="10px" width="10px"></td>
+<td bgcolor=#A000FF onMouseOver=View('A000FF') onClick=Set('A000FF') height="10px" width="10px"></td>
+<td bgcolor=#8000FF onMouseOver=View('8000FF') onClick=Set('8000FF') height="10px" width="10px"></td>
+<td bgcolor=#00FFFF onMouseOver=View('00FFFF') onClick=Set('00FFFF') height="10px" width="10px"></td>
+
+</tr>
+</table>
+<table border="0" cellspacing="1px" cellpadding="0px" width="110" bgcolor="#000000" style="cursor: hand;">
+<td bgcolor=#00E0FF onMouseOver=View('00E0FF') onClick=Set('00E0FF') height="10px" width="10px"></td>
+<td bgcolor=#00C0FF onMouseOver=View('00C0FF') onClick=Set('00C0FF') height="10px" width="10px"></td>
+<td bgcolor=#00A0FF onMouseOver=View('00A0FF') onClick=Set('00A0FF') height="10px" width="10px"></td>
+<td bgcolor=#00A0FF onMouseOver=View('00A0FF') onClick=Set('00A0FF') height="10px" width="10px"></td>
+<td bgcolor=#0060FF onMouseOver=View('0060FF') onClick=Set('0060FF') height="10px" width="10px"></td>
+<td bgcolor=#0000FF onMouseOver=View('0000FF') onClick=Set('0000FF') height="10px" width="10px"></td>
+<td bgcolor=#0000E0 onMouseOver=View('0000E0') onClick=Set('0000E0') height="10px" width="10px"></td>
+
+</tr>
+</table>
+<table border="0" cellspacing="1px" cellpadding="0px" width="110" bgcolor="#000000" style="cursor: hand;">
+<td bgcolor=#0000C0 onMouseOver=View('0000C0') onClick=Set('0000C0') height="10px" width="10px"></td>
+<td bgcolor=#D0FF00 onMouseOver=View('D0FF00') onClick=Set('D0FF00') height="10px" width="10px"></td>
+<td bgcolor=#A0FF00 onMouseOver=View('A0FF00') onClick=Set('A0FF00') height="10px" width="10px"></td>
+<td bgcolor=#80FF00 onMouseOver=View('80FF00') onClick=Set('80FF00') height="10px" width="10px"></td>
+<td bgcolor=#00FF00 onMouseOver=View('00FF00') onClick=Set('00FF00') height="10px" width="10px"></td>
+<td bgcolor=#00E000 onMouseOver=View('00E000') onClick=Set('00E000') height="10px" width="10px"></td>
+<td bgcolor=#00C000 onMouseOver=View('00C000') onClick=Set('00C000') height="10px" width="10px"></td>
+</tr>
+</table>
+<table border="0" cellspacing="1px" cellpadding="0px" width="110" bgcolor="#000000" style="cursor: hand;">
+<td bgcolor=#00A000 onMouseOver=View('00A000') onClick=Set('00A000') height="10px" width="10px"></td>
+<td bgcolor=#008000 onMouseOver=View('008000') onClick=Set('008000') height="10px" width="10px"></td>
+<td bgcolor=#00FF00 onMouseOver=View('00FF00') onClick=Set('00FF00') height="10px" width="10px"></td>
+<td bgcolor=#00E000 onMouseOver=View('00E000') onClick=Set('00E000') height="10px" width="10px"></td>
+<td bgcolor=#00C000 onMouseOver=View('00C000') onClick=Set('00C000') height="10px" width="10px"></td>
+<td bgcolor=#00A000 onMouseOver=View('00A000') onClick=Set('00A000') height="10px" width="10px"></td>
+<td bgcolor=#008000 onMouseOver=View('008000') onClick=Set('008000') height="10px" width="10px"></td>
+</tr>
+</table>
+<table border="0" cellspacing="1px" cellpadding="0px" width="110" bgcolor="#000000" style="cursor: hand;">
+<td bgcolor=#00A0A0 onMouseOver=View('00A0A0') onClick=Set('00A0A0') height="10px" width="10px"></td>
+<td bgcolor=#A0A000 onMouseOver=View('A0A000') onClick=Set('A0A000') height="10px" width="10px"></td>
+<td bgcolor=#A0A0A0 onMouseOver=View('A0A0A0') onClick=Set('A0A0A0') height="10px" width="10px"></td>
+<td bgcolor=#A0A0E0 onMouseOver=View('A0A0E0') onClick=Set('A0A0E0') height="10px" width="10px"></td>
+<td bgcolor=#E0A0A0 onMouseOver=View('E0A0A0') onClick=Set('E0A0A0') height="10px" width="10px"></td>
+<td bgcolor=#A0E0A0 onMouseOver=View('A0E0A0') onClick=Set('A0E0A0') height="10px" width="10px"></td>
+<td bgcolor=#000000 onMouseOver=View('000000') onClick=Set('000000') height="10px" width="10px"></td>
+</tr>
+</table>
+
+
+
+
+</body></html>

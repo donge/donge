@@ -1,0 +1,112 @@
+<html>
+<head>
+<title></title>
+<meta name="generator" content="Microsoft FrontPage 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!--BGM Script Includes-->
+<script LANGUAGE=javascript src="bgm_system.js">
+</script>
+<script language=Javascript>
+//选择歌曲播放形式
+//0 ->按照歌曲排列顺序播放
+//1 ->随机播放
+var playMode = 0;
+
+
+//每首歌之间的休息时间(秒)
+var restLength = 1;
+
+
+
+//是否显示歌曲名称
+var showTitle = 1;
+
+
+//是否歌曲一载入就自动播放
+var doFirstPlay = 1;
+
+//以下是连接歌曲URL语法（可增加/减少，但每首歌的播放时间数字一定不能相同）
+//歌曲类型最好是WMA MIDI & ASF!
+//addbgm('歌曲连接位置', '歌手－歌曲名称', 播放时间数字[以秒为单位]);
+addbgm('music/SayForever.wma','：Say Forever',315);
+</script>
+
+<!--End script-->
+<link rel="stylesheet" href="css.css" type="text/css">
+</head>
+<!--BODY 里的 OnLoad="init_bgm()" 为程式语法之一, 请勿删除哦!-->
+<body OnLoad="init_bgm()" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" bgcolor="#000000" text="#CCCCCC" >
+<!--BGM Script BODY Start-->
+<br>
+<form name="form1">
+  <!--以下语法最好不要修改-->
+  <div align="left">
+    <table width="267" border="0" cellspacing="0" cellpadding="0" align="right">
+      <tr>
+        <td><object classid="clsid:22D6F312-B0F6-11D0-94AB-0080C74C7E95" width="1" height="1" vspace="1" hspace="1" align="middle" id="Music" style="left:0px; top:0px;">
+            <param name="AllowChangeDisplaySize" value="true">
+            <param name="AllowScan" value="true">
+            <param name="AnimationAtStart" value="true">
+            <param name="AudioStream" value="-1">
+            <param name="AutoRewind" value="true">
+            <param name="AutoSize" value="false">
+            <param name="AutoStart" value="true">
+            <param name="Balance" value="0">
+            <param name="BufferingTime" value="5">
+            <param name="ClickToPlay" value="true">
+            <param name="CurrentMarker" value="0">
+            <param name="CurrentPosition" value="-1">
+            <param name="CursorType" value="0">
+            <param name="DisplayBackColor" value="0">
+            <param name="DisplayForeColor" value="16777215">
+            <param name="DisplayMode" value="0">
+            <param name="DisplaySize" value="2">
+            <param name="EnableContextMenu" value="true">
+            <param name="Enabled" value="true">
+            <param name="EnableFullScreenControls" value="false">
+            <param name="EnablePositionControls" value="true">
+            <param name="EnableTracker" value="true">
+            <param name="InvokeURLs" value="true">
+            <param name="Language" value="-1">
+            <param name="Mute" value="false">
+            <param name="PlayCount" value="1">
+            <param name="PreviewMode" value="false">
+            <param name="Rate" value="1">
+            <param name="SelectionEnd" value="-1">
+            <param name="SelectionStart" value="-1">
+            <param name="SendErrorEvents" value="true">
+            <param name="SendKeyboardEvents" value="false">
+            <param name="SendMouseClickEvents" value="true">
+            <param name="SendMouseMoveEvents" value="false">
+            <param name="SendOpenStateChangeEvents" value="true">
+            <param name="SendPlayStateChangeEvents" value="true">
+            <param name="SendWarningEvents" value="true">
+            <param name="ShowAudioControls" value="true">
+            <param name="ShowCaptioning" value="false">
+            <param name="ShowControls" value="true">
+            <param name="ShowDisplay" value="false">
+            <param name="ShowGotoBar" value="false">
+            <param name="ShowPositionControls" value="true">
+            <param name="ShowStatusBar" value="true">
+            <param name="ShowTracker" value="true">
+            <param name="TransparentAtStart" value="false">
+            <param name="VideoBorder3D" value="true">
+            <param name="VideoBorderColor" value="0">
+            <param name="VideoBorderWidth" value="0">
+            <param name="Volume" value="2000">
+            <param name="WindowlessVideo" value="false">
+          </object> 
+          <input type="text" name="stitle" size="22" value="Shinobu BGM Player 1.5 [ready]" style="font-family:Arial; font-size:8pt; color:#666699; background-color:#666699(102,102,153); border-width:0px;" readonly class="kuang">
+          <a href="#" onClick = "preTrack();" onMouseOver="window.status=('Previous Track'); return true;" onMouseOut="window.status=(''); return true;"><img src="forward.gif" border="0" align="middle" width="13" height="13" alt="上一首"></a> 
+          <a href="#" onClick = "stopTrack();" onMouseOver="window.status=('Stop BGM'); return true;" onMouseOut="window.status=(''); return true;"><img src="stop.gif" border="0" align="middle" width="13" height="13" alt="暂停"></a> 
+          <a href="#" onClick = "play();" onMouseOver="window.status=('Play BGM'); return true;" onMouseOut="window.status=(''); return true;"><img src="play.gif" border="0" align="middle" width="13" height="13" alt="播放"></a> 
+          <a href="#" onClick = "nextTrack();" onMouseOver="window.status=('Next Track'); return true;" onMouseOut="window.status=(''); return true;"><img src="backward.gif" border="0" align="middle" width="13" height="13" alt="下一首"></a> 
+          <a href="#" onClick = "m_list();" onMouseOver="window.status=('Display the BGM List'); return true;" onMouseOut="window.status=(''); return true;"><img src="list.gif" align="middle" border="0" width="13" height="13" alt="歌曲列表"></a> 
+        </td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+<!--BGM Script BODY End-->
+</html>

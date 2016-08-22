@@ -1,0 +1,10 @@
+<?
+$color1="#FFFFFF";
+$color2="#C6E2FD";
+$font1="#000000";
+$font2="#000000";
+$border="#C6E2FD";
+$bgcolor="#FFFFFF";
+$color3="#C6E2FD";
+$color4="#C6E2FD";
+$calendarwidth="200";

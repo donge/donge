@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>Alex&#8482; Gallery V1.2 中文版 - 明星写真在线 - 99Z.NET　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312"> 
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<script>
+function tick() {
+var hours, minutes, seconds, ap;
+var intHours, intMinutes, intSeconds;
+var today;
+today = new Date();
+intHours = today.getHours();
+intMinutes = today.getMinutes();
+intSeconds = today.getSeconds();
+if (intHours == 0) {
+hours = "12:";
+ap = "Midnight";
+} else if (intHours < 12) { 
+hours = intHours+":";
+ap = "A.M.";
+} else if (intHours == 12) {
+hours = "12:";
+ap = "Noon";
+} else {
+hours = intHours + ":";
+ap = "P.M.";
+}
+if (intMinutes < 10) {
+minutes = "0"+intMinutes+":";
+} else {
+minutes = intMinutes+":";
+}
+if (intSeconds < 10) {
+seconds = "0"+intSeconds+" ";
+} else {
+seconds = intSeconds+" ";
+} 
+timeString = hours+minutes+seconds+ap;
+Clock.innerHTML = timeString;
+window.setTimeout("tick();", 1000);
+}
+window.onload = tick;
+</script>
+<script>
+function about() { 
+showModalDialog('about.htm',window,'dialogHeight:200px;dialogWidth:365px;dialogleft:260px;dialogtop:190px;help:no;status:no;scroll:no');
+}
+</script>
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+</head>
+
+<body bgcolor="menu" text="#000000" scroll="no" style="border:0; " oncontextmenu="return false" onselectstart="return false">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+  <tr> 
+    <td height="34"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="5"></td>
+          
+    <td height="34" align="right" valign="bottom"> 
+                    
+      <table width="100%" border="0" cellspacing="2" cellpadding="0">
+	 
+        <tr> 
+          
+          <td width="15" class="button" height="22"><div align="center"><a href='javascript:history.go(-1)' id=mainFrame><img src="../images/left.gif" name="mg" align="absmiddle" hspace="2"  border="0"alt="后退"></a></div></td>
+          <td width="15" class="button"><div align="center"><a href='javascript:history.go(1)' id=mainFrame><img src="../images/right.gif" name="mg" align="absmiddle" hspace="2"  border="0" alt="前进"></a></div></td>
+          <td width="15" class="button" height="22"><div align="center"><a href='javascript://' id=mainFrame onclick='javascript:'><img src="../images/stop.gif" name="mg" align="absmiddle" hspace="2"  border="0"alt="停止"></a></div></td>
+          <td width="15" class="button" height="22" onclick="location.reload();"><div align="center"><a href='#' id=mainFrame><img src="../images/reload.gif" name="mg" align="absmiddle" hspace="2"  border="0"alt="刷新"></a></div></td>
+          <td width="15" class="button" ><div align="center"><a href="javascript:window.external.AddFavorite('http://www.99Z.NET/', '明星写真在线 - 99Z.NET')" target=mainFrame><img src="../images/home.gif" name="mg" align="absmiddle" hspace="2"  border="0"alt="收藏"></a></div></td>
+          <td width="15" class="button"><div align="center"><a href="index_main.asp?inc=search"  target=mainFrame><img src="../images/search.gif" name="mg" align="absmiddle" hspace="2"  border="0"alt="搜索"></a></div></td>
+          <td width="15" class="button" onclick="about();"><div align="center"><img src="../images/about.gif" name="mg" align="absmiddle" hspace="2"  border="0"alt="关于"></div></td>
+          <td width="15" class="button"><div align="center"><a href="out.asp"><img src="../images/out.gif" alt="注销" hspace="2" border="0" align="absmiddle"></a></div></td>
+          <td width="50%" align="right"></td>
+		  <td width="50%" align="right" class="borderoff" disabled><span class="tden">系统时间&nbsp;<span id="Clock">&nbsp; </span></span></td>
+        </tr>
+      </table>
+    </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td colspan="2"><iframe width="100%" name="oa_main"  id="oa_main" style="width:100%; height:expression(body.offsetHeight-32);" src="index_frameset.htm"> 
+      &nbsp;</iframe></td>
+  </tr>
+</table>
+ 
+</body>
+</html>

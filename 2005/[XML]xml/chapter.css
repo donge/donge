@@ -1,0 +1,25 @@
+div.btn_goback{
+	text-align:right;
+	padding:5px;
+	background-color:#555555;
+	clear:both;
+}
+div#chapter{ margin:0 auto;}
+div.author{ padding:2px;}
+h1{ font-size:16px}
+span.time{ margin:0px 10xp;}
+div#catalog{
+	padding:18px;
+}
+div#catalogbg{
+	background-image: url(table_bg.png);
+	float:left;
+	width:95%;
+	border: 20px solid #FFFFFF;
+	margin-bottom:20px;
+}
+div#catalog div.cataloglist{
+	line-height:30px;
+	width:30%;
+	float:left;
+}

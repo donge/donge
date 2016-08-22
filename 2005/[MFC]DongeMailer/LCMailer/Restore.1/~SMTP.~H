@@ -1,0 +1,65 @@
+#include "afxsock.h"
+
+#define SMTP_PORT 25
+#define RESPONSE_BUFFER_SIZE 1024
+
+//class CLCMailerDlg;
+
+class CSMTP
+{
+public:
+	CSMTP(LPCTSTR szSMTPServerName, UINT nPort = SMTP_PORT);
+	virtual ~CSMTP();
+	CString GetLastError();
+	UINT GetPort();
+	BOOL Disconnect();
+	BOOL Connect();
+	BOOL Auth();
+	//virtual BOOL FormatMailMessage(CMailMessage *msg);
+	BOOL SendMessage();
+	CString GetServerHostName();
+
+	CString m_strAccount;
+	CString m_strPassword;
+	CString m_strFrom;
+	CString m_strTo;
+	CString m_strSubject;
+	CString m_strHeader;
+	CTime m_tDateTime;
+	CString m_strBody;
+	CString m_strUsername;
+
+	CStringArray m_szFilenames;
+
+	//Ö÷¶Ô»°¿ò£º
+	//CLCMailerDlg *m_pLCMailerDlg;
+
+private:
+	BOOL get_response(UINT response_expected);
+	//CString cook_body(CMailMessage *msg);
+	CString m_sError;
+	BOOL m_bConnected;
+	UINT m_nPort;
+	CString m_sSMTPServerHostName;
+	CSocket m_wsSMTPServer;
+
+protected:
+	virtual BOOL transmit_message();
+	struct response_code
+	{
+		UINT nResponse;
+		TCHAR *sMessage;
+	};
+	enum eResponse
+	{
+		GENERIC_SUCCESS = 0,
+		AUTHLOGIN_SUCCESS,
+		AUTH_SUCCESS,
+		CONNECT_SUCCESS,
+		DATA_SUCCESS,
+		QUIT_SUCCESS,
+		LAST_RESPONSE
+	};
+	TCHAR *response_buf;
+	static response_code response_table[];
+};

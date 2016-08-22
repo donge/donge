@@ -1,0 +1,58 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><p>Syllable sorting is a method of sorting words based on their syllabic decompositions.  The first step is to decompose each word into syllables.  A syllable is defined as a maximal non-empty substring of consonants followed by a maximal non-empty substring of vowels.  The only vowels are <tt>'a'</tt>, <tt>'e'</tt>, <tt>'i'</tt>, <tt>'o'</tt> and <tt>'u'</tt>.  All other letters are considered consonants.  All words will start with a consonant and end with a vowel.</p><br></br>
+
+<p>To compare two words syllabically, first decompose them into sequences of syllables.  For example, the words "zcdbadaerfe" and "foubsyudba" decompose as follows:</p>
+
+<ul>
+<li><tt>"zcdbadaerfe"</tt> = {<tt>"zcdba"</tt>, <tt>"dae"</tt>, <tt>"rfe"</tt>}</li>
+<li><tt>"foubsyudba"</tt> = {<tt>"fou"</tt>, <tt>"bsyu"</tt>, <tt>"dba"</tt>}</li>
+</ul>
+
+<p>Then, sort each sequence of syllables alphabetically.  In the above example, the sequences become:</p>
+
+<ul>
+<li>{<tt>"dae"</tt>, <tt>"rfe"</tt>, <tt>"zcdba"</tt>}</li>
+<li>{<tt>"bsyu"</tt>, <tt>"dba"</tt>, <tt>"fou"</tt>}</li>
+</ul>
+
+<p>Then, compare these sorted sequences lexicographically.  A sequence S1 comes before a sequence S2 lexicographically if S1 has an alphabetically earlier element at the first index at which they differ.  In the above example, the second sequence comes earlier lexicographically because <tt>"bsyu"</tt> comes before <tt>"dae"</tt> alphabetically.</p><br></br>
+
+<p>If two sorted sequences are equal, then compare their corresponding unsorted sequences instead.  For example, the words <tt>"daba"</tt> and <tt>"bada"</tt> decompose into the same sorted sequence {<tt>"ba"</tt>, <tt>"da"</tt>}.  Compare the unsorted sequences {<tt>"da"</tt>, <tt>"ba"</tt>} and {<tt>"ba"</tt>, <tt>"da"</tt>} to determine that <tt>"bada"</tt> comes before <tt>"daba"</tt>.</p><br></br>
+
+<p>You are given a vector &lt;string&gt; <b>words</b>.  Sort the <b>words</b> using the method above and return the resulting vector &lt;string&gt;.</p><br></br></td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>SyllableSorting</td></tr><tr><td>Method:</td><td>sortWords</td></tr><tr><td>Parameters:</td><td>vector &lt;string&gt;</td></tr><tr><td>Returns:</td><td>vector &lt;string&gt;</td></tr><tr><td>Method signature:</td><td>vector &lt;string&gt; sortWords(vector &lt;string&gt; words)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>words</b> will contain between <tt>1</tt> and <tt>50</tt> elements, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>words</b> will contain between <tt>2</tt> and <tt>50</tt> characters, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>words</b> will contain only lowercase letters (<tt>'a'</tt>-<tt>'z'</tt>).</td></tr><tr><td align="center" valign="top">-</td><td>The first character of each element of <b>words</b> will be a consonant.</td></tr><tr><td align="center" valign="top">-</td><td>The last character of each element of <b>words</b> will be a vowel.</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;xiaoxiao&quot;, &quot;yamagawa&quot;, &quot;gawayama&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: {&quot;gawayama&quot;, &quot;yamagawa&quot;, &quot;xiaoxiao&quot; }</pre></td></tr><tr><td><table><tr><td colspan="2"><p>After decomposing the words into sequences of syllables, we get the following unsorted and sorted sequences of syllables:</p>
+
+<pre>
+   WORD    |    UNSORTED SEQUENCES    |     SORTED SEQUENCES
+-----------+--------------------------+--------------------------
+"xiaoxiao" | {"xiao", "xiao"}         | {"xiao", "xiao"}
+"yamagawa" | {"ya", "ma", "ga", "wa"} | {"ga", "ma", "ya", "wa"}
+"gawayama" | {"ga", "wa", "ya", "ma"} | {"ga", "ma", "ya", "wa"}
+</pre>
+
+<p>To compare <tt>"xiaoxiao"</tt> with the other two words, we use the sorted sequences of syllables. However, to compare <tt>"yamagawa"</tt> with <tt>"gawayama"</tt> we have to use the unsorted sequences because the sorted ones are equal.</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;bcedba&quot;, &quot;dbabce&quot;, &quot;zyuxxo&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: {&quot;bcedba&quot;, &quot;dbabce&quot;, &quot;zyuxxo&quot; }</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;hgnibqqaxeiuteuuvksi&quot;, &quot;jxbuzui&quot;, &quot;zrotyqeruiydozui&quot;,
+ &quot;ywuuzkto&quot;, &quot;lmopbookoagyco&quot;, &quot;vredfvavvexliu&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: 
+{&quot;hgnibqqaxeiuteuuvksi&quot;,
+ &quot;vredfvavvexliu&quot;,
+ &quot;lmopbookoagyco&quot;,
+ &quot;jxbuzui&quot;,
+ &quot;zrotyqeruiydozui&quot;,
+ &quot;ywuuzkto&quot; }</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;crazgo&quot;, &quot;cwsoygiokiuo&quot;, &quot;yueoseeu&quot;, &quot;tuadiojvugeoe&quot;,
+ &quot;naumxditui&quot;, &quot;sgukkelyoi&quot;, &quot;nrohjuasoia&quot;, &quot;mgabmo&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: 
+{&quot;mgabmo&quot;,
+ &quot;crazgo&quot;,
+ &quot;cwsoygiokiuo&quot;,
+ &quot;tuadiojvugeoe&quot;,
+ &quot;nrohjuasoia&quot;,
+ &quot;sgukkelyoi&quot;,
+ &quot;naumxditui&quot;,
+ &quot;yueoseeu&quot; }</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">4)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;wheewjuguoi&quot;, &quot;coutcu&quot;, &quot;hqivaa&quot;, &quot;sgiibgwi&quot;, &quot;ypaqpki&quot;,
+ &quot;bgyikouapae&quot;, &quot;wqakeu&quot;, &quot;skolfo&quot;, &quot;pzesaa&quot;, &quot;ypivhi&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: 
+{&quot;sgiibgwi&quot;,
+ &quot;bgyikouapae&quot;,
+ &quot;coutcu&quot;,
+ &quot;wheewjuguoi&quot;,
+ &quot;hqivaa&quot;,
+ &quot;wqakeu&quot;,
+ &quot;skolfo&quot;,
+ &quot;pzesaa&quot;,
+ &quot;ypaqpki&quot;,
+ &quot;ypivhi&quot; }</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

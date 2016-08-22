@@ -1,0 +1,23 @@
++OK 503 octets
+Received: from smtp.163.com (unknown [60.16.60.163])
+	by smtp2 (Coremail) with SMTP id U0CrAEmRskOs4owA.61704S2;
+	Wed, 28 Dec 2005 21:21:13 +0800 (CST)
+FROM: 东冬<23jh@163.com>
+TO: <23jh@163.com>
+Date: Wed, 28 Dec 2005 21:21:21 中国标准时间
+Subject: 测试邮件
+X-Mailer: LCMailer [ch]
+MIME_Version:1.0
+Content-type:multipart/mixed;Boundary=donge.org
+Message-Id: <43B29149.0181E4.04549>
+
+
+--donge.org
+Content-type:text/plain;Charset=gb2312
+Content-Transfer-Encoding:8bit
+
+
+
+--donge.org
+
+.

@@ -1,0 +1,181 @@
+
+<OBJECT id=closes type="application/x-oleobject" classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11">
+<param name="Command" value="Close">
+</OBJECT>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+<title>Team Source V1.0.8 开发版 &#8482;</title>
+
+<link href="style.css" rel="stylesheet" type="text/css">
+<LINK href="standard.css" rel="stylesheet" type="text/css">
+</head>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+<SCRIPT src="standard.js"></SCRIPT>
+<script language="javascript">
+<!--
+function chkinputlogin (){
+if (document.formlogin.user.value=="")
+	{
+    alert("请填写用户名");
+	document.formlogin.user.focus();
+    return false;
+    }
+if (document.formlogin.pass.value=="")
+	{
+    alert("请填写密码");
+	document.formlogin.pass.focus();
+    return false;
+    }
+}
+//-->
+</script>
+<SCRIPT language=javascript>
+<!--
+function window_onload() {
+	document.formlogin.user.focus();
+}
+//-->
+</SCRIPT>
+
+<body onLoad="initwindow()" bgcolor="#D4D0C8" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="border:0; " onload="return window_onload()" scroll="no" oncontextmenu="return false" onselectstart="return false">
+
+
+<table background="logintit.gif" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td> <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="50%" height="50">&nbsp;</td>
+          <td width="50%"><div align="right"></div></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<TABLE id=tb_content cellSpacing=0 cellPadding=10 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=content vAlign=top><!-- Main Content -->
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD class=tab-on onmousedown=switchCell(0) id=navcell 
+                  noWrap>&nbsp;用户登录</TD>
+				  
+                <TD class=tab-off onmousedown=switchCell(1) id=navcell 
+                  noWrap>&nbsp;状态信息</TD>
+				  
+                <TD class=tab-off onmousedown=switchCell(2) id=navcell 
+                  noWrap>&nbsp;在线帮助</TD>
+               
+                <TD class=tab-none>&nbsp;</TD></TR></TBODY></TABLE>
+            <TABLE class=tab-content id=tb style="DISPLAY: block" cellSpacing=5 
+            cellPadding=0 width="100%" border=0><!-- tab content -->
+              <TBODY>
+              <TR>
+                <TD class=td_heading vAlign=top></TD></TR>
+              <TR>
+                <TD vAlign=top>
+                  <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+<form name="formlogin" action="" method="post" onSubmit="return chkinputlogin()">
+  <tr>
+    <td width="68%"> 
+    
+      <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+            <td valign="top">
+                <br>
+                帐&nbsp;&nbsp;号： 
+                <input type=text name=user size=18>
+                <br>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr> 
+                    <td height="5"></td>
+                  </tr>
+                </table>
+                密&nbsp;&nbsp;码： 
+                <input type=password name=pass size=18>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr> 
+                    <td height="13"></td>
+                  </tr>
+                </table>
+                
+              </td>
+        </tr>
+      </table>
+	
+    </td>
+    <td valign="top"> 
+      <br>
+        <input name="submit" type="reset" value=" 清除帐号 ">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr> 
+                    <td height="5"></td>
+                  </tr>
+                </table> 
+        <input name="submit" type="reset" value=" 忘记密码 ">
+    </td>
+  </tr>
+
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td align=center>          
+<input name="Remember" type="checkbox">
+        <label for="Remember"><a href="#"><img src="losspw.gif" border="0"></a></label>
+        &nbsp;&nbsp;<input name="Hideme" type="checkbox">
+        <label for="Hideme"><img src="hidelg.gif">&nbsp;&nbsp;&nbsp; </label>
+        
+</td></tr></table>
+
+</TD></TR>
+              </TBODY></TABLE>
+            <TABLE class=tab-content id=tb style="DISPLAY: none" cellSpacing=4 
+            cellPadding=1 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD class=td_heading vAlign=top>以下是当前系统状态信息</TD></TR>
+              <TR><TD disabled vAlign=top>系统用户：2/管理员 18/开发团队 35/测试员</TD></TR>
+			  <TR><TD disabled vAlign=top>开发项目：1/网站系统 3/主题皮肤 10/模块</TD></TR>
+			  <TR><TD disabled vAlign=top>资料档案：62/开放 19/权限</TD></TR>
+			  <TR><TD disabled vAlign=top>&nbsp;</TD></TR>
+			  
+				</TBODY></TABLE>
+            <TABLE class=tab-content id=tb style="DISPLAY: none" cellSpacing=4 
+            cellPadding=1 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD class=td_heading vAlign=top>常见问题解答</TD></TR>
+              <TR><TD disabled vAlign=top>1.为什么我不能登录或注册为用户？</TD></TR>
+			  <TR><TD disabled vAlign=top>2.如何才能成为项目测试人员？</TD></TR>
+			  <TR><TD disabled vAlign=top>3.我怎样才能加入某个项目的开发团队？</TD></TR>
+			  <TR><TD disabled vAlign=top align=right>更多...</TD></TR>
+			  </TBODY></TABLE>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr> 
+                    <td height="12"></td>
+                  </tr>
+                </table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td align=right><input name=B12 type=submit value=" 确定 "> &nbsp;<input name=B122 type=button value=" 取消 " onclick="window.close()">
+</td></tr>
+<tr> 
+                  <td height="18" colspan="2"> 
+                    <div id="mdiv" style="height:0">
+                  </div>
+				  </td>
+                </tr>
+</table>
+</form>
+
+</body>
+</html>

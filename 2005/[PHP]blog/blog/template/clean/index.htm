@@ -1,0 +1,81 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="robots" content="all">
+<title>{articletitle}{blogname}</title>
+<meta name="keywords" content="{blogdc}, blog, Bo-Blog, 博客, 免费, PHP 文本程序">
+<meta name="description" content="Bo-blog, PHP+TEXT blog">
+<meta name="author" content="Bob">
+<base href="{weburl}">
+<link rel="alternate" title="Bo-Blog RSS" href="rss2.php" type="application/rss+xml">
+<link rel="stylesheet" type="text/css" href="blog/template/clean/new42.css">
+<link rel="stylesheet" type="text/css" href="img/span.css">
+<script type="text/javascript" src="blog/template/clean/function.js"></script>
+</head>
+<body>
+
+<div align="center">
+
+<table border="0" cellpadding="0" cellspacing="0"  class="maxbox">
+	<tr>
+		<td class="maxbox2">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td class="logo"><img border="0" src="blog/template/clean/header.jpg"></td>
+			</tr>
+			<tr>
+				<td class="topmenu">{catnav}</td>
+			</tr>	
+
+			<tr>
+				<td>
+				<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td class="content">{mainbodyout}</td>
+						<td class="leftbar">
+							<DIV class=sidetitle onclick="toggle_collapse('bar1')">{langindex14}</DIV>
+							<DIV class=side id=bar1 name=bar1>{announcebar}</DIV><br/>
+							<DIV class=sidetitle onclick="toggle_collapse('bar2')">{langindex15}</DIV>
+							<DIV class=side id=bar2 name=bar2>{langindex0}{articlenum}<br/>{langindex1}{reply}<br/>{langindex2}{visitorcounter} {stat}<br/>{langindex3}{todayvisit}<br/>{regusers}<br/>{currentonline}</DIV><br/>
+							<DIV class=sidetitle onclick="toggle_collapse('bar3')">{langindex4}</DIV>
+							<DIV class=calendar id=bar3 name=bar3>{calendar}</DIV><br/>
+							<DIV class=sidetitle onclick="toggle_collapse('bar4')">{langindex5}</DIV>
+							<DIV class=side id=bar4 name=bar4>{allnew}</DIV><br/>
+							<DIV class=sidetitle onclick="toggle_collapse('bar5')">{langindex6}</DIV>
+							<DIV class=side id=bar5 name=bar5>{newreply}</DIV><br/>
+							<DIV class=sidetitle onclick="toggle_collapse('bar6')">{langindex16}</DIV>
+							<DIV class=side id=bar6 name=bar6>{tbshow}</DIV><br/>
+							<DIV class=sidetitle onclick="toggle_collapse('bar7')">{langindex7}</DIV>
+							<DIV class=side id=bar7 name=bar7><form action="index.php" method="post"><input type="hidden" value="showsearch" name="job" /><input onclick="this.value=''" size="15" value="{langindex8}" name="keywords" /> <input type="submit" value="{langindex9}"/><a href="index.php?job=showsearch&amp;mode=advance">{langindex10}</a></form></DIV><br/>
+							<DIV class=sidetitle onclick="toggle_collapse('bar8')">{langindex13}</DIV>
+							<DIV class=side id=bar8 name=bar8>{archives}</DIV><br/>
+							<DIV class=sidetitle onclick="toggle_collapse('bar9')">{langindex12}</DIV>
+							<DIV class=side id=bar9 name=bar9>{links}</DIV><br/>
+							<DIV class=sidetitle onclick="toggle_collapse('bar10')">{langindex11}</DIV>
+							<DIV class=side id=bar10 name=bar10>{xml2}<br>{xml3}<br>{encodeinfo}<br><a href="http://www.creativecommons.cn/licenses/by-nc-sa/1.0/" target="_blank"><img src="img/cc.png" alt="Creative Commons" border="0" /></a><br><a href="http://www.getfirefox.com" target="_blank"><img src="img/firefox.gif" alt="Best viewed in Firefox" border="0" /></a><br><a href="index.php?job=about" target="_blank"><img src="img/boblog.png" alt="{versioninfo}" border="0" /></a></DIV>
+							
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+<div class="footer">  {versioninfo} | <b><a target="_blank" href="mblog_edit.php?action=write">Post</a></b> | <b><a target="_blank" href="admin.php">Admin</a></b></div>
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+

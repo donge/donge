@@ -1,0 +1,73 @@
+.css {
+    word-break:break-all;
+	font-size: 12px;
+	line-height: 150%;
+	text-decoration: none;
+}
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	color: #333333;
+	text-decoration: none;
+}
+a:hover {
+	color: #333333;
+	text-decoration: underline;
+}
+a:active {
+	color: #333333;
+	text-decoration: none;
+}
+.inputt {
+	margin: 1px;
+	padding: 1px;
+	border-top: 1px solid #999999;
+	border-right: 1px solid #E1E1E1;
+	border-bottom: 1px solid #E1E1E1;
+	border-left: 1px solid #999999;
+	background-color: #FAFAFA;
+	height: auto;
+	font-size: 12px;
+}
+.tablee {
+    margin-left: 1px;
+	padding-left: 1px;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #999999;
+	}
+.buttonn {
+	font-family: "ËÎÌו";
+	font-size: 12px;
+	text-decoration: none;
+	height: 20px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #dddddd;
+	border-right-color: #666666;
+	border-bottom-color: #666666;
+	border-left-color: #dddddd;
+	background-color: #f7f7f7;
+}
+.tablesx {
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: dashed;
+	border-right-style: none;
+	border-bottom-style: dashed;
+	border-left-style: none;
+	border-top-color: #333333;
+	border-bottom-color: #333333;
+}
+.selectn {
+	font-size: 12px;
+	background-color: #FAFAFA;
+}

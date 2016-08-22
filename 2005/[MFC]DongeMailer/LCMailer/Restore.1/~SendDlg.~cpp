@@ -1,0 +1,142 @@
+// SendDlg.cpp : implementation file
+//
+
+#include "stdafx.h"
+#include "LCMailer.h"
+#include "SendDlg.h"
+
+#include "SMTP.h"
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+// CSendDlg dialog
+
+int m_nCount = 0;
+
+CSendDlg::CSendDlg(CWnd* pParent /*=NULL*/)
+	: CDialog(CSendDlg::IDD, pParent)
+{
+	//{{AFX_DATA_INIT(CSendDlg)
+	m_Status = _T("");
+	//}}AFX_DATA_INIT
+}
+
+
+void CSendDlg::DoDataExchange(CDataExchange* pDX)
+{
+	CDialog::DoDataExchange(pDX);
+	//{{AFX_DATA_MAP(CSendDlg)
+	DDX_Control(pDX, IDCANCEL, m_Cancel);
+	DDX_Text(pDX, IDC_STATIC_STATUS, m_Status);
+	//}}AFX_DATA_MAP
+}
+
+BEGIN_MESSAGE_MAP(CSendDlg, CDialog)
+	//{{AFX_MSG_MAP(CSendDlg)
+	//ON_MESSAGE(WM_THREADFINISHED, OnThreadFinished)
+	//}}AFX_MSG_MAP
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// CSendDlg message handlers
+
+void CSendDlg::OnCancel() 
+{
+	// TODO: Add extra cleanup here
+	if(m_nCount == 0)
+	{
+		CDialog::OnCancel();
+	}
+	else
+	{
+		m_nCount = m_nCopyNumber;
+	}
+}
+
+UINT SendMailMulti(LPVOID pParam)
+{
+	CSendDlg *pSendThread = (CSendDlg *)pParam;
+	CSMTP smtp(pSendThread->m_strSmtpServer, pSendThread->m_nPort);
+
+	//初始化邮件内容：
+	smtp.m_strAccount = pSendThread->m_strAccount;
+	smtp.m_strPassword = pSendThread->m_strPassword;
+	smtp.m_strFrom = pSendThread->m_strFrom;
+	smtp.m_strTo = pSendThread->m_strTo;
+	smtp.m_strSubject = pSendThread->m_strSubject;
+	smtp.m_strBody = pSendThread->m_strBody;
+	smtp.m_strUsername = pSendThread->m_strUsername;
+	smtp.m_szFilenames.Copy(pSendThread->m_szFilenames);
+
+	//连接服务器：
+	pSendThread->SetDlgItemText(IDC_STATIC_STATUS, "正在连接服务器……");
+
+	if(!smtp.Connect())
+	{
+		AfxMessageBox(smtp.GetLastError());
+		pSendThread->SetDlgItemText(IDC_STATIC_STATUS, "连接服务器失败！");
+		pSendThread->m_Cancel.SetWindowText("退出");
+		return FALSE;
+	}
+
+	//当需要服务器验证的时候：
+	if(pSendThread->m_bNeedAuth == 1)
+	{
+		pSendThread->SetDlgItemText(IDC_STATIC_STATUS, "正在验证 用户名/密码 ……");
+		if(!smtp.Auth())
+		{
+			AfxMessageBox(smtp.GetLastError());
+			pSendThread->SetDlgItemText(IDC_STATIC_STATUS, "用户名/密码 验证出错！");
+			pSendThread->m_Cancel.SetWindowText("退出");
+			return FALSE;
+		}
+	}
+
+	//开始发送邮件：
+	CProgressCtrl *pBar;
+	pBar = (CProgressCtrl *)pSendThread->GetDlgItem(IDC_PROGRESS_SEND);
+
+	pSendThread->SetDlgItemText(IDC_STATIC_STATUS, "正在发送信件……");
+
+	for(m_nCount; m_nCount < pSendThread->m_nCopyNumber; ::InterlockedIncrement((long *)&m_nCount))
+	{
+		if(!smtp.SendMessage())
+		{
+			AfxMessageBox(smtp.GetLastError());
+			smtp.Disconnect();
+			pSendThread->SetDlgItemText(IDC_STATIC_STATUS, "发送信件出错！");
+			pSendThread->m_Cancel.SetWindowText("退出");
+			return FALSE;
+		}
+		else
+		{
+			pSendThread->SetDlgItemText(IDC_STATIC_STATUS, "正在发送信件……");
+			pBar->SetPos((m_nCount + 1) * 100 / pSendThread->m_nCopyNumber);
+			smtp.Disconnect();
+		}
+	}
+
+	//邮件已被成功发送！
+	pSendThread->SetDlgItemText(IDC_STATIC_STATUS, "发送完毕！");
+	pSendThread->SetDlgItemText(IDCANCEL, "完成");
+	pSendThread->m_Cancel.SetWindowText("退出");
+	m_nCount = 0;
+
+	return TRUE;
+}
+
+BOOL CSendDlg::OnInitDialog() 
+{
+	CDialog::OnInitDialog();
+	
+	// TODO: Add extra initialization here
+	AfxBeginThread(SendMailMulti, this);
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+	              // EXCEPTION: OCX Property Pages should return FALSE
+}

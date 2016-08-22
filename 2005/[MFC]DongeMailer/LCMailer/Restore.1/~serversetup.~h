@@ -1,0 +1,63 @@
+#if !defined(AFX_SERVERSETUP_H__1B13E6C6_3CCF_4241_9DC5_BDC2DF47C357__INCLUDED_)
+#define AFX_SERVERSETUP_H__1B13E6C6_3CCF_4241_9DC5_BDC2DF47C357__INCLUDED_
+
+#if _MSC_VER > 1000
+#pragma once
+#endif // _MSC_VER > 1000
+// ServerSetup.h : header file
+//
+
+/////////////////////////////////////////////////////////////////////////////
+// CServerSetup dialog
+
+#include "LCMailerDlg.h"
+
+class CLCMailerDlg;
+
+class CServerSetup : public CDialog
+{
+// Construction
+public:
+	CServerSetup(CWnd* pParent = NULL);   // standard constructor
+
+	//Ö÷¶Ô»°¿ò£º
+	CLCMailerDlg *m_pLCMailerDlg;
+
+// Dialog Data
+	//{{AFX_DATA(CServerSetup)
+	enum { IDD = IDD_SERVERSETUP_DIALOG };
+	CFlatEdit	m_ctrlFrom;
+	CMacCheckBox	m_ctrlNeedAuth;
+	CFlatEdit	m_ctrlAccount;
+	CMacButton	m_ctrlOK;
+	CMacButton	m_ctrlCancel;
+	CFlatEdit	m_ctrlUsername;
+	CFlatEdit	m_ctrlServerName;
+	CFlatEdit	m_ctrlPort;
+	CFlatEdit	m_ctrlPassword;
+	//}}AFX_DATA
+
+
+// Overrides
+	// ClassWizard generated virtual function overrides
+	//{{AFX_VIRTUAL(CServerSetup)
+	protected:
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	//}}AFX_VIRTUAL
+
+// Implementation
+protected:
+
+	// Generated message map functions
+	//{{AFX_MSG(CServerSetup)
+	afx_msg void OnCheckNeedAuth();
+	virtual BOOL OnInitDialog();
+	virtual void OnOK();
+	//}}AFX_MSG
+	DECLARE_MESSAGE_MAP()
+};
+
+//{{AFX_INSERT_LOCATION}}
+// Microsoft Visual C++ will insert additional declarations immediately before the previous line.
+
+#endif // !defined(AFX_SERVERSETUP_H__1B13E6C6_3CCF_4241_9DC5_BDC2DF47C357__INCLUDED_)

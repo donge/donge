@@ -1,0 +1,1 @@
+blog, emot, color, font, size, separator

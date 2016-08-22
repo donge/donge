@@ -1,0 +1,77 @@
+PROBLEM STATEMENT
+Your company runs a horse race betting service. Each person bets on a horse, and if that horse wins outright (i.e., it wins alone and doesn't tie for the win with any other hose), the person will win back their money plus a multiple of the amount they bet.  This multiple is called a payout factor. In all other cases your company keeps the money.  You are given a vector <int> probability and a vector <int> amounts.  The ith element of probability is the percentage chance of the ith horse winning the race, and the ith element of amounts is the amount bet on the ith horse. 
+These probabilities are independent (see example 1 for clarification).
+Return the highest payout factor such that the expected earnings of the company is minimumMoney or higher. If you can not achieve minimumMoney with a non-negative payout factor, then return -1. If you can achieve minimumMoney with any payout factor, then return -2.
+
+DEFINITION
+Class:RaceManagement
+Method:getPayoutFactor
+Parameters:vector <int>, vector <int>, int
+Returns:double
+Method signature:double getPayoutFactor(vector <int> probability, vector <int> amounts, int minimumMoney)
+
+
+NOTES
+-The returned value must have an absolute or relative error less than 1e-9.
+
+
+CONSTRAINTS
+-probability will contain between 1 and 5 elements, inclusive.
+-Each element of probability will be between 0 and 100, inclusive.
+-Each element of amounts will be between 0 and 1000, inclusive.
+-amounts will contain the same number of elements as probability.
+-The sum of all the elements in probability will be at most 100.
+-minimumMoney will be between 0 and 1000, inclusive.
+
+
+EXAMPLES
+
+0)
+{30}	
+{100}
+10
+
+Returns: 2.0
+
+Horse 1 has a 30% chance of winning.  If it wins, the company has to pay out 100*P dollars, where P is the payout factor, and if it doesn't win, the company gains 100 dollars.  Thus, the expected earnings of the compay is 70-30*P.  The highest payout factor that ensures  this is at least 10 is 2.
+
+1)
+{50,40}
+{300,200}
+100
+
+Returns: 2.076923076923077
+
+Horse A has a 50% chance of winning and horse B has a 40% chance of winning. But this also means that there is a 20% chance they tie and a remaining 30% chance neither of them wins.
+
+
+Thus, in this scenario, 4 cases arise
+
+Horse A wins 30% chance => The company loses 300*P dollars and gains 200 dollars
+
+Horse B wins 20% chance => The company loses 200*P dollars and gains 300 dollars
+
+Horse A & B both win (tie) 20% chance => The company loses 0*P dollars and gains 500 dollars
+
+Neither Horse A nor horse B wins (No result) 30% chance => The company loses 0*P dollars and gains 500 dollars
+
+
+To ensure the expected earnings are at least 100, the payout factor P can be at most approximately 2.077.
+
+2)
+{50}	
+{100}
+1000
+
+Returns: -1.0
+
+Return -1 because the payout factor in this case will be negative. 
+
+3)
+{0}
+{100}	
+100
+
+Returns: -2.0
+
+The payout factor is irrelevant. The company always gains 100 dollars.

@@ -1,0 +1,87 @@
+// LCMailerDlg.h : header file
+//
+
+#if !defined(AFX_LCMAILERDLG_H__482F9E3B_A01B_4755_BABC_036C21BC7BCA__INCLUDED_)
+#define AFX_LCMAILERDLG_H__482F9E3B_A01B_4755_BABC_036C21BC7BCA__INCLUDED_
+
+#if _MSC_VER > 1000
+#pragma once
+#endif // _MSC_VER > 1000
+
+/////////////////////////////////////////////////////////////////////////////
+// CLCMailerDlg dialog
+
+class CLCMailerDlg : public CDialog
+{
+// Construction
+public:
+	CString Mails[20];
+	int num;
+
+	CString m_szPop3Server;
+	CString m_nPop3Port;
+	CLCMailerDlg(CWnd* pParent = NULL);	// standard constructor
+
+	CString szIniFile;
+	
+	CString m_szServerName;
+	CString m_nPort;
+	CString m_nNeedAuth;
+	CString m_szAccount;
+	CString m_szPassword;
+	CString m_szFrom;
+	CString m_szUsername;
+
+	CStringArray m_szFilenames;
+
+// Dialog Data
+	//{{AFX_DATA(CLCMailerDlg)
+	enum { IDD = IDD_LCMAILER_DIALOG };
+	CStatic	m_ctrlState;
+	CListCtrl	m_ctrlMailList;
+	CFlatEdit	m_ctrlBody;
+	CFlatEdit	m_ctrlSubject;
+	CFlatEdit	m_ctrlTo;
+	CMacButton	m_ctrlServerSetup;
+	CMacButton	m_ctrlSend;
+	CMacButton	m_ctrlExit;
+	CMacButton	m_ctrlAttachment;
+	CMacButton	m_ctrlAbout;
+	//}}AFX_DATA
+
+	// ClassWizard generated virtual function overrides
+	//{{AFX_VIRTUAL(CLCMailerDlg)
+	public:
+	virtual BOOL PreTranslateMessage(MSG* pMsg);
+	protected:
+	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
+	//}}AFX_VIRTUAL
+
+// Implementation
+protected:
+	HICON m_hIcon;
+
+	// Generated message map functions
+	//{{AFX_MSG(CLCMailerDlg)
+	virtual BOOL OnInitDialog();
+	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
+	afx_msg void OnPaint();
+	afx_msg HCURSOR OnQueryDragIcon();
+	afx_msg void OnButtonServerSetup();
+	afx_msg void OnButtonAbout();
+	afx_msg void OnButtonExit();
+	afx_msg void OnButtonSend();
+	afx_msg void OnDestroy();
+	afx_msg void OnButtonAttachment();
+	afx_msg void OnButton1();
+	afx_msg void OnBtnPop3setup();
+	afx_msg void OnButtonRecv();
+	afx_msg void OnDblclkListMail(NMHDR* pNMHDR, LRESULT* pResult);
+	//}}AFX_MSG
+	DECLARE_MESSAGE_MAP()
+};
+
+//{{AFX_INSERT_LOCATION}}
+// Microsoft Visual C++ will insert additional declarations immediately before the previous line.
+
+#endif // !defined(AFX_LCMAILERDLG_H__482F9E3B_A01B_4755_BABC_036C21BC7BCA__INCLUDED_)

@@ -1,0 +1,73 @@
+PROBLEM STATEMENT
+You are the commander of a military operation that is focused on determining the location of an enemy unit.  Two radar stations have provided measurements of their calculated distance from the enemy unit.  You are given the locations of your radar stations in ints x1, y1 and x2, y2, and the calculated distances in ints r1 and r2, respectively.
+
+You are to return an int indicating the number of possible locations of the enemy unit.  If there are an infinite number of possible locations, return -1.
+
+
+
+DEFINITION
+Class:RadarFinder
+Method:possibleLocations
+Parameters:int, int, int, int, int, int
+Returns:int
+Method signature:int possibleLocations(int x1, int y1, int r1, int x2, int y2, int r2)
+
+
+CONSTRAINTS
+-x1 will be between -1000000000 and 1000000000, inclusive.
+-y1 will be between -1000000000 and 1000000000, inclusive.
+-r1 will be between 1 and 1000000000, inclusive.
+-x2 will be between -1000000000 and 1000000000, inclusive.
+-y2 will be between -1000000000 and 1000000000, inclusive.
+-r2 will be between 1 and 1000000000, inclusive.
+
+
+EXAMPLES
+
+0)
+0
+0
+13
+40
+0
+37
+
+Returns: 2
+
+The points (5, 12) and (5, -12) are the only points that are consistent with both radar measurements.
+
+1)
+0
+0
+3
+0
+7
+4
+
+Returns: 1
+
+Only one point, (0, 3), is consistent with both measurements.
+
+2)
+0
+0
+5
+10
+10
+3
+
+Returns: 0
+
+Perhaps one of the measurements was incorrect, since no points are consistent.
+
+3)
+0
+0
+1
+0
+0
+1
+
+Returns: -1
+
+Getting two identical readings from the same location still leaves an unlimited number of possible locations.

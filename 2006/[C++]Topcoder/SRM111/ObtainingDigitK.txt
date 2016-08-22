@@ -1,0 +1,54 @@
+PROBLEM STATEMENT
+
+Return the smallest non-negative integer that can be added to originalNumber such that the resulting integer contains at least one digit k. All numbers should have no extra leading zeroes.
+
+
+
+DEFINITION
+Class:ObtainingDigitK
+Method:minNumberToAdd
+Parameters:string, int
+Returns:int
+Method signature:int minNumberToAdd(string originalNumber, int k)
+
+
+CONSTRAINTS
+-originalNumber will contain between 1 and 50 characters, inclusive.
+-originalNumber will contain only digits ('0'-'9').
+-originalNumber will represent a non-negative integer with no extra leading zeroes.
+-k will be between 0 and 9, inclusive.
+
+
+EXAMPLES
+
+0)
+"153"
+7
+
+Returns: 4
+
+153 + 4 = 157
+
+1)
+"158"
+7
+
+Returns: 9
+
+158 + 9 = 167
+
+2)
+"7853192"
+2
+
+Returns: 0
+
+Digit '2' is already present in the number.
+
+3)
+"99999999999999999999999999999999999999999999999"
+0
+
+Returns: 1
+
+Add 1 to get a lot of zeroes.

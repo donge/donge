@@ -1,0 +1,6 @@
+//自定义的一个Base64类：
+class CBase64
+{
+public:
+	CString Encode(LPCTSTR szEncoding, int nSize);
+};

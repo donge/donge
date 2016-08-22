@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gb2312"?>
+<?xml-stylesheet type="text/xsl" href="content.xsl"?>
+  <book> 
+    <info> 
+      <title>个人介绍</title>
+      <author></author>
+      <time>2005-09-22 00:41:24</time>
+    </info>
+    <frame> 
+		<text><![CDATA[【姓名】 杨东冬]]></text> 
+		<text><![CDATA[【联系方式】]]></text> 
+		<text><![CDATA[QQ:2780224 E-mail:23donge@gmail.com]]></text> 
+		<text><![CDATA[【自我评价】]]></text> 
+		<text><![CDATA[性格比较内向，稳重，但对计算机问题十分敏感和狂热。头脑灵活，喜欢创新，酷爱计算机，擅长自学，喜欢和其他人讨论技术问题。从初中开始就接触计算机，一直热衷计算机技术，渴望学习和了解我所不知，并乐于分享我所知。]]></text> 
+		<text><![CDATA[喜欢关注并研究新潮技术，经常阅读程序员等杂志和浏览相关网站，对IT技术动向、IT公司和其产品都十分了解。尤其关注Linux，开源，企业开发等方向。]]></text> 
+		<text><![CDATA[另外平时喜欢研究电脑、电子、数码类产品等，对电脑配件、笔记本、Mp3、智能手机等都有比较深入的了解。
+]]></text> 
+		<text><![CDATA[【擅长】 C/C++, Linux, Win32开发]]></text> 
+    </frame>
+  </book>

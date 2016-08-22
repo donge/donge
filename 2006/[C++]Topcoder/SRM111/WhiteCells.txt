@@ -1,0 +1,77 @@
+PROBLEM STATEMENT
+
+A chessboard is an 8 x 8 grid of cells. Within each column and within each row, cells alternate between black and white. The cell in the upper left corner (0, 0) is white. You are given a vector <string> board, where the j-th character of the i-th element is 'F' if the cell in the j-th column from the left and i-th row from the top is occupied, or '.' if it is empty. Return the number of occupied white cells on the board.
+
+
+
+DEFINITION
+Class:WhiteCells
+Method:countOccupied
+Parameters:vector <string>
+Returns:int
+Method signature:int countOccupied(vector <string> board)
+
+
+CONSTRAINTS
+-board will contain exactly 8 elements.
+-Each element of board will contain exactly 8 characters.
+-board will contain only the characters '.' and 'F'.
+
+
+EXAMPLES
+
+0)
+{"........",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........"}
+
+Returns: 0
+
+
+
+1)
+{"FFFFFFFF",
+ "FFFFFFFF",
+ "FFFFFFFF",
+ "FFFFFFFF",
+ "FFFFFFFF",
+ "FFFFFFFF",
+ "FFFFFFFF",
+ "FFFFFFFF"}
+
+Returns: 32
+
+
+
+2)
+{".F.F...F",
+ "F...F.F.",
+ "...F.F.F",
+ "F.F...F.",
+ ".F...F..",
+ "F...F.F.",
+ ".F.F.F.F",
+ "..FF..F."}
+
+Returns: 1
+
+
+
+3)
+{"........",
+ "..F.....",
+ ".....F..",
+ ".....F..",
+ "........",
+ "........",
+ ".......F",
+ ".F......"}
+
+Returns: 2
+
+

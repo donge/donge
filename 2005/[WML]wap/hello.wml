@@ -1,0 +1,23 @@
+<?xml version="1.0"?> 
+　　<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.1//EN" "http://www.wapforum.org/DTD/wml_1.1.xml"> 
+　　<wml> 
+　　　<template> 
+　　　　<do type="options" label="back"> 
+　　　　　<prev/> 
+　 　　</do> 
+　　　</template> 
+　　　<card id="card1"> 
+　　 　　<p>Hello World !　 
+　　 　　</p> 
+　　 　　<do type="accept" label="Start"> 
+　　　 　　<go href="#Welcome"/> 
+　　 　　</do> 
+　　　</card> 
+　　　<card id="Welcome"> 
+　　 　　<p>You are welcome!　 
+　　 　　</p> 
+　　 　　<do type="accept" label="Back"> 
+　　　 　　<go href="#card1"/> 
+　　 　　</do> 
+　　　</card> 
+　　</wml>

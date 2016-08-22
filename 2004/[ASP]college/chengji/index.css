@@ -1,0 +1,16 @@
+.t9pt {
+	FONT-SIZE: 9pt
+}
+A {
+	COLOR: black; FONT-SIZE: 9pt; FONT-STYLE: normal; TEXT-DECORATION: none
+}
+A:hover {
+	BACKGROUND: #ffe7ce; COLOR: FF9900; FONT-SIZE: 9pt; FONT-STYLE: normal; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #ffe7ce; FONT-SIZE: 9pt; FONT-STYLE: normal; TEXT-DECORATION: underline 
+}
+TABLE {
+	FONT-SIZE: 9pt
+}
+.line {  line-height: 150%}

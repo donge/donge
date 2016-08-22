@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>Angel</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+body,td,select,input{font-size:9pt}
+.big {font-size:10.5pt}
+hr { color: #808080; height: 1px; width: 100%}
+A:link{COLOR: #ffffff;TEXT-DECORATION: none}
+A:visited{COLOR: #ffffff;TEXT-DECORATION: none}
+A:hover{COLOR: #cccccc;TEXT-DECORATION: none}
+</style>
+<script language="vbscript">
+Sub window_onLoad()
+	MsgBox "欢迎光临本站！"
+	call eclock()
+End Sub
+</script>
+			  <script language="vbscript">
+Sub eclock()
+	Dim datestring,timestring
+	datestring="现在是" & Year(Date()) & "年" &Month(Date()) & "月" & Day(Date()) & "日"
+	timestring=Hour(time()) & "时" & Minute(time()) & "分" & Second(time())& "秒"
+	document.ClockForm.ClockTxt.value=datestring & "" & timestring
+	//document.write datestring
+	window.settimeout "eclock()","1000"
+End Sub
+</script>
+</head>
+
+<body bgcolor = "#FFFFFF" topmargin = "0" leftmargin = "0" marginheight = "0" marginwidth = "0" text="#333333" link="#FF6600" vlink="#999999" alink="#999999">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/ba2_whats_new.gif" width="98" height="13"></td>
+  </tr>
+  <tr>
+    <td><img src="images/line.gif" width="450" height="3"></td>
+  </tr>
+</table>
+<br>
+<table width="450" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td style="line-height:12pt"> <p><a href="photo/jsj02061.JPG" target="_blank"><img src="images/photo.jpg" width="150" height="107" border="0" align="right"></a><font color="#003300"><strong>欢迎来到沈阳工业大学计算机0206班</strong></font></p>
+      <p>&nbsp;&nbsp;这是一个充满活力积极向上的班集体，由34名来自全国各地的精英组成，每个人都有自己的特点，他们组合起来就形成了这个无敌的班级－计算机0206班。</p>
+      </td>
+  </tr>
+  <tr> 
+    <td><img src="images/transparent.gif" width="10" height="15"></td>
+  </tr>
+  <tr> 
+    <td><img src="images/news.gif" width="55" height="14"></td>
+  </tr>
+  <tr> 
+    <td><font color="#FF3300"><b><font color="#FF6600">&gt;2005/03/14</font></b></font><br>
+      今天 我们班级在金鹏工大俱乐部组织了一次舞会</td>
+  </tr>
+  <tr> 
+    <td> <div align="right"><a href="diary.html" target="mainFrame"><img src="images/con_go.gif" width="34" height="27" border="0"></a></div></td>
+  </tr>
+  <tr> 
+    <td><font color="#FF6600"><b>&gt;2005/03/13</b></font><br>
+      新学期开学后经过了3周的上机实践，并进行了考试</td>
+  </tr>
+  <tr> 
+    <td align="right"> <p><a href="diary.html" target="mainFrame"><img src="images/con_go.gif" width="34" height="27" border="0"></a></p></td>
+  </tr>
+</table>
+<br>
+<table border="0" cellspacing="0" cellpadding="0" width="450">
+  <tr>
+    <td><img src="images/line.gif" width="450" height="3"></td>
+  </tr>
+  <tr>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0" width="450">
+        <tr>
+          <td><form name="ClockForm" method="post" ><input name="ClockTxt" type="text" id="ClockTxt" size="30">
+              </form>
+</td>
+          <td>
+            <div align="right"><font  face="Verdana, Arial, Helvetica, sans-serif">&copy; 
+              2005 张黎茵</font></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
